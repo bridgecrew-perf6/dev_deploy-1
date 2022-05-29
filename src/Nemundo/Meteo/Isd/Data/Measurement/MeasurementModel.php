@@ -91,6 +91,16 @@ public $windValid;
 */
 public $windDirectionValid;
 
+/**
+* @var \Nemundo\Model\Type\Number\NumberType
+*/
+public $year;
+
+/**
+* @var \Nemundo\Model\Type\Number\NumberType
+*/
+public $month;
+
 protected function loadModel() {
 $this->tableName = "isd_measurement";
 $this->aliasTableName = "isd_measurement";
@@ -233,6 +243,22 @@ $this->windDirectionValid->aliasFieldName = "isd_measurement_wind_direction_vali
 $this->windDirectionValid->label = "Wind Direction Valid";
 $this->windDirectionValid->allowNullValue = true;
 
+$this->year = new \Nemundo\Model\Type\Number\NumberType($this);
+$this->year->tableName = "isd_measurement";
+$this->year->externalTableName = "isd_measurement";
+$this->year->fieldName = "year";
+$this->year->aliasFieldName = "isd_measurement_year";
+$this->year->label = "Year";
+$this->year->allowNullValue = false;
+
+$this->month = new \Nemundo\Model\Type\Number\NumberType($this);
+$this->month->tableName = "isd_measurement";
+$this->month->externalTableName = "isd_measurement";
+$this->month->fieldName = "month";
+$this->month->aliasFieldName = "isd_measurement_month";
+$this->month->label = "Month";
+$this->month->allowNullValue = false;
+
 $index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
 $index->indexName = "station";
 $index->addType($this->stationId);
@@ -241,6 +267,12 @@ $index = new \Nemundo\Model\Definition\Index\ModelUniqueIndex($this);
 $index->indexName = "station_date_time";
 $index->addType($this->stationId);
 $index->addType($this->dateTime);
+
+$index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
+$index->indexName = "station_year_date";
+$index->addType($this->stationId);
+$index->addType($this->year);
+$index->addType($this->date);
 
 }
 public function loadStation() {

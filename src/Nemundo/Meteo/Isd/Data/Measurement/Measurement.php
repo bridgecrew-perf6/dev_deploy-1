@@ -86,6 +86,16 @@ public $windValid;
 */
 public $windDirectionValid;
 
+/**
+* @var int
+*/
+public $year;
+
+/**
+* @var int
+*/
+public $month;
+
 public function __construct() {
 parent::__construct();
 $this->model = new MeasurementModel();
@@ -118,6 +128,8 @@ if (!is_null($this->precipitation)) $this->precipitation = str_replace(",", ".",
 $this->typeValueList->setModelValue($this->model->precipitation, $this->precipitation);
 $this->typeValueList->setModelValue($this->model->windValid, $this->windValid);
 $this->typeValueList->setModelValue($this->model->windDirectionValid, $this->windDirectionValid);
+$this->typeValueList->setModelValue($this->model->year, $this->year);
+$this->typeValueList->setModelValue($this->model->month, $this->month);
 $id = parent::save();
 return $id;
 }

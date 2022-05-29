@@ -21,20 +21,20 @@ class DevController extends AbstractWebController
     protected function loadController()
     {
 
-
         new HomeSite($this);
+        new LoginSite($this);
 
         new TestSite($this);
 
         new AppSite($this);
         new AdminSite($this);
 
-        new IsdSite($this);
+        //new IsdSite($this);
 
 
         new ServiceRequestSite($this);
 
-        //new LoginSite($this);
+
 
 
 

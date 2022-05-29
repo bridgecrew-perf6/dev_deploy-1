@@ -101,6 +101,16 @@ public $windValid;
 */
 public $windDirectionValid;
 
+/**
+* @var int
+*/
+public $year;
+
+/**
+* @var int
+*/
+public $month;
+
 public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
 parent::__construct($row->getData());
 $this->row = $row;
@@ -127,6 +137,8 @@ $this->precipitationValid = boolval($this->getModelValue($model->precipitationVa
 $this->precipitation = floatval($this->getModelValue($model->precipitation));
 $this->windValid = boolval($this->getModelValue($model->windValid));
 $this->windDirectionValid = boolval($this->getModelValue($model->windDirectionValid));
+$this->year = intval($this->getModelValue($model->year));
+$this->month = intval($this->getModelValue($model->month));
 }
 private function loadNemundoMeteoIsdDataStationStationstationRow($model) {
 $this->station = new \Nemundo\Meteo\Isd\Data\Station\StationRow($this->row, $model);

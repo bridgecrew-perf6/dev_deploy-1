@@ -91,6 +91,16 @@ public $windValid;
 */
 public $windDirectionValid;
 
+/**
+* @var \Nemundo\Model\Type\Number\NumberType
+*/
+public $year;
+
+/**
+* @var \Nemundo\Model\Type\Number\NumberType
+*/
+public $month;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = MeasurementModel::class;
@@ -230,6 +240,22 @@ $this->windDirectionValid->externalTableName = $this->externalTableName;
 $this->windDirectionValid->aliasFieldName = $this->windDirectionValid->tableName . "_" . $this->windDirectionValid->fieldName;
 $this->windDirectionValid->label = "Wind Direction Valid";
 $this->addType($this->windDirectionValid);
+
+$this->year = new \Nemundo\Model\Type\Number\NumberType();
+$this->year->fieldName = "year";
+$this->year->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->year->externalTableName = $this->externalTableName;
+$this->year->aliasFieldName = $this->year->tableName . "_" . $this->year->fieldName;
+$this->year->label = "Year";
+$this->addType($this->year);
+
+$this->month = new \Nemundo\Model\Type\Number\NumberType();
+$this->month->fieldName = "month";
+$this->month->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->month->externalTableName = $this->externalTableName;
+$this->month->aliasFieldName = $this->month->tableName . "_" . $this->month->fieldName;
+$this->month->label = "Month";
+$this->addType($this->month);
 
 }
 public function loadStation() {

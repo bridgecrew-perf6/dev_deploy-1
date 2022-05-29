@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Content\Action;use Nemundo\Content\Type\AbstractContentType;use Nemundo\Package\Bootstrap\Form\BootstrapForm;class AbstractActionForm extends BootstrapForm{    /**     * @var AbstractContentType     */    public $content;}
