@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Zamg\Data\WetterkarteJob;use Nemundo\Model\Id\AbstractModelIdValue;class WetterkarteJobId extends AbstractModelIdValue {/*** @var WetterkarteJobModel*/public $model;public function __construct() {parent::__construct();$this->model = new WetterkarteJobModel();}}

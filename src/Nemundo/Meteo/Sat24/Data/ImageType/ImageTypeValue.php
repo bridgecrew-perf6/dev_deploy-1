@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Data\ImageType;class ImageTypeValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var ImageTypeModel*/public $model;public function __construct() {parent::__construct();$this->model = new ImageTypeModel();}}

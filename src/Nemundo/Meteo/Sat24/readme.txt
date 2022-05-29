@@ -1,0 +1,1 @@
+https://de.sat24.com/de/freeimageshttps://api.sat24.com/mostrecent/EU/visual5hdcompletehttps://api.sat24.com/mostrecent/EU/infraPolairhttps://api.sat24.com/mostrecent/EU/rainTMChttps://api.sat24.com/mostrecent/EU/snowhttps://api.sat24.com/mostrecent/AF/visual

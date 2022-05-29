@@ -1,0 +1,1 @@
+EmagrammWidgetlatest widgetLocationEmagrammView:SliderFancybox

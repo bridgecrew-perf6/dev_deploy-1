@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Igra\Data;use Nemundo\Model\Collection\AbstractModelCollection;class IgraCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Meteo\Igra\Data\Country\CountryModel());$this->addModel(new \Nemundo\Meteo\Igra\Data\Station\StationModel());}}

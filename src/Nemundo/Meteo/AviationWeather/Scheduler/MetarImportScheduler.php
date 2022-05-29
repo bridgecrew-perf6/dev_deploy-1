@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\AviationWeather\Scheduler;use Nemundo\App\Scheduler\Job\AbstractScheduler;use Nemundo\Meteo\AviationWeather\Import\MetarImport;class MetarImportScheduler extends AbstractScheduler{    protected function loadScheduler()    {    }    public function run()    {        (new MetarImport())->importMetar();    }}

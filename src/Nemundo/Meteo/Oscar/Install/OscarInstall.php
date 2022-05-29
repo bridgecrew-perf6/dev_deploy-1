@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Oscar\Install;use Nemundo\App\Application\Type\Install\AbstractInstall;class OscarInstall extends AbstractInstall {public function install() {}}

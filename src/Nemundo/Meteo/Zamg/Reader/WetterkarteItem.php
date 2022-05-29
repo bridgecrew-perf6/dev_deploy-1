@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Zamg\Reader;use Nemundo\Core\Base\AbstractBase;use Nemundo\Core\Type\DateTime\Date;use Nemundo\Core\Type\DateTime\DateTime;class WetterkarteItem extends AbstractBase{    /**     * @var Date     */    //public $date;    /**     * @var DateTime     */    public $dateTime;    public $imageUrl;}

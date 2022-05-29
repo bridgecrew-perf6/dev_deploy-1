@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Data\Continent;use Nemundo\Model\Id\AbstractModelIdValue;class ContinentId extends AbstractModelIdValue {/*** @var ContinentModel*/public $model;public function __construct() {parent::__construct();$this->model = new ContinentModel();}}

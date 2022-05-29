@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Source;use Nemundo\ImageCrawler\Source\AbstractImageSource;class Sat24RainSource extends AbstractImageSource{    protected function loadSource()    {        $this->title = 'Sat24 Rain';        $this->imageUrl = 'https://api.sat24.com/mostrecent/EU/rainTMC';    }}

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Nhc\Data;use Nemundo\Model\Collection\AbstractModelCollection;class NhcCollection extends AbstractModelCollection {protected function loadCollection() {}}

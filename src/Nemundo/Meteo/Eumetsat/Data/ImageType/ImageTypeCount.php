@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Eumetsat\Data\ImageType;class ImageTypeCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var ImageTypeModel*/public $model;public function __construct() {parent::__construct();$this->model = new ImageTypeModel();}}

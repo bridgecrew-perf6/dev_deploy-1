@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Dwd\Path;use Nemundo\Project\Path\TmpPath;class DwdTmpPath extends TmpPath{    protected function loadPath()    {        parent::loadPath();        $this->addPath('dwd');    }}

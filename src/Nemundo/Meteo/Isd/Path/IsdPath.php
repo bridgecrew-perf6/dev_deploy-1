@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Isd\Path;use Nemundo\Project\Path\CachePath;class IsdPath extends CachePath{    protected function loadPath()    {        parent::loadPath();        $this->addPath('isd');    }}

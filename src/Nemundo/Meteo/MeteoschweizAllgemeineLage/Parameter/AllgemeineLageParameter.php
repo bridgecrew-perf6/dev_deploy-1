@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\AllgemeineLage\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class AllgemeineLageParameter extends AbstractUrlParameter{    protected function loadParameter()    {        $this->parameterName='allgemeine-lage';        // TODO: Implement loadParameter() method.    }}

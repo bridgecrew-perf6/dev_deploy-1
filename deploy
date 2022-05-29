@@ -1,0 +1,2 @@
+git pull
+/usr/local/php80/bin/php bin/setup.php

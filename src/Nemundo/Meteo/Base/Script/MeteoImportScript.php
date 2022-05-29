@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Base\Script;use Nemundo\App\Script\Type\AbstractConsoleScript;use Nemundo\Meteo\Isd\Script\IsdImportScript;class MeteoImportScript extends AbstractConsoleScript{    protected function loadScript()    {        $this->scriptName = 'meteo-import';    }    public function run()    {        (new IsdImportScript())->run();    }}

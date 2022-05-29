@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Zamg\Data\Wetterkarte;class WetterkarteDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var WetterkarteModel*/public $model;public function __construct() {parent::__construct();$this->model = new WetterkarteModel();}}

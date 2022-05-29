@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Data\Continent;class ContinentCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var ContinentModel*/public $model;public function __construct() {parent::__construct();$this->model = new ContinentModel();}}

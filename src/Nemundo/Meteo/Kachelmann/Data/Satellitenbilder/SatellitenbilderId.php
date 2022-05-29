@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Kachelmann\Data\Satellitenbilder;use Nemundo\Model\Id\AbstractModelIdValue;class SatellitenbilderId extends AbstractModelIdValue {/*** @var SatellitenbilderModel*/public $model;public function __construct() {parent::__construct();$this->model = new SatellitenbilderModel();}}

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Eumetsat\Url;use Nemundo\Core\Base\AbstractBase;class EumetsatUrl extends AbstractBase{    public $region;    public function getUrl() {        $url = 'https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_RGBAirmass_'.$this->region.'.jpg';        return $url;    }}

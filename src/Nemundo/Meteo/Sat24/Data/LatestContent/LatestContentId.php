@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Data\LatestContent;use Nemundo\Model\Id\AbstractModelIdValue;class LatestContentId extends AbstractModelIdValue {/*** @var LatestContentModel*/public $model;public function __construct() {parent::__construct();$this->model = new LatestContentModel();}}

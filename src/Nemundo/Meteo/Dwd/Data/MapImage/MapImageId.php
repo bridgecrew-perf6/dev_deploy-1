@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Dwd\Data\MapImage;use Nemundo\Model\Id\AbstractModelIdValue;class MapImageId extends AbstractModelIdValue {/*** @var MapImageModel*/public $model;public function __construct() {parent::__construct();$this->model = new MapImageModel();}}

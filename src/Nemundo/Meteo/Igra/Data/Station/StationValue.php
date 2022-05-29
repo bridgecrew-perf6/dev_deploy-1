@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Igra\Data\Station;class StationValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var StationModel*/public $model;public function __construct() {parent::__construct();$this->model = new StationModel();}}

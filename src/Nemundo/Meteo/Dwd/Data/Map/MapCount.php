@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Dwd\Data\Map;class MapCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var MapModel*/public $model;public function __construct() {parent::__construct();$this->model = new MapModel();}}

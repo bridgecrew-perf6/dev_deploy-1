@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\MeteoschweizAllgemeineLage\Data\AllgemeineLage;use Nemundo\Model\Id\AbstractModelIdValue;class AllgemeineLageId extends AbstractModelIdValue {/*** @var AllgemeineLageModel*/public $model;public function __construct() {parent::__construct();$this->model = new AllgemeineLageModel();}}

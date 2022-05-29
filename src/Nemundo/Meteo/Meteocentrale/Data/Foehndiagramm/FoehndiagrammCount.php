@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Meteocentrale\Data\Foehndiagramm;class FoehndiagrammCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var FoehndiagrammModel*/public $model;public function __construct() {parent::__construct();$this->model = new FoehndiagrammModel();}}

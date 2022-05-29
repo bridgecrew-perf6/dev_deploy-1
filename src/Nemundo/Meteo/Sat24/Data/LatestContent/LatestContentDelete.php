@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Sat24\Data\LatestContent;class LatestContentDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var LatestContentModel*/public $model;public function __construct() {parent::__construct();$this->model = new LatestContentModel();}}

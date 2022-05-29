@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Isd\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class StationTextParameter extends AbstractUrlParameter{    protected function loadParameter()    {        $this->parameterName = 'station-text';    }}

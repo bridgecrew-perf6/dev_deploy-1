@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\AviationWeather\Data\MetarStation;class MetarStationCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var MetarStationModel*/public $model;public function __construct() {parent::__construct();$this->model = new MetarStationModel();}}

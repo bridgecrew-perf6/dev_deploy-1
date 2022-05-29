@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Meteocentrale\Com;use Nemundo\Html\Formatting\Small;class MeteocentraleSourceSmall extends Small{    public function getContent()    {        $this->content = 'Quelle meteocentrale.ch';        return parent::getContent();    }}

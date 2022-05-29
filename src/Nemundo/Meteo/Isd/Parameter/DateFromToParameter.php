@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Isd\Parameter;class DateFromToParameter{}

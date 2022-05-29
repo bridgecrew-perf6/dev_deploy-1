@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Eumetsat\Data\EumetsatLatest;class EumetsatLatestCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var EumetsatLatestModel*/public $model;public function __construct() {parent::__construct();$this->model = new EumetsatLatestModel();}}

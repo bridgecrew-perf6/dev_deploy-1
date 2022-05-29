@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Emagramm\Site;use Nemundo\Web\Site\AbstractSite;use Nemundo\Meteo\Emagramm\Page\EmagrammPage;class EmagrammSite extends AbstractSite {protected function loadSite() {$this->title = 'Emagramm';$this->url = 'emagramm';}public function loadContent() {(new EmagrammPage())->render();}}

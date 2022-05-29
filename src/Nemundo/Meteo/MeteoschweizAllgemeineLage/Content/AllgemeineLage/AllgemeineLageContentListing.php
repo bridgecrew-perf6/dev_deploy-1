@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\MeteoschweizAllgemeineLage\Content\AllgemeineLage;class AllgemeineLageContentListing{}

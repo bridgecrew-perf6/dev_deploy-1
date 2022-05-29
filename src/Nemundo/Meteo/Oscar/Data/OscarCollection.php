@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Oscar\Data;use Nemundo\Model\Collection\AbstractModelCollection;class OscarCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Meteo\Oscar\Data\Station\StationModel());}}

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Base\Import;use Nemundo\Core\Base\AbstractBase;abstract class __AbstractImport extends AbstractBase{    public abstract function importData();}

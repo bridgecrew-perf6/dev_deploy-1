@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Meteociel\Data;use Nemundo\Model\Collection\AbstractModelCollection;class MeteocielModelCollection extends AbstractModelCollection {protected function loadCollection() {}}

@@ -1,0 +1,8 @@
+/.idea
+/config.ini
+/log
+/tmp
+/data_redirect
+/web/data
+/web/tmp
+/web/log

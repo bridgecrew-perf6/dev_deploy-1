@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Isd\Reader;use Nemundo\Core\Base\AbstractBase;class IsdStationItem extends AbstractBase{    public $id;    public $stationCode;    public $station;}

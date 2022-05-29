@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\MetOffice\Data;use Nemundo\Model\Collection\AbstractModelCollection;class MetOfficeCollection extends AbstractModelCollection {protected function loadCollection() {}}

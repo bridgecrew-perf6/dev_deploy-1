@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteo\Oscar\Data\Station;class StationCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var StationModel*/public $model;public function __construct() {parent::__construct();$this->model = new StationModel();}}
