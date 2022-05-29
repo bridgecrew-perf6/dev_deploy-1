@@ -1,0 +1,138 @@
+/*input[type=text][type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}*/
+
+
+
+
+input[type=text], input[type=password] {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-size: large;
+    background-color: whitesmoke;
+
+}
+
+
+input[type=text]:focus {
+
+    background-color: rgba(213,213,213,0.02);
+    box-shadow: 1px 3px 29px 5px rgba(0,0,0,0.62);
+    border: none;
+
+}
+
+
+
+
+
+input[type=file] {
+
+    /*display: none;*/
+
+    width: 100%;
+    padding: 12px 20px;
+    /*margin: 8px 0;*/
+    /*display: inline-block;
+    /*border: 1px solid #ccc;*/
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-size: large;
+    background-color: whitesmoke;
+
+}
+
+
+
+
+
+
+textarea {
+
+    width: 100%;
+    /*height: 30px;*/
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-family: Arial;
+    font-size: large;
+
+}
+
+
+select {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius:0;/* 4px;*/
+    box-sizing: border-box;
+
+    font-size: 1.5rem;
+
+    background-color: whitesmoke;
+
+}
+
+
+select:focus {
+
+    background-color: #3dd5f3;
+    box-shadow: 1px 3px 29px 5px rgba(0,0,0,0.62);
+    border: none;
+
+}
+
+
+
+
+
+
+option {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+.error {
+
+    font-weight: bold;
+    color: red;
+
+
+}
+
+
+
+button {
+
+    width: 300px;
+    background-color: whitesmoke;
+    cursor: pointer;
+    border: none;
+
+}

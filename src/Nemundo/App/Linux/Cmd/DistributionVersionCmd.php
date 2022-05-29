@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\App\Linux\Cmd;use Nemundo\Core\Local\AbstractLocalCommand;class DistributionVersionCmd extends AbstractLocalCommand{    protected function loadCommand()    {        //$this->label = 'Distribution Version';        $this->addCommand( 'lsb_release -a');    }    public function getVersion() {        return parent::runCommand();    }}

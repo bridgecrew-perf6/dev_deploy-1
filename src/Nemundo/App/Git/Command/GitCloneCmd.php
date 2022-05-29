@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\App\Git\Command;use Nemundo\App\Linux\Cmd\AbstractCmd;class GitCloneCmd extends AbstractCmd{    public $gitUrl;    public $path;    public function getCmd()    {        $this->addCommandLine('git clone ' . $this->gitUrl . ' ' . $this->path);        return parent::getCmd();    }}

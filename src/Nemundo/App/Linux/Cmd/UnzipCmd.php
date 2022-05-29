@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\App\Linux\Cmd;class UnzipCmd extends AbstractCmd{    public $path;    public $zipFilename;    public function getCmd()    {        $this->addCommandLine('unzip ' . $this->zipFilename . ' -d ' . $this->path);        return parent::getCmd();    }}

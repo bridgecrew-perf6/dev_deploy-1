@@ -6,6 +6,7 @@ use Dev\Deployment\DevDeployment;
 use Dev\Setup\DevSetup;
 use Dev\Web\DevWeb;
 use Nemundo\Core\Path\Path;
+use Nemundo\FrameworkProject;
 use Nemundo\Meteo\MeteoProject;
 use Nemundo\Project\AbstractProject;
 
@@ -20,12 +21,13 @@ class DevProject extends AbstractProject
         $this->modelPath = (new Path())
             ->addPath(__DIR__)
             ->addParentPath()
-            ->addPath("model")
+            ->addPath('model')
             ->getPath();
         $this->webClass = DevWeb::class;
         $this->setupClass = DevSetup::class;
         $this->deploymentClass = DevDeployment::class;
 
+        $this->addDependency(new FrameworkProject());
         $this->addDependency(new MeteoProject());
 
 

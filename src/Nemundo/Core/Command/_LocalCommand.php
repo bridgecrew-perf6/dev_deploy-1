@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Core\Command;use Nemundo\Core\Base\AbstractBaseClass;use Nemundo\Core\Debug\Debug;class _oldLocalCommand extends AbstractLocalCommand   // AbstractBaseClass{}
