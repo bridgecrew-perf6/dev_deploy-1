@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Meteocentrale\Data\Bisendiagramm;use Nemundo\Model\Id\AbstractModelIdValue;class BisendiagrammId extends AbstractModelIdValue {/*** @var BisendiagrammModel*/public $model;public function __construct() {parent::__construct();$this->model = new BisendiagrammModel();}}

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Meteociel\Application;use Nemundo\App\Application\Type\AbstractApplication;class MeteocielApplication extends AbstractApplication {protected function loadApplication() {$this->application = 'Meteociel';$this->applicationId = 'cc3bdabc-1bd6-4ef5-a816-6da82fd50378';}}

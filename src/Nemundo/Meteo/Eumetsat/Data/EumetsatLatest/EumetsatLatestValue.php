@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Eumetsat\Data\EumetsatLatest;class EumetsatLatestValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var EumetsatLatestModel*/public $model;public function __construct() {parent::__construct();$this->model = new EumetsatLatestModel();}}

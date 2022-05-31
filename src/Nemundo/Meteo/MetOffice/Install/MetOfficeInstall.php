@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\App\MetOffice\Install;use Nemundo\App\Application\Type\Install\AbstractInstall;class MetOfficeInstall extends AbstractInstall {public function install() {}}

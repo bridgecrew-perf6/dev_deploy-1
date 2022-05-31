@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Zamg\Site;use Nemundo\Meteo\Zamg\Page\ZamgPage;use Nemundo\Web\Site\AbstractSite;class ZamgSite extends AbstractSite{    protected function loadSite()    {        $this->title = 'Zamg';        $this->url = 'zamg';    }    public function loadContent()    {        (new ZamgPage())->render();    }}

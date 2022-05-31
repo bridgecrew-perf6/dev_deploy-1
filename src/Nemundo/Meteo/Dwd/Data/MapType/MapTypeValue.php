@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Dwd\Data\MapType;class MapTypeValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var MapTypeModel*/public $model;public function __construct() {parent::__construct();$this->model = new MapTypeModel();}}

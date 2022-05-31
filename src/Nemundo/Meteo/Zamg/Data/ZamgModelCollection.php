@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Zamg\Data;use Nemundo\Model\Collection\AbstractModelCollection;class ZamgModelCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Meteo\Zamg\Data\Wetterkarte\WetterkarteModel());$this->addModel(new \Nemundo\Meteo\Zamg\Data\WetterkarteJob\WetterkarteJobModel());}}

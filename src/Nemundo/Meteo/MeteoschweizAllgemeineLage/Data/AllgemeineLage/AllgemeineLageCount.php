@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\MeteoschweizAllgemeineLage\Data\AllgemeineLage;class AllgemeineLageCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var AllgemeineLageModel*/public $model;public function __construct() {parent::__construct();$this->model = new AllgemeineLageModel();}}

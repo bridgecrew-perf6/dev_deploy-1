@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Kachelmann\Data\Satellitenbilder;class SatellitenbilderDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var SatellitenbilderModel*/public $model;public function __construct() {parent::__construct();$this->model = new SatellitenbilderModel();}}

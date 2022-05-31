@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Meteocentrale\Data\Foehndiagramm;class FoehndiagrammDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var FoehndiagrammModel*/public $model;public function __construct() {parent::__construct();$this->model = new FoehndiagrammModel();}}

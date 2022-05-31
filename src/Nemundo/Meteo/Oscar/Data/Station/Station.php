@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Oscar\Data\Station;class Station extends \Nemundo\Model\Data\AbstractModelData {/*** @var StationModel*/protected $model;public function __construct() {parent::__construct();$this->model = new StationModel();}public function save() {$id = parent::save();return $id;}}

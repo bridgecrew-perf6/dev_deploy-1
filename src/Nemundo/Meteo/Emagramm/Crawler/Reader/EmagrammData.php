@@ -1,1 +1,0 @@
-<?phpnamespace Meteo\Emagramm\Emagramm\Reader;use Nemundo\Core\Base\AbstractBase;class EmagrammData extends AbstractBase{    public $pressure;    public $height;    public $temperatur;    public $dewPoint;    public $windDirection;    public $windSpeed;    //Pressure  Height  Temp   Dewpt   W-dir  W-speed}

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Sat24\Site;use Nemundo\Meteo\Sat24\Page\Sat24Page;use Nemundo\Web\Site\AbstractSite;class Sat24Site extends AbstractSite{    protected function loadSite()    {        $this->title = 'Sat24';        $this->url = 'sat24';    }    public function loadContent()    {        (new Sat24Page())->render();    }}

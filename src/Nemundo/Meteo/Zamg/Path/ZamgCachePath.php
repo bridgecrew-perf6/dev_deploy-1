@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Zamg\Path;use Nemundo\Project\Path\CachePath;class ZamgCachePath extends CachePath{    protected function loadPath()    {        $this->addPath('zamg');    }}

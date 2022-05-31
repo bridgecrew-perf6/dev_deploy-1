@@ -1,1 +1,0 @@
-<?phpnamespace Paranautik\Physik;class IdealesGas{    // https://de.wikipedia.org/wiki/Ideales_Gas}

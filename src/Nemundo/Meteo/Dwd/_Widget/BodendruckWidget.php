@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Dwd\Widget;use Nemundo\ImageCrawler\Widget\AbstractImageSourceWidget;use Nemundo\Meteo\Dwd\Source\BodendruckSource;class BodendruckWidget extends AbstractImageSourceWidget{    public function getContent()    {        $this->source=new BodendruckSource();        return parent::getContent();    }}

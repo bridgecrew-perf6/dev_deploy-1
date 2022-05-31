@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Sat24\Page;use Nemundo\Com\Template\AbstractTemplateDocument;class Sat24Page extends AbstractTemplateDocument{    public function getContent()    {        return parent::getContent();    }}

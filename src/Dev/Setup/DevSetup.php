@@ -54,8 +54,8 @@ class DevSetup extends AbstractSetup
         (new AbstimmungTodayScheduler())->setActive();
 
 
-        (new IsdApplication())->installApp();
-        (new VideoApplication())->installApp();
+        /*(new IsdApplication())->installApp();
+        (new VideoApplication())->installApp();*/
 
 
         $reset->remove();

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Oscar\Data\Station;use Nemundo\Model\Data\AbstractModelUpdate;class StationUpdate extends AbstractModelUpdate {/*** @var StationModel*/public $model;public function __construct() {parent::__construct();$this->model = new StationModel();}public function update() {parent::update();}}

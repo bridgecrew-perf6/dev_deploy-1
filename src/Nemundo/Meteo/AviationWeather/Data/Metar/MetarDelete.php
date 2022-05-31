@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\AviationWeather\Data\Metar;class MetarDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var MetarModel*/public $model;public function __construct() {parent::__construct();$this->model = new MetarModel();}}

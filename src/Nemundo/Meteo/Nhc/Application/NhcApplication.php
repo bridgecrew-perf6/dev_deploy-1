@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Nhc\Application;use Nemundo\App\Application\Type\AbstractApplication;class NhcApplication extends AbstractApplication {protected function loadApplication() {$this->application = 'Nhc';$this->applicationId = '0f6f82df-f597-4563-b7c1-3a65edaef1e5';}}

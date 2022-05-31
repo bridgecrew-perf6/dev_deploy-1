@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Isd\Session;use Nemundo\Core\Http\Session\AbstractSessionList;class StationSessionList extends AbstractSessionList{    protected function loadSession()    {        $this->sessionName='stationlist';        $this->uniqueList=true;        // TODO: Implement loadSession() method.    }}

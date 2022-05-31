@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Sat24\Source;use Nemundo\ImageCrawler\Source\AbstractImageSource;class Sat24VisualSource extends AbstractImageSource{    protected function loadSource()    {        $this->title='Sat24 Visual';        $this->imageUrl='https://api.sat24.com/mostrecent/EU/visual5hdcomplete';    }}

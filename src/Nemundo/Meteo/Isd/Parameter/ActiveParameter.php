@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Isd\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class ActiveParameter extends AbstractUrlParameter {protected function loadParameter() {$this->parameterName = 'active';}}

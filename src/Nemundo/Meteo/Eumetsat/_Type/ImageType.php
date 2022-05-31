@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Eumetsat\Type;class ImageType{    const IR039 = 'IR 3.9';    const VIS006Color = 'Visual 00.6';    const RGBNatColour = 'RGB Natuaral Color';}

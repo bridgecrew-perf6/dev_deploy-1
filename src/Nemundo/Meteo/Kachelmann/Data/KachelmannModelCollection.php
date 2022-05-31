@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Kachelmann\Data;use Nemundo\Model\Collection\AbstractModelCollection;class KachelmannModelCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Meteo\Kachelmann\Data\Satellitenbilder\SatellitenbilderModel());}}

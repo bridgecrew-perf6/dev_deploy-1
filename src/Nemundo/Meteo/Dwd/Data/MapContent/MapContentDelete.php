@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Dwd\Data\MapContent;class MapContentDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var MapContentModel*/public $model;public function __construct() {parent::__construct();$this->model = new MapContentModel();}}

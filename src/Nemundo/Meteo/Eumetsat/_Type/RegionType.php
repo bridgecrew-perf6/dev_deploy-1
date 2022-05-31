@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Eumetsat\Type;class RegionType{    const WesternEurope = 'WesternEurope';    const CentralEurope = 'CentralEurope';    const WesternAfrica = 'WesternAfrica';    const SouthernAfrica= 'Southern Africa';}

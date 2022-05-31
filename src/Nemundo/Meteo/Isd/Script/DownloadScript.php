@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Isd\Script;use Nemundo\App\Script\Type\AbstractConsoleScript;use Nemundo\Meteo\Isd\Download\DownloadQueue;class DownloadScript extends AbstractConsoleScript{    public function loadScript()    {        $this->scriptName = 'isd-download';    }    public function run()    {        (new DownloadQueue())->downloadQueue();    }}

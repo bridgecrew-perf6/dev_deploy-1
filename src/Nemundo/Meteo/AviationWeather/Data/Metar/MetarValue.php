@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\AviationWeather\Data\Metar;class MetarValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var MetarModel*/public $model;public function __construct() {parent::__construct();$this->model = new MetarModel();}}

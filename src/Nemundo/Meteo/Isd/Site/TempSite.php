@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Isd\Site;use Nemundo\Meteo\Isd\Page\TempPage;use Nemundo\Web\Site\AbstractSite;class TempSite extends AbstractSite{    protected function loadSite()    {        $this->title = 'Temp';        $this->url = 'temp';    }    public function loadContent()    {        (new TempPage())->render();    }}

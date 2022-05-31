@@ -29,7 +29,7 @@ class DevProject extends AbstractProject
         $this->deploymentClass = DevDeployment::class;
 
         $this->addDependency(new FrameworkProject());
-        $this->addDependency(new MeteoProject());
+        //$this->addDependency(new MeteoProject());
         $this->addDependency(new ParlamentProject());
 
 

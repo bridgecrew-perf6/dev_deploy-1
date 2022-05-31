@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\MeteoschweizAllgemeineLage\Data;use Nemundo\Model\Collection\AbstractModelCollection;class MeteoschweizAllgemeineLageModelCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Meteo\MeteoschweizAllgemeineLage\Data\AllgemeineLage\AllgemeineLageModel());}}

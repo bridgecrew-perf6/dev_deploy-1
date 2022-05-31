@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteo\Isd\Site;use Nemundo\Web\Site\AbstractSite;class StationRemoveSite extends AbstractSite {protected function loadSite() {$this->title = 'Station Remove';$this->url = 'station-remove';}public function loadContent() {}}
