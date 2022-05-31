@@ -32,6 +32,10 @@ class DevController extends AbstractWebController
         //new IsdSite($this);
 
 
+        new ParlamentSite($this);
+
+
+
         new ServiceRequestSite($this);
 
 

@@ -4,6 +4,8 @@ namespace Dev\Page;
 
 use Nemundo\Admin\Com\Button\AdminSubmitButton;
 use Nemundo\Com\Chart\Data\LineChartData;
+use Nemundo\Com\Template\AbstractTemplateHtmlDocument;
+use Nemundo\Com\Video\YouTube\YouTubePlayer;
 use Nemundo\Core\Debug\Debug;
 use Nemundo\Db\Sql\Field\Aggregate\MaxField;
 use Nemundo\Html\Form\Form;
@@ -13,12 +15,18 @@ use Nemundo\Package\Bootstrap\Document\BootstrapDocument;
 use Nemundo\Package\Echarts\Chart\Echart;
 
 
-class TestPage extends BootstrapDocument  // AbstractTemplateHtmlDocument
+//class TestPage extends BootstrapDocument  // AbstractTemplateHtmlDocument
+    class TestPage extends AbstractTemplateHtmlDocument
 {
 
 
     public function getContent()
     {
+
+
+
+
+
 
         /*
         $meta = new Meta($this);
@@ -29,6 +37,7 @@ class TestPage extends BootstrapDocument  // AbstractTemplateHtmlDocument
         //$stationId = 66800;
 
 
+        /*
         $form = new Form($this);
 
         $station = new StationAutocompleteListBox($form);
@@ -51,7 +60,7 @@ class TestPage extends BootstrapDocument  // AbstractTemplateHtmlDocument
             $max = new MaxField($reader);
             $max->aggregateField = $reader->model->temperature;*/
 
-            $reader->filter->andEqual($reader->model->stationId, $station->getStationId());
+         /*   $reader->filter->andEqual($reader->model->stationId, $station->getStationId());
             $reader->filter->andEqual($reader->model->month, 5);
             $reader->filter->andEqual($reader->model->year, 2022);
             $reader->filter->andEqual($reader->model->temperatureValid, true);
@@ -66,7 +75,7 @@ class TestPage extends BootstrapDocument  // AbstractTemplateHtmlDocument
             }
 
 
-        }
+        }*/
 
 
         return parent::getContent();

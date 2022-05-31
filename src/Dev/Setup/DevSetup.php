@@ -7,6 +7,7 @@ use Nemundo\App\Application\Reset\ApplicationReset;
 use Nemundo\App\Script\Reset\ScriptReset;
 use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\App\WebService\Reset\WebServiceReset;
+use Nemundo\Content\App\Video\Application\VideoApplication;
 use Nemundo\Content\Reset\ContentReset;
 use Nemundo\Dev\Script\AdminBuilderScript;
 use Nemundo\Meteo\Isd\Application\IsdApplication;
@@ -14,6 +15,8 @@ use Nemundo\Model\Script\ModelCleanScript;
 use Nemundo\Project\Install\ProjectInstall;
 use Nemundo\Project\Reset\ProjectReset;
 use Nemundo\Project\Setup\AbstractSetup;
+use Parlament\Application\ParlamentApplication;
+use Parlament\Scheduler\AbstimmungTodayScheduler;
 
 class DevSetup extends AbstractSetup
 {
@@ -46,8 +49,13 @@ class DevSetup extends AbstractSetup
         //(new RoundshotApplication())->installApp();
 
 
-        //(new ParlamentApplication())->installApp();
+
+        (new ParlamentApplication())->installApp();
+        (new AbstimmungTodayScheduler())->setActive();
+
+
         (new IsdApplication())->installApp();
+        (new VideoApplication())->installApp();
 
 
         $reset->remove();
