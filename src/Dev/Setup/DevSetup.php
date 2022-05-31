@@ -4,6 +4,7 @@ namespace Dev\Setup;
 
 use Dev\Script\TestScript;
 use Nemundo\App\Application\Reset\ApplicationReset;
+use Nemundo\App\FileLog\Application\FileLogApplication;
 use Nemundo\App\Script\Reset\ScriptReset;
 use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\App\WebService\Reset\WebServiceReset;
@@ -49,6 +50,7 @@ class DevSetup extends AbstractSetup
         //(new RoundshotApplication())->installApp();
 
 
+        (new FileLogApplication())->installApp();
 
         (new ParlamentApplication())->installApp();
         (new AbstimmungTodayScheduler())->setActive();

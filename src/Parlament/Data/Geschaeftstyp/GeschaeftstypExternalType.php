@@ -11,6 +11,11 @@ public $id;
 */
 public $geschaeftstyp;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $abk;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = GeschaeftstypModel::class;
@@ -31,6 +36,14 @@ $this->geschaeftstyp->externalTableName = $this->externalTableName;
 $this->geschaeftstyp->aliasFieldName = $this->geschaeftstyp->tableName . "_" . $this->geschaeftstyp->fieldName;
 $this->geschaeftstyp->label = "Geschäftstyp";
 $this->addType($this->geschaeftstyp);
+
+$this->abk = new \Nemundo\Model\Type\Text\TextType();
+$this->abk->fieldName = "abk";
+$this->abk->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->abk->externalTableName = $this->externalTableName;
+$this->abk->aliasFieldName = $this->abk->tableName . "_" . $this->abk->fieldName;
+$this->abk->label = "Abk";
+$this->addType($this->abk);
 
 }
 }

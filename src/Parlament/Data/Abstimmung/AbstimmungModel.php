@@ -46,6 +46,16 @@ public $enthaltung;
 */
 public $zeit;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $jaBedeutung;
+
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $neinBedeutung;
+
 protected function loadModel() {
 $this->tableName = "parlament_abstimmung";
 $this->aliasTableName = "parlament_abstimmung";
@@ -117,9 +127,28 @@ $this->zeit->aliasFieldName = "parlament_abstimmung_zeit";
 $this->zeit->label = "Zeit";
 $this->zeit->allowNullValue = false;
 
+$this->jaBedeutung = new \Nemundo\Model\Type\Text\TextType($this);
+$this->jaBedeutung->tableName = "parlament_abstimmung";
+$this->jaBedeutung->externalTableName = "parlament_abstimmung";
+$this->jaBedeutung->fieldName = "ja_bedeutung";
+$this->jaBedeutung->aliasFieldName = "parlament_abstimmung_ja_bedeutung";
+$this->jaBedeutung->label = "Ja Bedeutung";
+$this->jaBedeutung->allowNullValue = false;
+$this->jaBedeutung->length = 255;
+
+$this->neinBedeutung = new \Nemundo\Model\Type\Text\TextType($this);
+$this->neinBedeutung->tableName = "parlament_abstimmung";
+$this->neinBedeutung->externalTableName = "parlament_abstimmung";
+$this->neinBedeutung->fieldName = "nein_bedeutung";
+$this->neinBedeutung->aliasFieldName = "parlament_abstimmung_nein_bedeutung";
+$this->neinBedeutung->label = "Nein Bedeutung";
+$this->neinBedeutung->allowNullValue = false;
+$this->neinBedeutung->length = 255;
+
 $index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
 $index->indexName = "datum";
 $index->addType($this->datum);
+$index->addType($this->zeit);
 
 }
 public function loadGeschaeft() {

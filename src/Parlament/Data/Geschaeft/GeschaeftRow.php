@@ -46,6 +46,16 @@ public $sessionId;
 */
 public $session;
 
+/**
+* @var int
+*/
+public $geschaeftsstatusId;
+
+/**
+* @var \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusRow
+*/
+public $geschaeftsstatus;
+
 public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
 parent::__construct($row->getData());
 $this->row = $row;
@@ -60,11 +70,18 @@ $this->sessionId = intval($this->getModelValue($model->sessionId));
 if ($model->session !== null) {
 $this->loadParlamentDataSessionSessionsessionRow($model->session);
 }
+$this->geschaeftsstatusId = intval($this->getModelValue($model->geschaeftsstatusId));
+if ($model->geschaeftsstatus !== null) {
+$this->loadParlamentDataGeschaeftsstatusGeschaeftsstatusgeschaeftsstatusRow($model->geschaeftsstatus);
+}
 }
 private function loadParlamentDataGeschaeftstypGeschaeftstypgeschaeftstypRow($model) {
 $this->geschaeftstyp = new \Parlament\Data\Geschaeftstyp\GeschaeftstypRow($this->row, $model);
 }
 private function loadParlamentDataSessionSessionsessionRow($model) {
 $this->session = new \Parlament\Data\Session\SessionRow($this->row, $model);
+}
+private function loadParlamentDataGeschaeftsstatusGeschaeftsstatusgeschaeftsstatusRow($model) {
+$this->geschaeftsstatus = new \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusRow($this->row, $model);
 }
 }

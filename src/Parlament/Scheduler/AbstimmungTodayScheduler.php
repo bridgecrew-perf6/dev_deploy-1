@@ -25,6 +25,7 @@ class AbstimmungTodayScheduler extends AbstractScheduler
         $import = new AbstimmungImport();
         $import->datum = (new Date())->setNow();
         $import->importDetail = true;
+        $import->importGeschaeft=true;
         $import->importData();
 
     }

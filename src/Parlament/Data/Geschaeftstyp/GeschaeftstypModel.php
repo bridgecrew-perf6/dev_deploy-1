@@ -11,6 +11,11 @@ public $id;
 */
 public $geschaeftstyp;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $abk;
+
 protected function loadModel() {
 $this->tableName = "parlament_geschaeftstyp";
 $this->aliasTableName = "parlament_geschaeftstyp";
@@ -34,6 +39,15 @@ $this->geschaeftstyp->aliasFieldName = "parlament_geschaeftstyp_geschaeftstyp";
 $this->geschaeftstyp->label = "Geschäftstyp";
 $this->geschaeftstyp->allowNullValue = false;
 $this->geschaeftstyp->length = 255;
+
+$this->abk = new \Nemundo\Model\Type\Text\TextType($this);
+$this->abk->tableName = "parlament_geschaeftstyp";
+$this->abk->externalTableName = "parlament_geschaeftstyp";
+$this->abk->fieldName = "abk";
+$this->abk->aliasFieldName = "parlament_geschaeftstyp_abk";
+$this->abk->label = "Abk";
+$this->abk->allowNullValue = false;
+$this->abk->length = 10;
 
 }
 }

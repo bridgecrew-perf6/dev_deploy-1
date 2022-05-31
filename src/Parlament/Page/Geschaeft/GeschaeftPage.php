@@ -2,14 +2,14 @@
 
 namespace Parlament\Page\Geschaeft;
 
-use Nemundo\Package\Bootstrap\Form\BootstrapSearchForm;
+use Nemundo\Com\FormBuilder\SearchForm;
+use Nemundo\Html\Heading\H1;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
+use Parlament\Com\ListBox\DepartementListBox;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
-use Parlament\Com\ListBox\LegislaturListBox;
-use Parlament\Com\ListBox\RatListBox;
 use Parlament\Com\ListBox\SessionListBox;
-use Parlament\Com\Table\AbstimmungRatsmitgliedTable;
+use Parlament\Com\ListBox\ThemaListBox;
 use Parlament\Com\Table\GeschaeftTable;
 use Parlament\Template\ParlamentTemplate;
 
@@ -18,39 +18,54 @@ class GeschaeftPage extends ParlamentTemplate
     public function getContent()
     {
 
+        $h1 = new H1($this);
+        $h1->content = 'Geschäft';
 
-        $form = new BootstrapSearchForm($this);
+        $form = new SearchForm($this);
 
-        $formRow=new BootstrapRow($form);
+        $formRow = new BootstrapRow($form);
 
-        $geschaeftsstatus=new GeschaeftsstatusListBox($formRow);
-        $geschaeftsstatus->column=true;
-        $geschaeftsstatus->searchMode=true;
+        $geschaeftstyp = new GeschaeftstypListBox($formRow);
+        $geschaeftstyp->column = true;
+        $geschaeftstyp->searchMode = true;
+        $geschaeftstyp->submitOnChange = true;
 
-        $geschaeftstyp=new GeschaeftstypListBox($formRow);
-        $geschaeftstyp->column=true;
-        $geschaeftstyp->searchMode=true;
+        $geschaeftsstatus = new GeschaeftsstatusListBox($formRow);
+        $geschaeftsstatus->column = true;
+        $geschaeftsstatus->searchMode = true;
+        $geschaeftsstatus->submitOnChange = true;
 
-        $legislatur=new LegislaturListBox($formRow);
-        $legislatur->column=true;
-        $legislatur->searchMode=true;
+        $session = new SessionListBox($formRow);
+        $session->column = true;
+        $session->searchMode = true;
+        $session->submitOnChange = true;
 
-        /*$rat=new RatListBox($formRow);
-        $rat->column=true;
-        $rat->searchMode=true;*/
+        $thema = new ThemaListBox($formRow);
+        $thema->column = true;
+        $thema->searchMode = true;
+        $thema->submitOnChange = true;
 
-        $session=new SessionListBox($formRow);
-        $session->column=true;
-        $session->searchMode=true;
+        $depeartement = new DepartementListBox($formRow);
+        $depeartement->column = true;
+        $depeartement->searchMode = true;
+        $depeartement->submitOnChange = true;
 
+        $table = new GeschaeftTable($this);
 
-        $table=new GeschaeftTable($this);
+        if ($session->hasValue()) {
+            $table->sessionId = $session->getValue();
+        }
 
+        if ($geschaeftsstatus->hasValue()) {
+            $table->geschaeftsstatusId = $geschaeftsstatus->getValue();
+        }
 
-
-
-
+        if ($geschaeftstyp->hasValue()) {
+            $table->geschaeftstypId = $geschaeftstyp->getValue();
+        }
 
         return parent::getContent();
+
     }
+
 }

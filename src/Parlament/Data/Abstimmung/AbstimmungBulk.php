@@ -46,6 +46,16 @@ public $enthaltung;
 */
 public $zeit;
 
+/**
+* @var string
+*/
+public $jaBedeutung;
+
+/**
+* @var string
+*/
+public $neinBedeutung;
+
 public function __construct() {
 parent::__construct();
 $this->model = new AbstimmungModel();
@@ -64,6 +74,8 @@ $this->typeValueList->setModelValue($this->model->nein, $this->nein);
 $this->typeValueList->setModelValue($this->model->enthaltung, $this->enthaltung);
 $property = new \Nemundo\Model\Data\Property\DateTime\TimeDataProperty($this->model->zeit, $this->typeValueList);
 $property->setValue($this->zeit);
+$this->typeValueList->setModelValue($this->model->jaBedeutung, $this->jaBedeutung);
+$this->typeValueList->setModelValue($this->model->neinBedeutung, $this->neinBedeutung);
 $id = parent::save();
 return $id;
 }

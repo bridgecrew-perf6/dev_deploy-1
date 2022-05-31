@@ -54,6 +54,15 @@ class AbstimmungDetailImport extends AbstractParlamentImport
             $data->datum = $datum->getDate();
             $data->zeit = $datum->getTime();
 
+            $data->jaBedeutung= $affairVote['meaningYes'];
+            $data->neinBedeutung= $affairVote['meaningNo'];
+
+
+            /*
+            "meaningNo": "Antrag der Minderheit Wermuth (Nichteintreten)",
+      "meaningYes": "Antrag der Mehrheit (Eintreten)",
+            */
+
             foreach ($affairVote['totalVotes'] as $totalVote) {
 
                 if ($totalVote['type'] == 1) {

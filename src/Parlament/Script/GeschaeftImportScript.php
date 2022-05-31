@@ -20,7 +20,7 @@ class GeschaeftImportScript extends AbstractConsoleScript
     {
 
         $import= new GeschaeftImport();
-        $import->page=1075;
+        //$import->page=1075;
         $import->importDetail=true;
         $import->importData();
 

@@ -27,6 +27,11 @@ public $geschaeftstypId;
 */
 public $sessionId;
 
+/**
+* @var string
+*/
+public $geschaeftsstatusId;
+
 public function __construct() {
 parent::__construct();
 $this->model = new GeschaeftModel();
@@ -36,6 +41,7 @@ $this->typeValueList->setModelValue($this->model->kurzbezeichnung, $this->kurzbe
 $this->typeValueList->setModelValue($this->model->geschaeft, $this->geschaeft);
 $this->typeValueList->setModelValue($this->model->geschaeftstypId, $this->geschaeftstypId);
 $this->typeValueList->setModelValue($this->model->sessionId, $this->sessionId);
+$this->typeValueList->setModelValue($this->model->geschaeftsstatusId, $this->geschaeftsstatusId);
 parent::update();
 }
 }

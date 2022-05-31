@@ -10,16 +10,16 @@ class GeschaeftstypListBox extends BootstrapListBox
 
     public function __construct($parentContainer = null)
     {
+
         parent::__construct($parentContainer);
 
-        $this->label = 'Geschaeftstyp';
+        $this->label = 'Geschäftstyp';
         $this->name='typ';
 
     }
 
     public function getContent()
     {
-
 
         $reader=new GeschaeftstypReader();
         $reader->addOrder($reader->model->geschaeftstyp);

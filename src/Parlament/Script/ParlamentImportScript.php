@@ -11,6 +11,7 @@ use Parlament\Import\Allgemein\RatImport;
 use Parlament\Import\Allgemein\SessionImport;
 use Parlament\Import\Geschaeft\GeschaeftsstatusImport;
 use Parlament\Import\Geschaeft\GeschaeftstypImport;
+use Parlament\Import\Geschaeft\ThemaImport;
 use Parlament\Import\Kommission\KommissionImport;
 use Parlament\Import\Ratsmitglied\AktivRatsmitgliedImport;
 use Parlament\Import\Ratsmitglied\RatsmitgliedImport;
@@ -34,6 +35,7 @@ class ParlamentImportScript extends AbstractConsoleScript
         (new SessionImport())->importData();
         (new GeschaeftstypImport())->importData();
         (new GeschaeftsstatusImport())->importData();
+        (new ThemaImport())->importData();
         (new FraktionImport())->importData();
 
 

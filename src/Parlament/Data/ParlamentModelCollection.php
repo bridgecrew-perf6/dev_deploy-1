@@ -5,9 +5,13 @@ class ParlamentModelCollection extends AbstractModelCollection {
 protected function loadCollection() {
 $this->addModel(new \Parlament\Data\Abstimmung\AbstimmungModel());
 $this->addModel(new \Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedModel());
+$this->addModel(new \Parlament\Data\Departement\DepartementModel());
 $this->addModel(new \Parlament\Data\Entscheidung\EntscheidungModel());
 $this->addModel(new \Parlament\Data\Fraktion\FraktionModel());
 $this->addModel(new \Parlament\Data\Geschaeft\GeschaeftModel());
+$this->addModel(new \Parlament\Data\GeschaeftText\GeschaeftTextModel());
+$this->addModel(new \Parlament\Data\GeschaeftTextTyp\GeschaeftTextTypModel());
+$this->addModel(new \Parlament\Data\GeschaeftThema\GeschaeftThemaModel());
 $this->addModel(new \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusModel());
 $this->addModel(new \Parlament\Data\Geschaeftstyp\GeschaeftstypModel());
 $this->addModel(new \Parlament\Data\Geschlecht\GeschlechtModel());
@@ -20,5 +24,6 @@ $this->addModel(new \Parlament\Data\Rat\RatModel());
 $this->addModel(new \Parlament\Data\Ratsmitglied\RatsmitgliedModel());
 $this->addModel(new \Parlament\Data\Session\SessionModel());
 $this->addModel(new \Parlament\Data\Sprache\SpracheModel());
+$this->addModel(new \Parlament\Data\Thema\ThemaModel());
 }
 }

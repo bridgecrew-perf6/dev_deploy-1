@@ -12,12 +12,18 @@ public $model;
 */
 public $geschaeftstyp;
 
+/**
+* @var string
+*/
+public $abk;
+
 public function __construct() {
 parent::__construct();
 $this->model = new GeschaeftstypModel();
 }
 public function update() {
 $this->typeValueList->setModelValue($this->model->geschaeftstyp, $this->geschaeftstyp);
+$this->typeValueList->setModelValue($this->model->abk, $this->abk);
 parent::update();
 }
 }

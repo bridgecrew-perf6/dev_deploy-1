@@ -9,6 +9,7 @@ use Parlament\Site\Fraktion\FraktionSite;
 use Parlament\Site\Geschaeft\GeschaeftSite;
 use Parlament\Site\Kommission\KommissionSite;
 use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
+use Parlament\Site\Session\SessionSite;
 
 class ParlamentSite extends AbstractSite
 {
@@ -23,6 +24,7 @@ class ParlamentSite extends AbstractSite
         new RatsmitgliedSite($this);
         new KommissionSite($this);
         new FraktionSite($this);
+        new SessionSite($this);
 
 
     }

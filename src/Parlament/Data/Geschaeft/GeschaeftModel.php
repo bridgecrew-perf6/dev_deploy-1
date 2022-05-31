@@ -36,6 +36,16 @@ public $sessionId;
 */
 public $session;
 
+/**
+* @var \Nemundo\Model\Type\External\Id\ExternalIdType
+*/
+public $geschaeftsstatusId;
+
+/**
+* @var \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusExternalType
+*/
+public $geschaeftsstatus;
+
 protected function loadModel() {
 $this->tableName = "parlament_geschaeft";
 $this->aliasTableName = "parlament_geschaeft";
@@ -83,6 +93,13 @@ $this->sessionId->aliasFieldName = "parlament_geschaeft_session";
 $this->sessionId->label = "Session";
 $this->sessionId->allowNullValue = false;
 
+$this->geschaeftsstatusId = new \Nemundo\Model\Type\External\Id\ExternalIdType($this);
+$this->geschaeftsstatusId->tableName = "parlament_geschaeft";
+$this->geschaeftsstatusId->fieldName = "geschaeftsstatus";
+$this->geschaeftsstatusId->aliasFieldName = "parlament_geschaeft_geschaeftsstatus";
+$this->geschaeftsstatusId->label = "Geschaeftsstatus";
+$this->geschaeftsstatusId->allowNullValue = false;
+
 }
 public function loadGeschaeftstyp() {
 if ($this->geschaeftstyp == null) {
@@ -101,6 +118,16 @@ $this->session->tableName = "parlament_geschaeft";
 $this->session->fieldName = "session";
 $this->session->aliasFieldName = "parlament_geschaeft_session";
 $this->session->label = "Session";
+}
+return $this;
+}
+public function loadGeschaeftsstatus() {
+if ($this->geschaeftsstatus == null) {
+$this->geschaeftsstatus = new \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusExternalType($this, "parlament_geschaeft_geschaeftsstatus");
+$this->geschaeftsstatus->tableName = "parlament_geschaeft";
+$this->geschaeftsstatus->fieldName = "geschaeftsstatus";
+$this->geschaeftsstatus->aliasFieldName = "parlament_geschaeft_geschaeftsstatus";
+$this->geschaeftsstatus->label = "Geschaeftsstatus";
 }
 return $this;
 }

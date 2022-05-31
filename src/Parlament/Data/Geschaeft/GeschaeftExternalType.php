@@ -36,6 +36,16 @@ public $sessionId;
 */
 public $session;
 
+/**
+* @var \Nemundo\Model\Type\Id\IdType
+*/
+public $geschaeftsstatusId;
+
+/**
+* @var \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusExternalType
+*/
+public $geschaeftsstatus;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = GeschaeftModel::class;
@@ -79,6 +89,13 @@ $this->sessionId->aliasFieldName = $this->sessionId->tableName ."_".$this->sessi
 $this->sessionId->label = "Session";
 $this->addType($this->sessionId);
 
+$this->geschaeftsstatusId = new \Nemundo\Model\Type\Id\IdType();
+$this->geschaeftsstatusId->fieldName = "geschaeftsstatus";
+$this->geschaeftsstatusId->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->geschaeftsstatusId->aliasFieldName = $this->geschaeftsstatusId->tableName ."_".$this->geschaeftsstatusId->fieldName;
+$this->geschaeftsstatusId->label = "Geschaeftsstatus";
+$this->addType($this->geschaeftsstatusId);
+
 }
 public function loadGeschaeftstyp() {
 if ($this->geschaeftstyp == null) {
@@ -99,6 +116,17 @@ $this->session->tableName = $this->parentFieldName . "_" . $this->externalTableN
 $this->session->aliasFieldName = $this->session->tableName ."_".$this->session->fieldName;
 $this->session->label = "Session";
 $this->addType($this->session);
+}
+return $this;
+}
+public function loadGeschaeftsstatus() {
+if ($this->geschaeftsstatus == null) {
+$this->geschaeftsstatus = new \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusExternalType(null, $this->parentFieldName . "_geschaeftsstatus");
+$this->geschaeftsstatus->fieldName = "geschaeftsstatus";
+$this->geschaeftsstatus->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->geschaeftsstatus->aliasFieldName = $this->geschaeftsstatus->tableName ."_".$this->geschaeftsstatus->fieldName;
+$this->geschaeftsstatus->label = "Geschaeftsstatus";
+$this->addType($this->geschaeftsstatus);
 }
 return $this;
 }

@@ -2,59 +2,62 @@
 
 namespace Parlament\Page\Abstimmung;
 
+use Nemundo\Com\FormBuilder\SearchForm;
+use Nemundo\Html\Form\Form;
+use Nemundo\Html\Heading\H1;
 use Nemundo\Package\Bootstrap\Form\BootstrapSearchForm;
-use Nemundo\Package\Bootstrap\Layout\BootstrapTwoColumnLayout;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
-use Parlament\Com\ListBox\FraktionListBox;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
-use Parlament\Com\ListBox\KommissionListBox;
-use Parlament\Com\ListBox\LegislaturListBox;
-use Parlament\Com\ListBox\RatListBox;
 use Parlament\Com\ListBox\SessionListBox;
-use Parlament\Com\Table\AbstimmungRatsmitgliedTable;
 use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Template\ParlamentTemplate;
 
 class AbstimmungPage extends ParlamentTemplate
 {
+
     public function getContent()
     {
 
-        $form = new BootstrapSearchForm($this);
+        $h1 = new H1($this);
+        $h1->content = 'Abstimmung';
 
-        $formRow=new BootstrapRow($form);
+        $form = new SearchForm($this);  // new BootstrapSearchForm($this);
 
-        $geschaeftsstatus=new GeschaeftsstatusListBox($formRow);
-        $geschaeftsstatus->column=true;
-        $geschaeftsstatus->searchMode=true;
+        $formRow = new BootstrapRow($form);
 
-        $geschaeftstyp=new GeschaeftstypListBox($formRow);
-        $geschaeftstyp->column=true;
-        $geschaeftstyp->searchMode=true;
+        $geschaeftstyp = new GeschaeftstypListBox($formRow);
+        $geschaeftstyp->column = true;
+        $geschaeftstyp->searchMode = true;
+        $geschaeftstyp->submitOnChange = true;
 
-        $legislatur=new LegislaturListBox($formRow);
-        $legislatur->column=true;
-        $legislatur->searchMode=true;
+        $geschaeftsstatus = new GeschaeftsstatusListBox($formRow);
+        $geschaeftsstatus->column = true;
+        $geschaeftsstatus->searchMode = true;
+        $geschaeftsstatus->submitOnChange = true;
 
-        $rat=new RatListBox($formRow);
-        $rat->column=true;
-        $rat->searchMode=true;
-
-        $session=new SessionListBox($formRow);
-        $session->column=true;
-        $session->searchMode=true;
-
-
-
-        //$layout=new BootstrapTwoColumnLayout($this);
+        $session = new SessionListBox($formRow);
+        $session->column = true;
+        $session->searchMode = true;
+        $session->submitOnChange = true;
 
 
         $table = new AbstimmungTable($this);
 
-        //$table=new AbstimmungRatsmitgliedTable($this);
+        if ($session->hasValue()) {
+            $table->sessionId = $session->getValue();
+        }
 
+        if ($geschaeftsstatus->hasValue()) {
+            $table->geschaeftsstatusId = $geschaeftsstatus->getValue();
+        }
+
+        if ($geschaeftstyp->hasValue()) {
+            $table->geschaeftstypId = $geschaeftstyp->getValue();
+        }
 
         return parent::getContent();
+
     }
+
 }

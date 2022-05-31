@@ -23,6 +23,7 @@ class GeschaeftstypImport extends AbstractParlamentImport
         $data->updateOnDuplicate = true;
         $data->id = $json['id'];
         $data->geschaeftstyp = $json['name'];
+        $data->abk=$json['abbreviation'];
         $data->save();
 
     }

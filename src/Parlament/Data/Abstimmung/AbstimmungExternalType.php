@@ -46,6 +46,16 @@ public $enthaltung;
 */
 public $zeit;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $jaBedeutung;
+
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $neinBedeutung;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = AbstimmungModel::class;
@@ -113,6 +123,22 @@ $this->zeit->externalTableName = $this->externalTableName;
 $this->zeit->aliasFieldName = $this->zeit->tableName . "_" . $this->zeit->fieldName;
 $this->zeit->label = "Zeit";
 $this->addType($this->zeit);
+
+$this->jaBedeutung = new \Nemundo\Model\Type\Text\TextType();
+$this->jaBedeutung->fieldName = "ja_bedeutung";
+$this->jaBedeutung->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->jaBedeutung->externalTableName = $this->externalTableName;
+$this->jaBedeutung->aliasFieldName = $this->jaBedeutung->tableName . "_" . $this->jaBedeutung->fieldName;
+$this->jaBedeutung->label = "Ja Bedeutung";
+$this->addType($this->jaBedeutung);
+
+$this->neinBedeutung = new \Nemundo\Model\Type\Text\TextType();
+$this->neinBedeutung->fieldName = "nein_bedeutung";
+$this->neinBedeutung->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->neinBedeutung->externalTableName = $this->externalTableName;
+$this->neinBedeutung->aliasFieldName = $this->neinBedeutung->tableName . "_" . $this->neinBedeutung->fieldName;
+$this->neinBedeutung->label = "Nein Bedeutung";
+$this->addType($this->neinBedeutung);
 
 }
 public function loadGeschaeft() {

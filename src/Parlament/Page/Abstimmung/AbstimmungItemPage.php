@@ -8,7 +8,9 @@ use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\TableBuilder\TableHeader;
 use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Com\Template\AbstractTemplateDocument;
+use Nemundo\Db\Sql\Field\CountField;
 use Nemundo\Html\Heading\H1;
+use Nemundo\Html\Heading\H2;
 use Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedReader;
 use Parlament\Manager\AbstimmungManager;
 use Parlament\Parameter\AbstimmungParameter;
@@ -32,12 +34,20 @@ class AbstimmungItemPage extends AbstractTemplateDocument
         $table->addLabelValue('Zeit',$abstimmungRow->zeit->getTimeLeadingZero());
         //}
         $table->addLabelValue('Geschäft',$abstimmungRow->geschaeft->geschaeft);
+
+        $table->addLabelValue('Ja Bedeutung', $abstimmungRow->jaBedeutung);
+        $table->addLabelValue('Nein Bedeutung',$abstimmungRow->neinBedeutung);
+
         $table->addLabelValue('Ja', $abstimmungRow->ja);
         $table->addLabelValue('Nein',$abstimmungRow->nein);
         $table->addLabelValue('Enthaltung',$abstimmungRow->enthaltung);
         $table->addLabelHyperlink('Url',$abstimmungRow->geschaeft->getUrl());
         $table->addLabelHyperlink('Json (Geschäft)',$abstimmungRow->geschaeft->getJsonUrl());
         $table->addLabelHyperlink('Json (Abstimmung)',$abstimmungRow->getJsonUrl());
+
+
+        $h2=new H2($this);
+        $h2->content='Entscheidung der Ratsmitglied';
 
 
         $table=new AdminTable($this);
@@ -71,6 +81,43 @@ class AbstimmungItemPage extends AbstractTemplateDocument
 
         }
 
+
+        $h2=new H2($this);
+        $h2->content='Entscheidung nach Fraktion';
+
+
+        $table=new AdminTable($this);
+
+        $header=new TableHeader($table);
+        //$header->addText('Ratsmitglied');
+        $header->addText('Fraktion');
+        $header->addText('Entscheidung');
+        $header->addText('Anzahl');
+
+        $reader=new AbstimmungRatsmitgliedReader();
+        $reader->model->loadRatsmitglied();
+        $reader->model->ratsmitglied->loadFraktion();
+        $reader->model->loadEntscheidung();
+        $reader->filter->andEqual($reader->model->abstimmungId,$abstimmungId);
+
+        $reader->addGroup($reader->model->ratsmitglied->fraktionId);
+        $reader->addGroup($reader->model->entscheidungId);
+
+        $count = new CountField($reader);
+
+        foreach ($reader->getData() as $abstimmungRatsmitgliedRow) {
+
+
+            $row=new TableRow($table);
+            //$row->addText($abstimmungRatsmitgliedRow->ratsmitglied->getVornameName());*/
+
+            $hyperlink=new SiteHyperlink($row);
+            $hyperlink->site=$abstimmungRatsmitgliedRow->ratsmitglied->fraktion->getSite();
+            $row->addText($abstimmungRatsmitgliedRow->entscheidung->entscheidung);
+            $row->addText($abstimmungRatsmitgliedRow->getModelValue($count));
+
+
+        }
 
 
 
