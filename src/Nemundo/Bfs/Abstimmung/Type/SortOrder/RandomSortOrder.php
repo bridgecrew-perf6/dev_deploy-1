@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Bfs\Abstimmung\Type\SortOrder;use Nemundo\Db\Sql\Order\SortOrder;class RandomSortOrder extends AbstractSortOrder{    protected function loadSortOrder()    {        $this->id = 3;        $this->sortOrder = 'Random';        $this->sql = SortOrder::RANDOM;    }}

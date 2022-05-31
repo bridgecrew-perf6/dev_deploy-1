@@ -9,6 +9,7 @@ use Nemundo\Core\Path\Path;
 use Nemundo\FrameworkProject;
 use Nemundo\Meteo\MeteoProject;
 use Nemundo\Project\AbstractProject;
+use Parlament\ParlamentProject;
 
 class DevProject extends AbstractProject
 {
@@ -29,6 +30,7 @@ class DevProject extends AbstractProject
 
         $this->addDependency(new FrameworkProject());
         $this->addDependency(new MeteoProject());
+        $this->addDependency(new ParlamentProject());
 
 
     }

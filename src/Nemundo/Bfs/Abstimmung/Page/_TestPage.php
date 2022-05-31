@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Bfs\Abstimmung\Page;use Nemundo\Bfs\Abstimmung\Com\Chart\StimmbeteiligungChart;use Nemundo\Com\Template\AbstractTemplateDocument;class TestPage extends AbstractTemplateDocument{    public function getContent()    {        $chart=new StimmbeteiligungChart($this);        return parent::getContent();    }}

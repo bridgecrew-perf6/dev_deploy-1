@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Bfs\Abstimmung\Type\GeoLevel;use Nemundo\Core\Base\AbstractBase;abstract class AbstractGeoLevel extends AbstractBase{    public $id;    public $geo;    abstract protected function loadGeoLevel();    public function __construct()    {        $this->loadGeoLevel();    }}

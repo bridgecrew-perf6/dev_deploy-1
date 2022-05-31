@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Bfs\Abstimmung\Type\GeoLevel;class KantonGeoLevel extends AbstractGeoLevel{    protected function loadGeoLevel()    {        $this->id = 2;        $this->geo = 'Kanton';    }}
