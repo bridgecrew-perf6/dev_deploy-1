@@ -56,6 +56,16 @@ public $geschaeftsstatusId;
 */
 public $geschaeftsstatus;
 
+/**
+* @var \Nemundo\Core\Type\DateTime\DateTime
+*/
+public $lastUpdate;
+
+/**
+* @var \Nemundo\Core\Type\DateTime\Date
+*/
+public $datumEinreichung;
+
 public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
 parent::__construct($row->getData());
 $this->row = $row;
@@ -73,6 +83,11 @@ $this->loadParlamentDataSessionSessionsessionRow($model->session);
 $this->geschaeftsstatusId = intval($this->getModelValue($model->geschaeftsstatusId));
 if ($model->geschaeftsstatus !== null) {
 $this->loadParlamentDataGeschaeftsstatusGeschaeftsstatusgeschaeftsstatusRow($model->geschaeftsstatus);
+}
+$this->lastUpdate = new \Nemundo\Core\Type\DateTime\DateTime($this->getModelValue($model->lastUpdate));
+$value = $this->getModelValue($model->datumEinreichung);
+if ($value !== "0000-00-00") {
+$this->datumEinreichung = new \Nemundo\Core\Type\DateTime\Date($this->getModelValue($model->datumEinreichung));
 }
 }
 private function loadParlamentDataGeschaeftstypGeschaeftstypgeschaeftstypRow($model) {

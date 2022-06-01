@@ -7,6 +7,7 @@ use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Hr;
 use Nemundo\Html\Formatting\Small;
+use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H2;
 use Parlament\Data\Kommission\KommissionReader;
 use Parlament\Data\KommissionRatsmitglied\KommissionRatsmitgliedReader;
@@ -16,6 +17,8 @@ class KommissionPage extends AbstractTemplateDocument
     public function getContent()
     {
 
+        $h1 = new H1($this);
+        $h1->content = 'Kommission';
 
         $kommissionReader=new KommissionReader();
         $kommissionReader->model->loadRat();

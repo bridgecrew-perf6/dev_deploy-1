@@ -24,14 +24,18 @@ class AbstimmungImport extends AbstractPageParlamentImport
     public function importData()
     {
 
+        $this->crawlerLogId=2;
+
         if ($this->sessionId !== null) {
             $this->addParameter('sessionFilter', $this->sessionId);
+            $this->crawlerLogId=null;
         }
 
         if ($this->datum !== null) {
             $datumText = $this->datum->getYear() . '/' . $this->datum->getMonthNumberWithLeadingZero() . '/' . $this->datum->getDayWithLeadingZero();
             $this->addParameter('dateFromFilter', $datumText);
             $this->addParameter('dateToFilter', $datumText);
+            $this->crawlerLogId=null;
         }
 
         $this->loadJson('votes/affairs');

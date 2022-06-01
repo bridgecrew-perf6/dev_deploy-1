@@ -2,16 +2,23 @@
 
 namespace Parlament\Reader;
 
+use Parlament\Data\Geschaeft\GeschaeftPaginationReader;
 use Parlament\Data\Geschaeft\GeschaeftReader;
 use Parlament\Filter\GeschaeftFilterTrait;
 
-class GeschaeftDataReader extends GeschaeftReader
+class GeschaeftDataReader extends GeschaeftPaginationReader
 {
 
     use GeschaeftFilterTrait;
 
-    public function getData()
-    {
+
+    public function sortByDatum() {
+        $this->addOrder($this->model->datumEinreichung);
+    }
+
+
+
+    public function loadFilter() {
 
         $this->model->loadGeschaeftstyp();
         $this->model->loadGeschaeftsstatus();
@@ -28,6 +35,16 @@ class GeschaeftDataReader extends GeschaeftReader
         if ($this->geschaeftsstatusId !== null) {
             $this->filter->andEqual($this->model->geschaeftsstatusId, $this->geschaeftsstatusId);
         }
+
+
+
+    }
+
+
+
+    public function getData()
+    {
+
 
         return parent::getData();
 

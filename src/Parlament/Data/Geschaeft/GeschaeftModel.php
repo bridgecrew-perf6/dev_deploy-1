@@ -46,6 +46,16 @@ public $geschaeftsstatusId;
 */
 public $geschaeftsstatus;
 
+/**
+* @var \Nemundo\Model\Type\DateTime\DateTimeType
+*/
+public $lastUpdate;
+
+/**
+* @var \Nemundo\Model\Type\DateTime\DateType
+*/
+public $datumEinreichung;
+
 protected function loadModel() {
 $this->tableName = "parlament_geschaeft";
 $this->aliasTableName = "parlament_geschaeft";
@@ -99,6 +109,22 @@ $this->geschaeftsstatusId->fieldName = "geschaeftsstatus";
 $this->geschaeftsstatusId->aliasFieldName = "parlament_geschaeft_geschaeftsstatus";
 $this->geschaeftsstatusId->label = "Geschaeftsstatus";
 $this->geschaeftsstatusId->allowNullValue = false;
+
+$this->lastUpdate = new \Nemundo\Model\Type\DateTime\DateTimeType($this);
+$this->lastUpdate->tableName = "parlament_geschaeft";
+$this->lastUpdate->externalTableName = "parlament_geschaeft";
+$this->lastUpdate->fieldName = "last_update";
+$this->lastUpdate->aliasFieldName = "parlament_geschaeft_last_update";
+$this->lastUpdate->label = "Last Update";
+$this->lastUpdate->allowNullValue = false;
+
+$this->datumEinreichung = new \Nemundo\Model\Type\DateTime\DateType($this);
+$this->datumEinreichung->tableName = "parlament_geschaeft";
+$this->datumEinreichung->externalTableName = "parlament_geschaeft";
+$this->datumEinreichung->fieldName = "datum_einreichung";
+$this->datumEinreichung->aliasFieldName = "parlament_geschaeft_datum_einreichung";
+$this->datumEinreichung->label = "Datum Einreichung";
+$this->datumEinreichung->allowNullValue = true;
 
 }
 public function loadGeschaeftstyp() {

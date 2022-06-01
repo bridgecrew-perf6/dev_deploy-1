@@ -10,6 +10,7 @@ use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
 use Parlament\Com\ListBox\SessionListBox;
+use Parlament\Com\Small\SourceSmall;
 use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Template\ParlamentTemplate;
 
@@ -22,7 +23,7 @@ class AbstimmungPage extends ParlamentTemplate
         $h1 = new H1($this);
         $h1->content = 'Abstimmung';
 
-        $form = new SearchForm($this);  // new BootstrapSearchForm($this);
+        $form = new SearchForm($this);
 
         $formRow = new BootstrapRow($form);
 
@@ -55,6 +56,9 @@ class AbstimmungPage extends ParlamentTemplate
         if ($geschaeftstyp->hasValue()) {
             $table->geschaeftstypId = $geschaeftstyp->getValue();
         }
+
+        new SourceSmall($this);
+
 
         return parent::getContent();
 

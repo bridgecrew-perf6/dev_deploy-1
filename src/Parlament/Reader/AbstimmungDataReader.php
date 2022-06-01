@@ -15,6 +15,7 @@ class AbstimmungDataReader extends AbstimmungReader
     {
 
         $this->model->loadGeschaeft();
+        $this->model->geschaeft->loadSession();
         $this->model->geschaeft->loadGeschaeftstyp();
         $this->model->geschaeft->loadGeschaeftsstatus();
 

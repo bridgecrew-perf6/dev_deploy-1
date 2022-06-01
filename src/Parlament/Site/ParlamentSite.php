@@ -10,6 +10,7 @@ use Parlament\Site\Geschaeft\GeschaeftSite;
 use Parlament\Site\Kommission\KommissionSite;
 use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
 use Parlament\Site\Session\SessionSite;
+use Parlament\Site\Stream\StreamSite;
 
 class ParlamentSite extends AbstractSite
 {
@@ -19,12 +20,15 @@ class ParlamentSite extends AbstractSite
         $this->title = 'Parlament';
         $this->url = 'parlament';
 
+        new StreamSite($this);
+
         new AbstimmungSite($this);
         new GeschaeftSite($this);
         new RatsmitgliedSite($this);
         new KommissionSite($this);
         new FraktionSite($this);
         new SessionSite($this);
+        new CrawlerLogSite($this);
 
 
     }

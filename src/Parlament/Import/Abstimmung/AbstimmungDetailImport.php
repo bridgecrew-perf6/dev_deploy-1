@@ -4,6 +4,7 @@ namespace Parlament\Import\Abstimmung;
 
 use Nemundo\Core\Type\DateTime\DateTime;
 use Parlament\Data\Abstimmung\Abstimmung;
+use Parlament\Data\AbstimmungDatum\AbstimmungDatum;
 use Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedBulk;
 use Parlament\Import\Base\AbstractParlamentImport;
 use Parlament\Import\Geschaeft\GeschaeftDetailImport;
@@ -42,6 +43,11 @@ class AbstimmungDetailImport extends AbstractParlamentImport
         foreach ($json['affairVotes'] as $affairVote) {
 
             $abstimmungId = $affairVote['id'];
+            $datum = new DateTime($affairVote['date']);
+
+
+
+
 
             $data = new Abstimmung();
             $data->updateOnDuplicate = true;
@@ -49,7 +55,7 @@ class AbstimmungDetailImport extends AbstractParlamentImport
             $data->geschaeftId = $geschaeftId;
             $data->abstimmung = $affairVote['divisionText'];
 
-            $datum = new DateTime($affairVote['date']);
+
 
             $data->datum = $datum->getDate();
             $data->zeit = $datum->getTime();
@@ -80,6 +86,13 @@ class AbstimmungDetailImport extends AbstractParlamentImport
             }
 
             $data->save();
+
+
+            $data=new AbstimmungDatum();
+            $data->ignoreIfExists=true;
+            $data->datum=$datum;
+            $data->save();
+
 
 
             $entscheidung = [];

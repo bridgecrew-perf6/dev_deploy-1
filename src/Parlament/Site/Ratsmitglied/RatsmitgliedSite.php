@@ -3,7 +3,7 @@
 namespace Parlament\Site\Ratsmitglied;
 
 use Nemundo\Web\Site\AbstractSite;
-use Parlament\Page\RatsmitgliedPage;
+use Parlament\Page\Ratsmitglied\RatsmitgliedPage;
 use Parlament\Site\Ratsmitglied\RatsmitgliedItemSite;
 
 class RatsmitgliedSite extends AbstractSite

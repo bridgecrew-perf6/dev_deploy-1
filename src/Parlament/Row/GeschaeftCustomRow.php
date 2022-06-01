@@ -14,11 +14,21 @@ use Parlament\Site\Geschaeft\GeschaeftItemSite;
 class GeschaeftCustomRow extends GeschaeftRow
 {
 
+
+    public function getTitle() {
+
+        $title = $this->kurzbezeichnung . ' ' .$this->geschaeft;
+        return $title;
+
+    }
+
+
     public function getSite() {
 
         $site=clone(GeschaeftItemSite::$site);
         $site->addParameter(new GeschaeftParameter($this->id));
-        $site->title=$this->geschaeft;
+        //$site->title=$this->geschaeft;
+        $site->title=$this->getTitle();
 
         return $site;
 

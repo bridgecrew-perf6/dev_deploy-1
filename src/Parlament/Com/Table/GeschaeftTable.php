@@ -9,34 +9,45 @@ use Nemundo\Html\Hyperlink\Hyperlink;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTable;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTableRow;
 use Parlament\Data\Abstimmung\AbstimmungReader;
+use Parlament\Data\Geschaeft\GeschaeftReader;
 use Parlament\Filter\GeschaeftFilterTrait;
 use Parlament\Reader\GeschaeftDataReader;
 
 class GeschaeftTable extends BootstrapClickableTable
 {
 
-    use GeschaeftFilterTrait;
+    //use GeschaeftFilterTrait;
+
+    /**
+     * @var GeschaeftReader
+     */
+    public $geschaeftReader;
 
     public function getContent()
     {
 
         $header = new TableHeader($this);
+        $header->addText('Datum Einreichung');
         $header->addText('Kürzel');
         $header->addText('Geschäft');
         $header->addText('Typ');
         $header->addText('Status');
         $header->addText('Session');
         $header->addText('Abstimmung');
+        $header->addText('Last Update');
 
-        $reader = new GeschaeftDataReader();
+        /*$reader = new GeschaeftDataReader();
         $reader->sessionId = $this->sessionId;
         $reader->geschaeftstypId = $this->geschaeftstypId;
-        $reader->geschaeftsstatusId = $this->geschaeftsstatusId;
+        $reader->geschaeftsstatusId = $this->geschaeftsstatusId;*/
 
 
-        foreach ($reader->getData() as $geschaeftRow) {
+        foreach ($this->geschaeftReader->getData() as $geschaeftRow) {
 
             $row = new BootstrapClickableTableRow($this);
+
+            $row->addText($geschaeftRow->datumEinreichung->getShortDateLeadingZeroFormat());
+
             $row->addText($geschaeftRow->kurzbezeichnung);
 
             $hyperlink = new SiteHyperlink($row);
@@ -71,6 +82,7 @@ class GeschaeftTable extends BootstrapClickableTable
             $hyperlink->content = 'Vote Json';
             $hyperlink->href = $geschaeftRow->getVoteJsonUrl();
 
+            $row->addText($geschaeftRow->lastUpdate->getShortDateTimeLeadingZeroFormat());
 
         }
 

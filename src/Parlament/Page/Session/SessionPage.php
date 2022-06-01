@@ -32,6 +32,7 @@ use Parlament\Data\Session\SessionReader;
 use Parlament\Manager\RatsmitgliedManager;
 use Parlament\Parameter\FraktionParameter;
 use Parlament\Parameter\RatParameter;
+use Parlament\Reader\SessionDataReader;
 
 
 class SessionPage extends AdminTemplate
@@ -44,16 +45,17 @@ class SessionPage extends AdminTemplate
         $table = new AdminTable($this);
 
         $header=new TableHeader($table);
+        $header->addText('Id');
         $header->addText('Session');
         $header->addText('Von');
         $header->addText('Bis');
 
 
-        $reader= new SessionReader();
-        //$reader->addOrder($reader->model->abstimmung->id,SortOrder::DESCENDING);
+        $reader= new SessionDataReader();
         foreach ($reader->getData() as $sessionRow) {
 
             $row=new TableRow($table);
+            $row->addText($sessionRow->id);
             $row->addText($sessionRow->session);
             $row->addText($sessionRow->von->getShortDateLeadingZeroFormat());
             $row->addText($sessionRow->bis->getShortDateLeadingZeroFormat());

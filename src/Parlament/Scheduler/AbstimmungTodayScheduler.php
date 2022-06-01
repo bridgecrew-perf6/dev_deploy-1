@@ -4,6 +4,8 @@ namespace Parlament\Scheduler;
 
 use Nemundo\App\Scheduler\Job\AbstractScheduler;
 use Nemundo\Core\Type\DateTime\Date;
+use Nemundo\Core\Type\DateTime\DateTime;
+use Parlament\Data\LastUpdate\LastUpdate;
 use Parlament\Import\Abstimmung\AbstimmungImport;
 
 class AbstimmungTodayScheduler extends AbstractScheduler
@@ -12,7 +14,7 @@ class AbstimmungTodayScheduler extends AbstractScheduler
     {
 
         //$this->active = true;
-        $this->minute = 30;
+        $this->minute = 60;  //30;
 
         $this->scriptName = 'parlament-abstimmung-today';
         $this->consoleScript = true;
@@ -27,6 +29,14 @@ class AbstimmungTodayScheduler extends AbstractScheduler
         $import->importDetail = true;
         $import->importGeschaeft=true;
         $import->importData();
+
+
+        $data=new LastUpdate();
+        $data->updateOnDuplicate=true;
+        $data->id=1;
+        $data->lastUpdate = (new DateTime())->setNow();
+        $data->save();
+
 
     }
 }

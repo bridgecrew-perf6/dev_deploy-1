@@ -73,13 +73,6 @@ abstract class AbstractParlamentImport extends AbstractImport
         $url = $this->getUrl($webService);
 
 
-        //$responseCode = (new WebRequest())->getResponseCode($url);
-
-        /*(new Debug())->write($responseCode);
-        exit;*/
-
-
-
         $reader = new JsonReader();
         $reader->fromUrl($url);
         foreach ($reader->getData() as $json) {

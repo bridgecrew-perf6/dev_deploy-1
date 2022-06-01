@@ -72,6 +72,11 @@ $index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
 $index->indexName = "geschaeft";
 $index->addType($this->geschaeftId);
 
+$index = new \Nemundo\Model\Definition\Index\ModelUniqueIndex($this);
+$index->indexName = "geschaeft_text_type";
+$index->addType($this->geschaeftId);
+$index->addType($this->textTypId);
+
 }
 public function loadGeschaeft() {
 if ($this->geschaeft == null) {

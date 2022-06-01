@@ -46,6 +46,16 @@ public $geschaeftsstatusId;
 */
 public $geschaeftsstatus;
 
+/**
+* @var \Nemundo\Model\Type\DateTime\DateTimeType
+*/
+public $lastUpdate;
+
+/**
+* @var \Nemundo\Model\Type\DateTime\DateType
+*/
+public $datumEinreichung;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = GeschaeftModel::class;
@@ -95,6 +105,22 @@ $this->geschaeftsstatusId->tableName = $this->parentFieldName . "_" . $this->ext
 $this->geschaeftsstatusId->aliasFieldName = $this->geschaeftsstatusId->tableName ."_".$this->geschaeftsstatusId->fieldName;
 $this->geschaeftsstatusId->label = "Geschaeftsstatus";
 $this->addType($this->geschaeftsstatusId);
+
+$this->lastUpdate = new \Nemundo\Model\Type\DateTime\DateTimeType();
+$this->lastUpdate->fieldName = "last_update";
+$this->lastUpdate->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->lastUpdate->externalTableName = $this->externalTableName;
+$this->lastUpdate->aliasFieldName = $this->lastUpdate->tableName . "_" . $this->lastUpdate->fieldName;
+$this->lastUpdate->label = "Last Update";
+$this->addType($this->lastUpdate);
+
+$this->datumEinreichung = new \Nemundo\Model\Type\DateTime\DateType();
+$this->datumEinreichung->fieldName = "datum_einreichung";
+$this->datumEinreichung->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->datumEinreichung->externalTableName = $this->externalTableName;
+$this->datumEinreichung->aliasFieldName = $this->datumEinreichung->tableName . "_" . $this->datumEinreichung->fieldName;
+$this->datumEinreichung->label = "Datum Einreichung";
+$this->addType($this->datumEinreichung);
 
 }
 public function loadGeschaeftstyp() {

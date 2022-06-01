@@ -18,7 +18,6 @@ class AbstimmungImportScript extends AbstractConsoleScript
     {
 
         $import = new AbstimmungImport();
-        $import->sessionId = 5113;
         $import->importDetail = true;
         $import->importGeschaeft = true;
         $import->importData();

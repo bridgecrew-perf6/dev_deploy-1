@@ -9,6 +9,7 @@ use Parlament\Data\Abstimmung\AbstimmungDelete;
 use Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedDelete;
 use Parlament\Data\Geschaeft\GeschaeftDelete;
 use Parlament\Import\Abstimmung\AbstimmungImport;
+use Parlament\Import\Allgemein\SessionImport;
 use Parlament\Import\Geschaeft\ThemaImport;
 
 
@@ -23,20 +24,32 @@ class ParlamentTestScript extends AbstractConsoleScript
     {
 
 
+        (new SessionImport())->importData();
+
 
         /*
-        (new AbstimmungDelete())->delete();
-        (new AbstimmungRatsmitgliedDelete())->delete();
         (new GeschaeftDelete())->delete();
 
+        (new AbstimmungDelete())->delete();
+        (new AbstimmungRatsmitgliedDelete())->delete();
+        (new GeschaeftDelete())->delete();*/
 
-        $import = new AbstimmungImport();
+        //(new ParlamentApplication())->installApp();*/
+
+
+        //(new GeschaeftImportScript())->run();
+
+
+
+       /* $import = new AbstimmungImport();
         $import->datum = (new Date())->setNow()->minusDay(1);
-        $import->importDetail = true;
-        $import->importGeschaeft=true;
-        $import->importData();*/
+        /*$import->importDetail = false true;
+        $import->importGeschaeft=true;*/
+        //$import->importData();
 
 
+
+        /*
         (new ParlamentApplication())->installApp();
 
         (new ThemaImport())->importData();
@@ -49,7 +62,7 @@ class ParlamentTestScript extends AbstractConsoleScript
         $import->sessionId = 5114;
         $import->importDetail = true;
         $import->importGeschaeft = true;
-        $import->importData();
+        $import->importData();*/
 
 
     }

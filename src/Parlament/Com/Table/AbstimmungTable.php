@@ -19,12 +19,14 @@ class AbstimmungTable extends BootstrapClickableTable
     {
 
         $header = new TableHeader($this);
+        $header->addText('Session');
         $header->addText('Datum');
         $header->addText('Zeit');
         $header->addText('Geschäft');
         $header->addText('Typ');
         $header->addText('Status');
-        $header->addText('Abstimmung');
+        //$header->addText('Abstimmung');
+        $header->addText('Gegenstand');
         $header->addText('Ja');
         $header->addEmpty();
         $header->addText('Nein');
@@ -41,8 +43,12 @@ class AbstimmungTable extends BootstrapClickableTable
         foreach ($reader->getData() as $abstimmungRow) {
 
             $row = new BootstrapClickableTableRow($this);
+            $row->addText($abstimmungRow->geschaeft->session->session,true);
             $row->addText($abstimmungRow->datum->getShortDateLeadingZeroFormat());
             $row->addText($abstimmungRow->zeit->getTimeLeadingZero());
+
+
+
 
             $hyperlink = new SiteHyperlink($row);
             $hyperlink->site = $abstimmungRow->geschaeft->getSite();

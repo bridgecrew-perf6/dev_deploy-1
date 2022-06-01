@@ -8,12 +8,14 @@ use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\Bfs\Gemeinde\Application\GemeindeApplication;
 use Nemundo\Model\Setup\ModelCollectionSetup;
 use Parlament\Application\ParlamentApplication;
+use Parlament\Data\CrawlerLog\CrawlerLog;
 use Parlament\Data\Entscheidung\Entscheidung;
 use Parlament\Data\Geschlecht\Geschlecht;
 use Parlament\Data\ParlamentModelCollection;
 use Parlament\Data\Sprache\Sprache;
 use Parlament\Scheduler\AbstimmungTodayScheduler;
 use Parlament\Script\AbstimmungImportScript;
+use Parlament\Script\AbstimmungSessionImportScript;
 use Parlament\Script\GeschaeftImportScript;
 use Parlament\Script\ParlamentCleanScript;
 use Parlament\Script\ParlamentImportScript;
@@ -33,6 +35,7 @@ class ParlamentInstall extends AbstractInstall
         (new ScriptSetup(new ParlamentApplication()))
             ->addScript(new ParlamentImportScript())
             ->addScript(new AbstimmungImportScript())
+            ->addScript(new AbstimmungSessionImportScript())
             ->addScript(new GeschaeftImportScript())
             ->addScript(new ParlamentCleanScript())
             ->addScript(new ParlamentTestScript());
@@ -53,6 +56,10 @@ class ParlamentInstall extends AbstractInstall
 
         $this->addGeschlecht(1, 'männlich');
         $this->addGeschlecht(2, 'weiblich');
+
+        $this->addCrawlerLog(1,'Geschäft');
+        $this->addCrawlerLog(2,'Abstimmung');
+        $this->addCrawlerLog(3,'Ratsmitglied');
 
     }
 
@@ -90,6 +97,18 @@ class ParlamentInstall extends AbstractInstall
         $data->geschlecht = $geschlecht;
         $data->save();
 
+    }
+
+
+    private function addCrawlerLog($id,$crawler) {
+
+        $data=new CrawlerLog();
+        $data->ignoreIfExists=true;
+        $data->id=$id;
+        $data->crawler=$crawler;
+        $data->page=1;
+        $data->finished=false;
+        $data->save();
 
     }
 

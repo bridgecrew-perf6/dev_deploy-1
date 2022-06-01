@@ -1,6 +1,6 @@
 <?php
 
-namespace Parlament\Page;
+namespace Parlament\Page\Ratsmitglied;
 
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
 use Nemundo\Admin\Template\AdminTemplate;
@@ -8,6 +8,7 @@ use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
 use Nemundo\Com\FormBuilder\SearchForm;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
+use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Paragraph\Paragraph;
 use Nemundo\Package\Bootstrap\Icon\BootstrapIcon;
 use Nemundo\Package\Bootstrap\Layout\BootstrapTwoColumnLayout;
@@ -28,6 +29,9 @@ class RatsmitgliedPage extends AdminTemplate
 {
     public function getContent()
     {
+
+        $h1 = new H1($this);
+        $h1->content = RatsmitgliedSite::$site->title;  // 'Ratsmitglied';
 
         $form = new SearchForm($this);
 
