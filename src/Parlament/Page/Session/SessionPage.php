@@ -5,7 +5,7 @@ namespace Parlament\Page\Session;
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
 use Nemundo\Admin\Com\Table\AdminLabelValueTable;
 use Nemundo\Admin\Com\Table\AdminTable;
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
 use Nemundo\Bfs\Gemeinde\Parameter\RatsmitgliedParameter;
@@ -35,7 +35,7 @@ use Parlament\Parameter\RatParameter;
 use Parlament\Reader\SessionDataReader;
 
 
-class SessionPage extends AdminTemplate
+class SessionPage extends BootstrapAdminTemplate
 {
 
     public function getContent()

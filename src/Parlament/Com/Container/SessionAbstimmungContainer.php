@@ -2,16 +2,21 @@
 
 namespace Parlament\Com\Container;
 
+use Nemundo\Admin\Com\Table\AdminTable;
 use Nemundo\Com\Html\Hyperlink\UrlHyperlink;
 use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
+use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Db\Sql\Order\SortOrder;
 use Nemundo\Html\Block\ContentDiv;
 use Nemundo\Html\Block\Div;
+use Nemundo\Html\Block\Hr;
 use Nemundo\Html\Formatting\Bold;
+use Nemundo\Html\Formatting\Small;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H3;
 use Nemundo\Html\Heading\H5;
 use Nemundo\Html\Paragraph\Paragraph;
+use Nemundo\Html\Table\Table;
 use Parlament\Data\AbstimmungDatum\AbstimmungDatumReader;
 use Parlament\Data\GeschaeftText\GeschaeftTextReader;
 use Parlament\Reader\AbstimmungDataReader;
@@ -45,17 +50,8 @@ class SessionAbstimmungContainer extends Div
 
                 $card=new Div($cardContainer);
                 $card->addCssClass('card');
-                //$card->addDataAttribute('geschaeft',$abstimmungGeschaeftRow->geschaeftId);
 
                 $geschaeftRow = $abstimmungGeschaeftRow->geschaeft;
-
-                //$h3->content = $abstimmungGeschaeftRow->geschaeft->kurzbezeichnung . ' ' . $abstimmungGeschaeftRow->geschaeft->geschaeft;
-
-                /*$hyperlink=new SiteHyperlink($card);
-                $hyperlink->site=$geschaeftRow->getSite();
-                //$hyperlink->showSiteTitle=false;
-                $hyperlink->addCssClass('card-title');*/
-
 
                 $h3 = new H3($card);
                 $h3->content= $abstimmungGeschaeftRow->geschaeft->getTitle();
@@ -67,19 +63,22 @@ class SessionAbstimmungContainer extends Div
                 $content->id='geschaeft-content-'.$abstimmungGeschaeftRow->geschaeftId;
 
 
-                $p = new Paragraph($content);
+                $div = new Div($content);
+
+                $p = new Small($div);  // new Paragraph($content);
                 $p->content = 'Geschäftstyp: ';
 
-                $bold = new Bold($p);
+                $bold = new Bold($div);
                 $bold->content = $geschaeftRow->geschaeftstyp->geschaeftstyp;
 
-                $p = new Paragraph($content);
+                $div = new Div($content);
+
+                $p = new Small($div);  //new Paragraph($content);
                 $p->content = 'Status: ';
-                $bold = new Bold($p);
+                $bold = new Bold($div);
                 $bold->content = $geschaeftRow->geschaeftsstatus->geschaeftsstatus;
 
-
-
+                (new Hr($content));
 
 
                 $textReader = new GeschaeftTextReader();
@@ -96,9 +95,7 @@ class SessionAbstimmungContainer extends Div
 
                 }
 
-
-
-
+                (new Hr($content));
 
                 $abstimmungReader = new AbstimmungDataReader();
                 $abstimmungReader->filter->andEqual($abstimmungReader->model->datum, $abstimmungDatumRow->datum->getIsoDate());
@@ -106,23 +103,39 @@ class SessionAbstimmungContainer extends Div
                 foreach ($abstimmungReader->getData() as $abstimmungRow) {
 
                     $div = new ContentDiv($content);
-                    $div->content = $abstimmungRow->zeit->getTimeLeadingZero();
+                    $div->content = $abstimmungRow->zeit->getTimeLeadingZero(). ' Uhr';
 
-                    $div = new Div($content);
+                    //$div = new Div($content);
 
-                    $bold = new Bold($div);
+
+                    $bold = new Bold($content);
                     $bold->content = $abstimmungRow->abstimmung;
 
+                    $table = new AdminTable($content);  // new Table($content);
 
+                    $tableRow=new TableRow($table);
+                    $tableRow->addText($abstimmungRow->jaBedeutung);
+                    $tableRow->addBoldText($abstimmungRow->ja);
+
+                    $tableRow=new TableRow($table);
+                    $tableRow->addText($abstimmungRow->neinBedeutung);
+                    $tableRow->addBoldText($abstimmungRow->nein);
+
+                    $tableRow=new TableRow($table);
+                    $tableRow->addText('Enthaltungen');
+                    $tableRow->addBoldText($abstimmungRow->enthaltung);
+
+
+
+                    /*
                     $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->jaBedeutung . ': ' . $abstimmungRow->ja;
 
                     $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->neinBedeutung . ': ' . $abstimmungRow->nein;
 
-
                     $div = new ContentDiv($content);
-                    $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;
+                    $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;*/
 
 
                     /*
@@ -144,10 +157,11 @@ class SessionAbstimmungContainer extends Div
                 }
 
 
+                /*
                 $hyperlink = new UrlHyperlink($content);
                 $hyperlink->openNewWindow=true;
                 $hyperlink->content='Curia Vista';
-                $hyperlink->url=$geschaeftRow->getUrl();
+                $hyperlink->url=$geschaeftRow->getUrl();*/
 
 
             }

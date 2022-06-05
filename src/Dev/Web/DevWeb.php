@@ -5,7 +5,7 @@ namespace Dev\Web;
 use Dev\Controller\DevController;
 use Dev\Template\DevTemplate;
 use Nemundo\Admin\AdminConfig;
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\User\Login\CookieLogin;
 use Nemundo\Web\Base\AbstractWeb;
 use Nemundo\Web\ResponseConfig;

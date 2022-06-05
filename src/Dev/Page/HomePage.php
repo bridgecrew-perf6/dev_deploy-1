@@ -10,6 +10,8 @@ class HomePage extends DevTemplate
     public function getContent()
     {
 
+        $this->pageTitle='hello world';
+
         $p = new Paragraph($this);
         $p->content = 'hello world';
 

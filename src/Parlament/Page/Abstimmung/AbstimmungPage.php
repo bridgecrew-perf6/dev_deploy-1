@@ -3,16 +3,13 @@
 namespace Parlament\Page\Abstimmung;
 
 use Nemundo\Com\FormBuilder\SearchForm;
-use Nemundo\Html\Form\Form;
 use Nemundo\Html\Heading\H1;
-use Nemundo\Package\Bootstrap\Form\BootstrapSearchForm;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
 use Parlament\Com\Container\AbstimmungContainer;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
 use Parlament\Com\ListBox\SessionListBox;
 use Parlament\Com\Small\SourceSmall;
-use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Reader\AbstimmungDataReader;
 use Parlament\Template\ParlamentTemplate;
 
@@ -45,7 +42,7 @@ class AbstimmungPage extends ParlamentTemplate
         $session->submitOnChange = true;
 
 
-        $dataReader = new AbstimmungDataReader();  // new AbstimmungContainer($this);  // new AbstimmungTable($this);
+        $dataReader = new AbstimmungDataReader();
 
         if ($session->hasValue()) {
             $dataReader->sessionId = $session->getValue();
@@ -60,13 +57,9 @@ class AbstimmungPage extends ParlamentTemplate
         }
 
         $container = new AbstimmungContainer($this);
-        $container->abstimmungReader=$dataReader;
-
-
-
+        $container->abstimmungReader = $dataReader;
 
         new SourceSmall($this);
-
 
         return parent::getContent();
 

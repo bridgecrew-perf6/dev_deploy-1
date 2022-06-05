@@ -3,7 +3,7 @@
 namespace Parlament\Page\Stream;
 
 use Nemundo\Admin\Com\Image\AdminImage;
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\Html\Hyperlink\UrlHyperlink;

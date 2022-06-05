@@ -4,7 +4,7 @@ namespace Parlament\Page\Fraktion;
 
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
 use Nemundo\Admin\Com\Table\AdminLabelValueTable;
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
 use Nemundo\Bfs\Gemeinde\Parameter\RatsmitgliedParameter;
@@ -27,7 +27,7 @@ use Parlament\Parameter\FraktionParameter;
 use Parlament\Parameter\RatParameter;
 
 
-class FraktionItemPage extends AdminTemplate
+class FraktionItemPage extends BootstrapAdminTemplate
 {
 
     public function getContent()

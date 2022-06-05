@@ -33,7 +33,7 @@
     color: var(--color-light1);
     /*font-style: italic;*/
     font-size: 1.1rem;
-    padding: 10px;
+    padding: var(--default-space);
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -44,9 +44,7 @@
 .card-content {
 
     display: none;
-
-    padding: 2em;
-
+    padding: var(--default-space);
 
 }
 

@@ -3,7 +3,7 @@
 namespace Parlament\Page\Ratsmitglied;
 
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
 use Nemundo\Com\FormBuilder\SearchForm;
@@ -25,7 +25,7 @@ use Parlament\Parameter\RatParameter;
 use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
 
 
-class _RatsmitgliedPage extends AdminTemplate
+class _RatsmitgliedPage extends BootstrapAdminTemplate
 {
     public function getContent()
     {

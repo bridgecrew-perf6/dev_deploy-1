@@ -2,7 +2,7 @@
 
 namespace Parlament\Page;
 
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTable;
@@ -34,11 +34,6 @@ class ParlamentPage extends AbstractTemplateDocument  //  AdminTemplate
 
 
         //new RatsmitgliedListContainer($this);
-
-
-
-
-
 
 
         /*
