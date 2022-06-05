@@ -2,10 +2,13 @@
 
 namespace Parlament\Com\Table;
 
+use Nemundo\Admin\Com\Image\AdminImage;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\TableBuilder\TableHeader;
+use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Html\Hyperlink\Hyperlink;
 use Nemundo\Html\Hyperlink\HyperlinkTarget;
+use Nemundo\Html\Table\Table;
 use Nemundo\Package\Bootstrap\Image\BootstrapResponsiveImage;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTable;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTableRow;
@@ -14,7 +17,7 @@ use Parlament\Data\Geschaeft\GeschaeftPaginationReader;
 use Parlament\Data\Ratsmitglied\RatsmitgliedReader;
 use Parlament\Manager\RatsmitgliedManager;
 
-class RatsmitgliedTable extends BootstrapClickableTable
+class RatsmitgliedTable extends Table  // BootstrapClickableTable
 {
 
     public $kantonId;
@@ -26,6 +29,8 @@ class RatsmitgliedTable extends BootstrapClickableTable
 
     public function getContent()
     {
+
+        $this->addCssClass('nemundo-table');
 
         $header=new TableHeader($this);
         $header->addEmpty();
@@ -39,13 +44,12 @@ class RatsmitgliedTable extends BootstrapClickableTable
 
         foreach ($this->manager->getData() as $ratsmitgliedRow) {
 
-            $row=new BootstrapClickableTableRow($this);
+            $row= new TableRow($this);  // new BootstrapClickableTableRow($this);
 
+            /*$img= new AdminImage($row);  //  new BootstrapResponsiveImage($row);
+            $img->src=$ratsmitgliedRow->bild->getUrl();*/
 
-            $img=new BootstrapResponsiveImage($row);
-            $img->src=$ratsmitgliedRow->bild->getUrl();
-
-            //$row->addEmpty();
+            $row->addEmpty();
 
             $row->addText($ratsmitgliedRow->rat->rat);
             //$row->addText($ratsmitgliedRow->getNameVorname());

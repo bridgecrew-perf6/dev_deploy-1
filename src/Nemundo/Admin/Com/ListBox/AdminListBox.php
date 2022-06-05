@@ -28,6 +28,9 @@ class AdminListBox extends AbstractListBox
         $this->prepareHtml();
         //$this->loadStyle();
 
+        $this->tagName='div';
+        $this->addCssClass('admin-textbox');
+
         if ($this->inputId !== null) {
             $this->select->id = $this->inputId;
         }
@@ -36,7 +39,7 @@ class AdminListBox extends AbstractListBox
         $this->addCssClass(BootstrapSpacing::MARIGN_BOTTOM_3);
         $this->addCssClass('col');*/
 
-        $this->select->addCssClass('nemundo-select');
+        //$this->select->addCssClass('nemundo-select');
 
         $label = new Label();
         $label->id = 'label_'.$this->name;

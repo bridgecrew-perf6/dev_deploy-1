@@ -6,13 +6,19 @@ use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\TableBuilder\TableHeader;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTable;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTableRow;
+use Parlament\Data\Geschaeft\GeschaeftPaginationReader;
 use Parlament\Filter\GeschaeftFilterTrait;
 use Parlament\Reader\AbstimmungDataReader;
 
 class AbstimmungTable extends BootstrapClickableTable
 {
 
-    use GeschaeftFilterTrait;
+    //use GeschaeftFilterTrait;
+
+    /**
+     * @var AbstimmungDataReader
+     */
+    public $abstimmungReader;
 
 
     public function getContent()
@@ -34,13 +40,13 @@ class AbstimmungTable extends BootstrapClickableTable
         $header->addText('Enthaltung');
 
 
-        $reader = new AbstimmungDataReader();
+        /*$reader = new AbstimmungDataReader();
         $reader->sessionId = $this->sessionId;
         $reader->geschaeftstypId = $this->geschaeftstypId;
-        $reader->geschaeftsstatusId = $this->geschaeftsstatusId;
+        $reader->geschaeftsstatusId = $this->geschaeftsstatusId;*/
 
 
-        foreach ($reader->getData() as $abstimmungRow) {
+        foreach ($this->abstimmungReader->getData() as $abstimmungRow) {
 
             $row = new BootstrapClickableTableRow($this);
             $row->addText($abstimmungRow->geschaeft->session->session,true);

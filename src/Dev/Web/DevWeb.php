@@ -3,6 +3,7 @@
 namespace Dev\Web;
 
 use Dev\Controller\DevController;
+use Dev\Template\DevTemplate;
 use Nemundo\Admin\AdminConfig;
 use Nemundo\Admin\Template\AdminTemplate;
 use Nemundo\User\Login\CookieLogin;
@@ -19,7 +20,7 @@ class DevWeb extends AbstractWeb
         ResponseConfig::$imageUrl = null;
 
 
-        AdminConfig::$defaultTemplateClassName = AdminTemplate::class;
+        AdminConfig::$defaultTemplateClassName = DevTemplate::class;  // AdminTemplate::class;
         AdminConfig::$webController = new DevController();
         (new DevController())->render();
 

@@ -1,6 +1,7 @@
 import BootstrapDataListBox from "../../../../framework/Bootstrap/Data/BootstrapDataListBox.js";
+import AdminDataListBox from "../../../../framework/Admin/Form/AdminDataListBox.js";
 
-export default class DatumListBox extends BootstrapDataListBox {
+export default class DatumListBox extends AdminDataListBox {   // BootstrapDataListBox {
 
 
     constructor(parentContainer) {

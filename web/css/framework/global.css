@@ -1,0 +1,15 @@
+:root {
+
+    --color-light1: white;
+    --color-light2: lightgrey;
+    --color-dark1: #2a2a2b;
+    --color-dark2: #2a2a2b;
+
+    --border-radius: 0;
+    --box-shadow: 1px 3px 29px 5px rgba(0,0,0,0.62);
+
+
+    --default-space:20px;
+
+
+}

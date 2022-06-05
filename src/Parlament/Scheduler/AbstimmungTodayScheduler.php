@@ -14,7 +14,7 @@ class AbstimmungTodayScheduler extends AbstractScheduler
     {
 
         //$this->active = true;
-        $this->minute = 60;  //30;
+        $this->minute = 30;
 
         $this->scriptName = 'parlament-abstimmung-today';
         $this->consoleScript = true;
@@ -26,17 +26,15 @@ class AbstimmungTodayScheduler extends AbstractScheduler
 
         $import = new AbstimmungImport();
         $import->datum = (new Date())->setNow();
-        $import->importDetail = true;
-        $import->importGeschaeft=true;
+        /*$import->importDetail = true;
+        $import->importGeschaeft = true;*/
         $import->importData();
 
-
-        $data=new LastUpdate();
-        $data->updateOnDuplicate=true;
-        $data->id=1;
+        $data = new LastUpdate();
+        $data->updateOnDuplicate = true;
+        $data->id = 1;
         $data->lastUpdate = (new DateTime())->setNow();
         $data->save();
-
 
     }
 }

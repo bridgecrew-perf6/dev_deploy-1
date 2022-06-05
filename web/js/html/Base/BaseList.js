@@ -13,7 +13,6 @@ export default class BaseContainerList {
 
         //event.preventDefault();
 
-
         for (let i = 0; i < this._htmlElementList.length; i++) {
             this._htmlElementList[i].addEventListener('click', event, false);
         }
@@ -29,23 +28,35 @@ export default class BaseContainerList {
     }
 
 
+    set display(value) {
 
-    getData(name) {
-
-
-        /*get id() {
-            return this._htmlElement.id;
-        }*/
-
-
-        //console.log(this);
-
-        let value = this._htmlElementList[0].getAttribute("data-" + name);
-
-        //let value = this.getAttribute("data-" + name);
-        return value;
+        for (let i = 0; i < this._htmlElementList.length; i++) {
+            this._htmlElementList[i].style.display = value;
+        }
 
     }
+
+
+    set toggle(value) {
+
+        for (let i = 0; i < this._htmlElementList.length; i++) {
+            this._htmlElementList[i].classList.toggle(value);  //style.display = value;
+        }
+
+        //document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+
+
+
+
+/*
+    getData(name) {
+
+        let value = this._htmlElementList[0].getAttribute("data-" + name);
+        return value;
+
+    }*/
 
 
 }

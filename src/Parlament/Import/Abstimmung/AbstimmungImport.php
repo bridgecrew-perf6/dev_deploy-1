@@ -2,16 +2,18 @@
 
 namespace Parlament\Import\Abstimmung;
 
+use Nemundo\Core\Debug\Debug;
 use Nemundo\Core\Type\DateTime\Date;
-use Parlament\Data\Abstimmung\Abstimmung;
+use Nemundo\Core\Type\DateTime\DateTime;
+use Parlament\Data\Geschaeft\GeschaeftCount;
 use Parlament\Import\Base\AbstractPageParlamentImport;
 
 class AbstimmungImport extends AbstractPageParlamentImport
 {
 
-    public $importDetail = false;
+    //public $importDetail = false;
 
-    public $importGeschaeft = false;
+    //public $importGeschaeft = false;
 
     public $sessionId;
 
@@ -24,18 +26,18 @@ class AbstimmungImport extends AbstractPageParlamentImport
     public function importData()
     {
 
-        $this->crawlerLogId=2;
+        $this->crawlerLogId = 2;
 
         if ($this->sessionId !== null) {
             $this->addParameter('sessionFilter', $this->sessionId);
-            $this->crawlerLogId=null;
+            $this->crawlerLogId = null;
         }
 
         if ($this->datum !== null) {
             $datumText = $this->datum->getYear() . '/' . $this->datum->getMonthNumberWithLeadingZero() . '/' . $this->datum->getDayWithLeadingZero();
             $this->addParameter('dateFromFilter', $datumText);
             $this->addParameter('dateToFilter', $datumText);
-            $this->crawlerLogId=null;
+            $this->crawlerLogId = null;
         }
 
         $this->loadJson('votes/affairs');
@@ -47,6 +49,7 @@ class AbstimmungImport extends AbstractPageParlamentImport
     {
 
         $geschaeftId = $json['id'];
+        $lastUpdate = new DateTime($json['updated']);
 
         /*$data = new Abstimmung();
         $data->updateOnDuplicate = true;
@@ -54,11 +57,32 @@ class AbstimmungImport extends AbstractPageParlamentImport
         $data->abstimmung = $json['title'];
         $data->save();*/
 
-        if ($this->importDetail) {
-            $imort = new AbstimmungDetailImport();
-            $imort->importGeschaeft = $this->importGeschaeft;
-            $imort->importAbstimmung($geschaeftId);
-        }
+        //if ($this->importDetail) {
+
+        //$count = new GeschaeftCount();
+
+
+        /*$importGeschaeft = false;
+
+        $count = new GeschaeftCount();
+        $count->filter->andEqual($count->model->id, $geschaeftId);
+        $count->filter->andEqual($count->model->lastUpdate, $lastUpdate->getIsoDateTime());
+
+        (new Debug())->write($geschaeftId);
+        (new Debug())->write($lastUpdate->getIsoDateTime());
+
+
+        if ($count->getCount() === 0) {
+            $importGeschaeft = true;
+        }*/
+
+        //(new Debug())->write($importGeschaeft);
+
+        $import = new AbstimmungDetailImport();
+        $import->importGeschaeft = true;  // $importGeschaeft;  // $this->importGeschaeft;
+        $import->importAbstimmung($geschaeftId);
+
+        //}
 
     }
 

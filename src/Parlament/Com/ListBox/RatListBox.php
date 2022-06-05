@@ -2,11 +2,10 @@
 
 namespace Parlament\Com\ListBox;
 
-use Nemundo\Package\Bootstrap\FormElement\BootstrapListBox;
+use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Parlament\Data\Rat\RatReader;
-use Parlament\Data\Session\SessionReader;
 
-class RatListBox extends BootstrapListBox
+class RatListBox extends AdminListBox
 {
 
     public function __construct($parentContainer = null)
@@ -14,7 +13,7 @@ class RatListBox extends BootstrapListBox
         parent::__construct($parentContainer);
 
         $this->label = 'Rat';
-        $this->name='rat';
+        $this->name = 'rat';
 
     }
 

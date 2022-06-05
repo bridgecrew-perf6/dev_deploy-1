@@ -2,10 +2,11 @@
 
 namespace Parlament\Com\ListBox;
 
+use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Nemundo\Package\Bootstrap\FormElement\BootstrapListBox;
 use Parlament\Manager\FraktionManager;
 
-class FraktionListBox extends BootstrapListBox
+class FraktionListBox extends AdminListBox  // BootstrapListBox
 {
 
 

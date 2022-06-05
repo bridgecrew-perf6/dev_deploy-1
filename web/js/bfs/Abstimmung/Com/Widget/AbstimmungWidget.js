@@ -1,5 +1,5 @@
 import WidgetContainer from "../../../../framework/Com/Widget/Widget.js";
-import AbstimmungContainer from "../Container/AbstimmungContainer.js";
+import AbstimmungGemeindeContainer from "../Container/AbstimmungGemeindeContainer.js";
 import GeoLevelListBox from "../ListBox/GeoLevelListBox.js";
 import JahrListBox from "../ListBox/JahrListBox.js";
 import DatumListBox from "../ListBox/DatumListBox.js";

@@ -2,12 +2,12 @@
 
 namespace Nemundo\Content\Page;
 
-use Nemundo\Admin\Template\PlainAdminTemplate;
+use Nemundo\Admin\Template\PlainAdminResponsive;
 use Nemundo\Html\Script\JavaScript;
 use Nemundo\Html\Script\JavaScriptType;
 use Nemundo\Web\WebConfig;
 
-class TestPage extends PlainAdminTemplate
+class TestPage extends PlainAdminResponsive
 {
     public function getContent()
     {

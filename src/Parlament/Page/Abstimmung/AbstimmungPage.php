@@ -7,11 +7,13 @@ use Nemundo\Html\Form\Form;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Package\Bootstrap\Form\BootstrapSearchForm;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
+use Parlament\Com\Container\AbstimmungContainer;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
 use Parlament\Com\ListBox\SessionListBox;
 use Parlament\Com\Small\SourceSmall;
 use Parlament\Com\Table\AbstimmungTable;
+use Parlament\Reader\AbstimmungDataReader;
 use Parlament\Template\ParlamentTemplate;
 
 class AbstimmungPage extends ParlamentTemplate
@@ -43,19 +45,25 @@ class AbstimmungPage extends ParlamentTemplate
         $session->submitOnChange = true;
 
 
-        $table = new AbstimmungTable($this);
+        $dataReader = new AbstimmungDataReader();  // new AbstimmungContainer($this);  // new AbstimmungTable($this);
 
         if ($session->hasValue()) {
-            $table->sessionId = $session->getValue();
+            $dataReader->sessionId = $session->getValue();
         }
 
         if ($geschaeftsstatus->hasValue()) {
-            $table->geschaeftsstatusId = $geschaeftsstatus->getValue();
+            $dataReader->geschaeftsstatusId = $geschaeftsstatus->getValue();
         }
 
         if ($geschaeftstyp->hasValue()) {
-            $table->geschaeftstypId = $geschaeftstyp->getValue();
+            $dataReader->geschaeftstypId = $geschaeftstyp->getValue();
         }
+
+        $container = new AbstimmungContainer($this);
+        $container->abstimmungReader=$dataReader;
+
+
+
 
         new SourceSmall($this);
 

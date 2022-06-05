@@ -44,9 +44,6 @@ class GeschaeftImport extends AbstractPageParlamentImport
 
         //http://ws-old.parlament.ch/affairsummaries?format=json
 
-
-
-
         /*$count = new GeschaeftCount();
         $count->filter->andEqual($count->model->lastUpdate, $lastUpdate->getIsoDateTime());
         if ($count->getCount() === 0) {

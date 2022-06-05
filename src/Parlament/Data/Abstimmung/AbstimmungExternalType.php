@@ -56,6 +56,11 @@ public $jaBedeutung;
 */
 public $neinBedeutung;
 
+/**
+* @var \Nemundo\Model\Type\DateTime\DateTimeType
+*/
+public $lastUpdate;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = AbstimmungModel::class;
@@ -139,6 +144,14 @@ $this->neinBedeutung->externalTableName = $this->externalTableName;
 $this->neinBedeutung->aliasFieldName = $this->neinBedeutung->tableName . "_" . $this->neinBedeutung->fieldName;
 $this->neinBedeutung->label = "Nein Bedeutung";
 $this->addType($this->neinBedeutung);
+
+$this->lastUpdate = new \Nemundo\Model\Type\DateTime\DateTimeType();
+$this->lastUpdate->fieldName = "last_update";
+$this->lastUpdate->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->lastUpdate->externalTableName = $this->externalTableName;
+$this->lastUpdate->aliasFieldName = $this->lastUpdate->tableName . "_" . $this->lastUpdate->fieldName;
+$this->lastUpdate->label = "Last Update";
+$this->addType($this->lastUpdate);
 
 }
 public function loadGeschaeft() {

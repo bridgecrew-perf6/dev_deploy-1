@@ -56,11 +56,17 @@ public $jaBedeutung;
 */
 public $neinBedeutung;
 
+/**
+* @var \Nemundo\Core\Type\DateTime\DateTime
+*/
+public $lastUpdate;
+
 public function __construct() {
 parent::__construct();
 $this->model = new AbstimmungModel();
 $this->datum = new \Nemundo\Core\Type\DateTime\Date();
 $this->zeit = new \Nemundo\Core\Type\DateTime\Time();
+$this->lastUpdate = new \Nemundo\Core\Type\DateTime\DateTime();
 }
 public function save() {
 $id = $this->id;
@@ -76,6 +82,8 @@ $property = new \Nemundo\Model\Data\Property\DateTime\TimeDataProperty($this->mo
 $property->setValue($this->zeit);
 $this->typeValueList->setModelValue($this->model->jaBedeutung, $this->jaBedeutung);
 $this->typeValueList->setModelValue($this->model->neinBedeutung, $this->neinBedeutung);
+$property = new \Nemundo\Model\Data\Property\DateTime\DateTimeDataProperty($this->model->lastUpdate, $this->typeValueList);
+$property->setValue($this->lastUpdate);
 $id = parent::save();
 return $id;
 }

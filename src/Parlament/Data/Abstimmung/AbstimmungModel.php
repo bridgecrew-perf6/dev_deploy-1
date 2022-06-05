@@ -56,6 +56,11 @@ public $jaBedeutung;
 */
 public $neinBedeutung;
 
+/**
+* @var \Nemundo\Model\Type\DateTime\DateTimeType
+*/
+public $lastUpdate;
+
 protected function loadModel() {
 $this->tableName = "parlament_abstimmung";
 $this->aliasTableName = "parlament_abstimmung";
@@ -144,6 +149,14 @@ $this->neinBedeutung->aliasFieldName = "parlament_abstimmung_nein_bedeutung";
 $this->neinBedeutung->label = "Nein Bedeutung";
 $this->neinBedeutung->allowNullValue = false;
 $this->neinBedeutung->length = 255;
+
+$this->lastUpdate = new \Nemundo\Model\Type\DateTime\DateTimeType($this);
+$this->lastUpdate->tableName = "parlament_abstimmung";
+$this->lastUpdate->externalTableName = "parlament_abstimmung";
+$this->lastUpdate->fieldName = "last_update";
+$this->lastUpdate->aliasFieldName = "parlament_abstimmung_last_update";
+$this->lastUpdate->label = "Last Update";
+$this->lastUpdate->allowNullValue = false;
 
 $index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
 $index->indexName = "datum";

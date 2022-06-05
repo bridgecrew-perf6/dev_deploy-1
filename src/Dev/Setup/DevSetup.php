@@ -8,6 +8,7 @@ use Nemundo\App\FileLog\Application\FileLogApplication;
 use Nemundo\App\Script\Reset\ScriptReset;
 use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\App\WebService\Reset\WebServiceReset;
+use Nemundo\Bfs\Abstimmung\Application\AbstimmungApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
 use Nemundo\Content\Reset\ContentReset;
 use Nemundo\Dev\Script\AdminBuilderScript;
@@ -51,9 +52,10 @@ class DevSetup extends AbstractSetup
 
 
         (new FileLogApplication())->installApp();
-
         (new ParlamentApplication())->installApp();
-        (new AbstimmungTodayScheduler())->setActive();
+        (new AbstimmungApplication())->installApp();
+
+        //(new AbstimmungTodayScheduler())->setActive();
 
 
         /*(new IsdApplication())->installApp();

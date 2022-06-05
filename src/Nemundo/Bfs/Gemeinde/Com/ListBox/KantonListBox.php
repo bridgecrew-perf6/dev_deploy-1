@@ -2,10 +2,11 @@
 
 namespace Nemundo\Bfs\Gemeinde\Com\ListBox;
 
+use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Nemundo\Bfs\Gemeinde\Data\Kanton\KantonReader;
 use Nemundo\Package\Bootstrap\FormElement\BootstrapListBox;
 
-class KantonListBox extends BootstrapListBox
+class KantonListBox extends AdminListBox  // BootstrapListBox
 {
 
     public function __construct($parentContainer = null)

@@ -5,9 +5,9 @@ namespace Dev;
 use Dev\Deployment\DevDeployment;
 use Dev\Setup\DevSetup;
 use Dev\Web\DevWeb;
+use Nemundo\Bfs\BfsProject;
 use Nemundo\Core\Path\Path;
 use Nemundo\FrameworkProject;
-use Nemundo\Meteo\MeteoProject;
 use Nemundo\Project\AbstractProject;
 use Parlament\ParlamentProject;
 
@@ -24,13 +24,16 @@ class DevProject extends AbstractProject
             ->addParentPath()
             ->addPath('model')
             ->getPath();
+
         $this->webClass = DevWeb::class;
         $this->setupClass = DevSetup::class;
         $this->deploymentClass = DevDeployment::class;
+        //$this- webteClass=DevTemplate::class;
 
         $this->addDependency(new FrameworkProject());
         //$this->addDependency(new MeteoProject());
         $this->addDependency(new ParlamentProject());
+        $this->addDependency(new BfsProject());
 
 
     }

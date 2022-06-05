@@ -415,6 +415,10 @@ export default class BaseContainer {
         this._htmlElement.style.width = value;
     }
 
+    get width() {
+        return this._htmlElement.style.width;
+    }
+
     set widthPercent(value) {
         this._htmlElement.style.width = value + "%";
     }

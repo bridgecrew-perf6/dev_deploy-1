@@ -13,12 +13,15 @@ use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H2;
 use Nemundo\Html\Heading\H3;
 use Nemundo\Html\Heading\H5;
+use Parlament\Com\Container\AbstimmungContainer;
+use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Data\Abstimmung\AbstimmungReader;
 use Parlament\Data\GeschaeftKommission\GeschaeftKommissionReader;
 use Parlament\Data\GeschaeftText\GeschaeftTextReader;
 use Parlament\Data\GeschaeftThema\GeschaeftThemaReader;
 use Parlament\Manager\GeschaeftManager;
 use Parlament\Parameter\GeschaeftParameter;
+use Parlament\Reader\AbstimmungDataReader;
 use Parlament\Reader\GeschaeftDataReader;
 use Parlament\Template\ParlamentTemplate;
 
@@ -51,15 +54,12 @@ class GeschaeftItemPage extends ParlamentTemplate
 
         $table->addLabelValue('Typ', $geschaeftRow->geschaeftstyp->geschaeftstyp);
         $table->addLabelValue('Status', $geschaeftRow->geschaeftsstatus->geschaeftsstatus);
-
         $table->addLabelValue('Datum Einreichung', $geschaeftRow->datumEinreichung->getShortDateLeadingZeroFormat());
-
         $table->addLabelValue('Kurzbezeichnung', $geschaeftRow->kurzbezeichnung);
         $table->addLabelValue('Session', $geschaeftRow->session->session);
+        $table->addLabelHyperlink('Geschäftsdatenbank', $geschaeftRow->getUrl(),'Curia Vista');
+        $table->addLabelHyperlink('Maschinenlesbare Daten', $geschaeftRow->getJsonUrl(),'Json');
 
-
-        $table->addLabelHyperlink('Json', $geschaeftRow->getJsonUrl());
-        $table->addLabelHyperlink('Url', $geschaeftRow->getUrl());
 
 
         $h2 = new H2($this);
@@ -112,6 +112,7 @@ class GeschaeftItemPage extends ParlamentTemplate
         }
 
 
+        /*
         $table = new AdminTable($this);
 
         $header = new TableHeader($table);
@@ -122,13 +123,24 @@ class GeschaeftItemPage extends ParlamentTemplate
         $header->addEmpty();
         $header->addText('Nein');
         $header->addEmpty();
-        $header->addText('Enthaltungen');
+        $header->addText('Enthaltungen');*/
 
 
-        $reader = new AbstimmungReader();
+        $reader = new AbstimmungDataReader();
         $reader->filter->andEqual($reader->model->geschaeftId, $geschaeftId);
         $reader->addOrder($reader->model->datum);
         $reader->addOrder($reader->model->zeit);
+
+
+        $table= new AbstimmungContainer($this);  // new AbstimmungTable($this);
+        $table->abstimmungReader=$reader;
+
+        //$container = new
+
+
+
+
+        /*
         foreach ($reader->getData() as $abstimmungRow) {
 
             $row = new TableRow($table);
@@ -146,7 +158,7 @@ class GeschaeftItemPage extends ParlamentTemplate
             $row->addText($abstimmungRow->enthaltung);
 
 
-        }
+        }*/
 
 
         return parent::getContent();

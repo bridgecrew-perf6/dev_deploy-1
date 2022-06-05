@@ -11,10 +11,12 @@ use Nemundo\App\UserAction\Site\LoginSite;
 use Nemundo\App\WebService\Site\ServiceRequestSite;
 use Nemundo\Meteo\Isd\Site\IsdSite;
 use Nemundo\Web\Controller\AbstractWebController;
-use Parlament\Site\AbstimmungSite;
-use Parlament\Site\GeschaeftSite;
+use Parlament\Site\Abstimmung\AbstimmungSite;
+use Parlament\Site\CrawlerLogSite;
 use Parlament\Site\ParlamentSite;
-use Parlament\Site\RatsmitgliedSite;
+use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
+use Parlament\Site\Stream\StreamSite;
+
 
 class DevController extends AbstractWebController
 {
@@ -22,17 +24,25 @@ class DevController extends AbstractWebController
     {
 
         new HomeSite($this);
-        new LoginSite($this);
 
+        /*new LoginSite($this);
         new TestSite($this);
 
         new AppSite($this);
-        new AdminSite($this);
+        new AdminSite($this);*/
 
         //new IsdSite($this);
 
 
         new ParlamentSite($this);
+        //new StreamSite($this);
+        new RatsmitgliedSite($this);
+
+
+
+        new \Nemundo\Bfs\Abstimmung\Site\AbstimmungSite($this);
+
+        //new CrawlerLogSite($this);
 
 
 

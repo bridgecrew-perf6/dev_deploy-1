@@ -1,4 +1,4 @@
-* {
+/** {
     padding: 0;
     margin: 0;
 }
@@ -7,7 +7,7 @@
 
 html {
     font-size: 14px;
-}
+}*/
 
 
 
@@ -35,9 +35,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-
     flex-direction: column;
-
 
 }
 
@@ -76,10 +74,11 @@ html {
 
 .ratsmitglied-item {
 
-    background-color: rgba(242,242,242);
+    background-color: var(--color-dark2);
     opacity:1;
 
-    border-radius: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
 
 
 
@@ -97,8 +96,9 @@ html {
 
 .ratsmitglied-item:hover {
 
-    box-shadow: 1px 3px 29px 5px rgba(0,0,0,0.62);
-    cursor: pointer;
+    /*box-shadow: 1px 3px 29px 5px rgba(0,0,0,0.62);*/
+    box-shadow: var(--box-shadow);
+    /*cursor: pointer;*/
 
 
     /*width: 220px;*/
@@ -110,16 +110,16 @@ html {
 
 .ratsmitglied-item-title {
 
-    background-color: rgba(127,127,127,0.89);
-    color: whitesmoke;
-    font-size: 1.5rem;
+    background-color: var(--color-dark1);  /* rgba(127,127,127,0.89);*/
+    color: var(--color-light1);  /* whitesmoke;*/
+    font-size: 1.2rem;
     font-weight: bold;
     padding: 5px;
     text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 
 
+    /*border-top-left-radius: 20px;
+    border-top-right-radius: 20px;*/
 
 }
 

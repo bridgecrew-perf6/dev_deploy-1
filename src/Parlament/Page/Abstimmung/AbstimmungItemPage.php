@@ -33,7 +33,8 @@ class AbstimmungItemPage extends AbstractTemplateDocument
         $table->addLabelValue('Datum',$abstimmungRow->datum->getShortDateLeadingZeroFormat());
         $table->addLabelValue('Zeit',$abstimmungRow->zeit->getTimeLeadingZero());
         //}
-        $table->addLabelValue('Geschäft',$abstimmungRow->geschaeft->geschaeft);
+        //$table->addLabelValue('Geschäft',$abstimmungRow->geschaeft->geschaeft);
+        $table->addLabelSite('Geschäft',$abstimmungRow->geschaeft->getSite());
 
         $table->addLabelValue('Ja Bedeutung', $abstimmungRow->jaBedeutung);
         $table->addLabelValue('Nein Bedeutung',$abstimmungRow->neinBedeutung);
@@ -41,9 +42,9 @@ class AbstimmungItemPage extends AbstractTemplateDocument
         $table->addLabelValue('Ja', $abstimmungRow->ja);
         $table->addLabelValue('Nein',$abstimmungRow->nein);
         $table->addLabelValue('Enthaltung',$abstimmungRow->enthaltung);
-        $table->addLabelHyperlink('Url',$abstimmungRow->geschaeft->getUrl());
+        /*$table->addLabelHyperlink('Url',$abstimmungRow->geschaeft->getUrl());
         $table->addLabelHyperlink('Json (Geschäft)',$abstimmungRow->geschaeft->getJsonUrl());
-        $table->addLabelHyperlink('Json (Abstimmung)',$abstimmungRow->getJsonUrl());
+        $table->addLabelHyperlink('Json (Abstimmung)',$abstimmungRow->getJsonUrl());*/
 
 
         $h2=new H2($this);

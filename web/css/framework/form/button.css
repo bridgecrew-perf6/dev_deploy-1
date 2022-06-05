@@ -1,0 +1,24 @@
+
+.nemundo-button {
+    color: var(--color-light1);
+    background-color: var(--color-dark1);
+    width: 100px;
+    border-radius: var(--border-radius);
+    transition-duration: 0.3s;
+    border: none;
+    padding: 10px;
+}
+
+
+
+.nemundo-button:hover {
+    /*background-color: var(--color-light);*/
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+
+}
+
+
+
+
+

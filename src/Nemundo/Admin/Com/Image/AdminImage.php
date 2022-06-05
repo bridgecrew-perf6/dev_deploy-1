@@ -13,7 +13,8 @@ class AdminImage extends Img
     public function getContent()
     {
 
-        $this->addCssClass('nemundo-image');
+        //$this->addCssClass('nemundo-image');
+        $this->addCssClass('responsive-image');
 
         return parent::getContent();
 

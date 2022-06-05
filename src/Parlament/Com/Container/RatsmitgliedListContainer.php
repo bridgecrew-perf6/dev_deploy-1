@@ -12,6 +12,7 @@ use Nemundo\Html\Button\Button;
 use Nemundo\Html\Form\Formatting\Label;
 use Nemundo\Html\Form\Input\FileInput;
 use Nemundo\Html\Form\Input\TextInput;
+use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H3;
 use Nemundo\Html\Image\Img;
 
@@ -24,15 +25,20 @@ class RatsmitgliedListContainer extends Div
 
     use LibraryTrait;
 
+    /**
+     * @var RatsmitgliedManager
+     */
+    public $manager;
+
     public function getContent()
     {
 
         $this->addCssUrl('/css/parlament/parlament.css');
-        $this->addCssUrl('/css/html/form.css');
+        //$this->addCssUrl('/css/html/form.css');
 
 
 
-        $search=new Div($this);
+        /*$search=new Div($this);
         $search->addCssClass('search-box');
 
 
@@ -40,7 +46,7 @@ class RatsmitgliedListContainer extends Div
         /*$label=new Label($formItem);
         $label->content='Kanton';*/
 
-        $kanton=new KantonSelect($formItem);
+        //$kanton=new KantonSelect($formItem);
 
 
        /* $formItem = new Div($search);
@@ -50,19 +56,19 @@ class RatsmitgliedListContainer extends Div
         $file=new FileInput($formItem);*/
 
 
-        $btn=new Button($search);
-        $btn->label='Search';
+        /*$btn=new Button($search);
+        $btn->label='Search';*/
 
-
-
+        $h1= new H1($this);
+        $h1->content='National - und Ständerat';
 
 
         $container = new Div($this);
         $container->addCssClass('ratsmitglied-container');
 
-        $manager=new RatsmitgliedManager();
+        //$manager=new RatsmitgliedManager();
 
-        foreach ($manager->getData() as $ratsmitgliedRow) {
+        foreach ($this->manager->getData() as $ratsmitgliedRow) {
 
 
             $item=new Div($container);
@@ -87,17 +93,15 @@ class RatsmitgliedListContainer extends Div
             $item->content = $ratsmitgliedRow->fraktion->fraktion;
 
 
-            $ul=new UnorderedList($item);
+            /*$ul=new UnorderedList($item);
 
             $kommissionReader=new KommissionRatsmitgliedReader();
             $kommissionReader->model->loadKommission();
             $kommissionReader->model->loadFunktion();
             $kommissionReader->filter->andEqual($kommissionReader->model->ratsmitgliedId, $ratsmitgliedRow->id);
-            //$kommissionReader->filter->andEqual($kommissionReader->model->aktiv,true);
-            //$kommissionReader->filter->andEqual($kommissionReader->model->kommission->aktiv,false);
             foreach ($kommissionReader->getData() as $kommissionRatsmitgliedRow) {
                 $ul->addText($kommissionRatsmitgliedRow->kommission->kommission.' - '.$kommissionRatsmitgliedRow->funktion->funktion);
-            }
+            }*/
 
         }
 

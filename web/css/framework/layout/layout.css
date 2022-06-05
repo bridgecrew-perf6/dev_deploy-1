@@ -1,0 +1,29 @@
+body {
+
+      background-color: var(--color-light1);
+      color: var(--color-dark1);
+      font-family: Verdana;
+
+}
+
+
+
+
+#main-content {
+
+      margin:  var(--default-space);
+      padding: var(--default-space);
+      background-color: var(--color-light2);
+
+}
+
+
+
+.admin-search-form {
+
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+      margin-bottom: var(--default-space);
+
+}

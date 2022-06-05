@@ -66,6 +66,11 @@ public $jaBedeutung;
 */
 public $neinBedeutung;
 
+/**
+* @var \Nemundo\Core\Type\DateTime\DateTime
+*/
+public $lastUpdate;
+
 public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
 parent::__construct($row->getData());
 $this->row = $row;
@@ -85,6 +90,7 @@ $this->enthaltung = intval($this->getModelValue($model->enthaltung));
 $this->zeit = new \Nemundo\Core\Type\DateTime\Time($this->getModelValue($model->zeit));
 $this->jaBedeutung = $this->getModelValue($model->jaBedeutung);
 $this->neinBedeutung = $this->getModelValue($model->neinBedeutung);
+$this->lastUpdate = new \Nemundo\Core\Type\DateTime\DateTime($this->getModelValue($model->lastUpdate));
 }
 private function loadParlamentDataGeschaeftGeschaeftgeschaeftRow($model) {
 $this->geschaeft = new \Parlament\Row\GeschaeftCustomRow($this->row, $model);

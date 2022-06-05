@@ -7,7 +7,7 @@ use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Paragraph\Paragraph;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
 use Nemundo\Package\Bootstrap\Pagination\BootstrapPagination;
-use Parlament\Com\Container\GeschaeftContainer;
+use Parlament\Com\Container\GeschaeftListContainer;
 use Parlament\Com\ListBox\DepartementListBox;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;

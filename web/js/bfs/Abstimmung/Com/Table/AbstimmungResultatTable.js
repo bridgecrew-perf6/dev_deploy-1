@@ -1,8 +1,9 @@
 import BootstrapDataTable from "../../../../framework/Bootstrap/Table/BootstrapDataTable.js";
 import Debug from "../../../../core/Debug/Debug.js";
+import AdminDataTable from "../../../../framework/Admin/Table/AdminDataTable.js";
 
 
-export default class AbstimmungResultatTable extends BootstrapDataTable {
+export default class AbstimmungResultatTable extends AdminDataTable {   // BootstrapDataTable {
 
     showDatum=true;
 
@@ -27,7 +28,7 @@ export default class AbstimmungResultatTable extends BootstrapDataTable {
 
     onHeader(header) {
 
-        (new Debug()).write("onHeader");
+        //(new Debug()).write("onHeader");
 
         if (this.showDatum) {
         header.addText("Datum");

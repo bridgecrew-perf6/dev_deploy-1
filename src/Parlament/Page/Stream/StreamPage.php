@@ -2,26 +2,119 @@
 
 namespace Parlament\Page\Stream;
 
+use Nemundo\Admin\Com\Image\AdminImage;
+use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\Html\Hyperlink\UrlHyperlink;
+use Nemundo\Com\Html\Listing\UnorderedList;
+use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
+use Nemundo\Com\Template\AbstractResponsiveHtmlDocument;
+use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Db\Sql\Order\SortOrder;
 use Nemundo\Html\Block\ContentDiv;
 use Nemundo\Html\Block\Div;
 use Nemundo\Html\Block\Hr;
+use Nemundo\Html\Button\Button;
 use Nemundo\Html\Formatting\Bold;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H3;
+use Nemundo\Html\Heading\H5;
 use Nemundo\Html\Hyperlink\Hyperlink;
+use Nemundo\Html\Image\Img;
+use Nemundo\Html\Inline\Span;
+use Nemundo\Html\Layout\Nav;
 use Nemundo\Html\Paragraph\Paragraph;
+use Nemundo\Package\FontAwesome\FontAwesomeIcon;
+use Nemundo\Package\FontAwesome\FontAwesomePackage;
 use Parlament\Data\AbstimmungDatum\AbstimmungDatumReader;
+use Parlament\Data\GeschaeftText\GeschaeftTextReader;
 use Parlament\Reader\AbstimmungDataReader;
 use Parlament\Template\ParlamentTemplate;
 
-class StreamPage extends ParlamentTemplate
+
+// nach ParlamentPage
+class StreamPage extends AbstractTemplateDocument  // AbstractResponsiveHtmlDocument  // ParlamentTemplate
 {
 
     public function getContent()
     {
+
+
+        //$this->addPackage(new FontAwesomePackage());
+
+
+
+
+
+        $script=new ModuleJavaScript($this);
+        $script->src='/js/parlament/stream.js';
+
+        //$this->addCssUrl('');
+        //$this->addCssUrl('/css/dev/dev.css');
+        /*$this->addCssUrl('/css/framework/framework.css');
+        $this->addCssUrl('/css/dev/style.css');*/
+
+        /*$p=new Paragraph($this);
+        $p->addCssClass('hello');
+        $p->content='hello';
+
+
+        $container=new Div($this);
+        $container->addCssClass('container');
+
+        $img = new AdminImage($container);  // new Img($this);
+        $img->src='http://www.dallenwil.ch/de/images/6257ebd827656.jpg';
+        $img->addCssClass('responsive-image');
+
+
+        $div= new ContentDiv($container);
+        $div->addCssClass('menu-over');
+        $div->content='Hello World';
+
+
+
+
+$nav =new Nav($this);
+$nav->addCssClass('navigation-horizontal');
+
+$hyperlink=new Hyperlink($nav);
+$hyperlink->content='Nav1';
+
+        $hyperlink=new Hyperlink($nav);
+        $hyperlink->content='Nav2';
+
+
+        $nav3= new Span($nav);  // Div($nav);
+        $nav3->addCssClass('menu-item');
+
+
+        $hyperlink=new Hyperlink($nav3);
+        $hyperlink->content='Nav3';
+        $hyperlink->id='nav3';
+
+        $ul= new ContentDiv($nav3);  //new UnorderedList($nav3);
+        //$ul->addCssClass('subnav');
+        $ul->content='123123123';
+        /*$ul->addText('first');
+        $ul->addText('second');
+        $ul->addText('three');*/
+
+
+        //new AdminImage()
+
+
+
+
+
+
+        /*
+        $kanton=new KantonListBox($this);*/
+
+
+
+        $cardContainer = new Div($this);
+        $cardContainer->addCssClass('card-container');
 
 
         $datumReader = new AbstimmungDatumReader();
@@ -29,41 +122,75 @@ class StreamPage extends ParlamentTemplate
         $datumReader->limit = 10;
         foreach ($datumReader->getData() as $abstimmungDatumRow) {
 
-
-            $h1 = new H1($this);
+            $h1 = new H1($cardContainer);
             $h1->content = $abstimmungDatumRow->datum->getLongFormatWithWeekday();
-
-
-
 
             $abstimmungGeschaeftReader = new AbstimmungDataReader();
             $abstimmungGeschaeftReader->filter->andEqual($abstimmungGeschaeftReader->model->datum, $abstimmungDatumRow->datum->getIsoDate());
             $abstimmungGeschaeftReader->addGroup($abstimmungGeschaeftReader->model->geschaeftId);
             foreach ($abstimmungGeschaeftReader->getData() as $abstimmungGeschaeftRow) {
 
+                $card=new Div($cardContainer);
+                $card->addCssClass('card');
+                //$card->addDataAttribute('geschaeft',$abstimmungGeschaeftRow->geschaeftId);
 
                 $geschaeftRow = $abstimmungGeschaeftRow->geschaeft;
 
-                $h3 = new H3($this);
                 //$h3->content = $abstimmungGeschaeftRow->geschaeft->kurzbezeichnung . ' ' . $abstimmungGeschaeftRow->geschaeft->geschaeft;
 
-                $more=new SiteHyperlink($h3);
-                $more->site=$geschaeftRow->getSite();
+                /*$hyperlink=new SiteHyperlink($card);
+                $hyperlink->site=$geschaeftRow->getSite();
+                //$hyperlink->showSiteTitle=false;
+                $hyperlink->addCssClass('card-title');*/
+
+
+                $h3 = new H3($card);
+                $h3->content= $abstimmungGeschaeftRow->geschaeft->getTitle();
+                $h3->addCssClass('card-title');
+                $h3->addDataAttribute('geschaeft',$abstimmungGeschaeftRow->geschaeftId);
+
+                $content=new Div($card);
+                $content->addCssClass('card-content');
+                $content->id='geschaeft-content-'.$abstimmungGeschaeftRow->geschaeftId;
 
 
 
-                /*$hyperlink = new UrlHyperlink($this);
+                $hyperlink = new UrlHyperlink($content);
                 $hyperlink->openNewWindow=true;
-                $hyperlink->content='Informationen';
-                $hyperlink->url=$geschaeftRow->getUrl();*/
+                $hyperlink->content='Curia Vista';
+                $hyperlink->url=$geschaeftRow->getUrl();
+
+                $p = new Paragraph($content);
+                $p->content = 'Geschäftstyp: ';
+
+                $bold = new Bold($p);
+                $bold->content = $geschaeftRow->geschaeftstyp->geschaeftstyp;
+
+                $p = new Paragraph($content);
+                $p->content = 'Status: ';
+                $bold = new Bold($p);
+                $bold->content = $geschaeftRow->geschaeftsstatus->geschaeftsstatus;
 
 
 
-                $p = new Paragraph($this);
-                $p->content = $geschaeftRow->geschaeftstyp->geschaeftstyp;
 
-                $p = new Paragraph($this);
-                $p->content = $geschaeftRow->geschaeftsstatus->geschaeftsstatus;
+
+                $textReader = new GeschaeftTextReader();
+                $textReader->model->loadTextTyp();
+                $textReader->filter->andEqual($textReader->model->geschaeftId, $geschaeftRow->id);
+                $textReader->addOrder($textReader->model->textTypId);
+                foreach ($textReader->getData() as $geschaeftTextRow) {
+
+                    $h3 = new H5($content);
+                    $h3->content = $geschaeftTextRow->textTyp->textTyp;
+
+                    $div = new ContentDiv($content);
+                    $div->content = $geschaeftTextRow->text;
+
+                }
+
+
+
 
 
                 $abstimmungReader = new AbstimmungDataReader();
@@ -71,24 +198,23 @@ class StreamPage extends ParlamentTemplate
                 $abstimmungReader->filter->andEqual($abstimmungReader->model->geschaeftId, $geschaeftRow->id);
                 foreach ($abstimmungReader->getData() as $abstimmungRow) {
 
-
-                    $div = new ContentDiv($this);
+                    $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->zeit->getTimeLeadingZero();
 
-                    $div = new Div($this);
+                    $div = new Div($content);
 
                     $bold = new Bold($div);
                     $bold->content = $abstimmungRow->abstimmung;
 
 
-                    $div = new ContentDiv($this);
+                    $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->jaBedeutung . ': ' . $abstimmungRow->ja;
 
-                    $div = new ContentDiv($this);
+                    $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->neinBedeutung . ': ' . $abstimmungRow->nein;
 
 
-                    $div = new ContentDiv($this);
+                    $div = new ContentDiv($content);
                     $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;
 
 
@@ -111,7 +237,7 @@ class StreamPage extends ParlamentTemplate
                 }
 
 
-                new Hr($this);
+                //new Hr($this);
 
 
             }
