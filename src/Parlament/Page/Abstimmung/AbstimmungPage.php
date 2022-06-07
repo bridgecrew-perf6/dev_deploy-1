@@ -9,7 +9,7 @@ use Parlament\Com\Container\AbstimmungContainer;
 use Parlament\Com\ListBox\GeschaeftsstatusListBox;
 use Parlament\Com\ListBox\GeschaeftstypListBox;
 use Parlament\Com\ListBox\SessionListBox;
-use Parlament\Com\Small\SourceSmall;
+use Parlament\Com\Small\ParlamentSource;
 use Parlament\Reader\AbstimmungDataReader;
 use Parlament\Template\ParlamentTemplate;
 
@@ -59,7 +59,7 @@ class AbstimmungPage extends ParlamentTemplate
         $container = new AbstimmungContainer($this);
         $container->abstimmungReader = $dataReader;
 
-        new SourceSmall($this);
+        new ParlamentSource($this);
 
         return parent::getContent();
 

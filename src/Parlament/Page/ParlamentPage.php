@@ -18,11 +18,7 @@ class ParlamentPage extends AbstractTemplateDocument  //  AdminTemplate
     public function getContent()
     {
 
-
         $container = new SessionAbstimmungContainer($this);
-
-
-
 
 
         //$table=new AbstimmungTable($this);

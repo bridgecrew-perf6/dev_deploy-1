@@ -21,6 +21,7 @@ class AbstimmungTodayScheduler extends AbstractScheduler
 
     }
 
+
     public function run()
     {
 

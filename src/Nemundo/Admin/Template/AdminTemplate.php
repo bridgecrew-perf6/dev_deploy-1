@@ -7,12 +7,15 @@ use Nemundo\Admin\Com\Navbar\AdminSiteNavbar;
 use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\App\Manifest\Com\JavaScript\WebManifestJavaScript;
 use Nemundo\App\Manifest\Com\Link\WebManifestLink;
+use Nemundo\App\UserAction\Site\LogoutSite;
 use Nemundo\Com\Html\Header\LibraryHeader;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
 use Nemundo\Com\Template\AbstractResponsiveHtmlDocument;
 use Nemundo\Html\Block\Div;
 use Nemundo\Html\Container\AbstractContainer;
+use Nemundo\Html\Heading\H3;
+use Nemundo\Html\Image\Img;
 use Nemundo\Html\Layout\Nav;
 use Nemundo\Html\Script\JavaScript;
 use Nemundo\Html\Script\JavaScriptType;
@@ -67,6 +70,10 @@ class AdminTemplate extends AbstractResponsiveHtmlDocument
         $nav = new Nav();  // new AdminSiteNavbar($this);
         $nav->addCssClass('nav');
 
+/*        $logo=new Img($nav);
+        $logo->src='/tmp/logo.svg';
+$logo->height=150;*/
+
 
         $menuContent = new Div($nav);
         $menuContent->id = 'menu-content';
@@ -83,6 +90,12 @@ class AdminTemplate extends AbstractResponsiveHtmlDocument
             $hyperlink->addCssClass('nav-item');
 
         }
+
+
+        $hyperlink=new SiteHyperlink($nav);
+        $hyperlink->site= LogoutSite::$site;
+        $hyperlink->addCssClass('nav-item');
+
 
 
         $icon = new FontAwesomeIcon($nav);

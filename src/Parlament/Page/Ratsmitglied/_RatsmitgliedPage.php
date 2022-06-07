@@ -17,7 +17,7 @@ use Nemundo\Package\Bootstrap\Pagination\BootstrapPagination;
 use Nemundo\Web\Site\Site;
 use Parlament\Com\ListBox\FraktionListBox;
 use Parlament\Com\ListBox\RatListBox;
-use Parlament\Com\Small\SourceSmall;
+use Parlament\Com\Small\ParlamentSource;
 use Parlament\Com\Table\RatsmitgliedTable;
 use Parlament\Manager\RatsmitgliedManager;
 use Parlament\Parameter\FraktionParameter;
@@ -129,7 +129,7 @@ class _RatsmitgliedPage extends BootstrapAdminTemplate
 
         }
 
-        new SourceSmall($this);
+        new ParlamentSource($this);
 
         return parent::getContent();
     }

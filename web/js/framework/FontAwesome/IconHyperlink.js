@@ -1,5 +1,5 @@
-import FontAwesomeIconContainer from "./Icon.js";
 import HyperlinkContainer from "../../html/Hyperlink/Hyperlink.js";
+import FontAwesomeIcon from "./FontAwesomeIcon.js";
 
 
 export default class IconHyperlink extends HyperlinkContainer {

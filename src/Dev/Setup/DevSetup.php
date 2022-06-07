@@ -12,6 +12,7 @@ use Nemundo\Bfs\Abstimmung\Application\AbstimmungApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
 use Nemundo\Content\Reset\ContentReset;
 use Nemundo\Dev\Script\AdminBuilderScript;
+use Nemundo\Meteo\Emagramm\Application\EmagrammApplication;
 use Nemundo\Meteo\Isd\Application\IsdApplication;
 use Nemundo\Model\Script\ModelCleanScript;
 use Nemundo\Project\Install\ProjectInstall;
@@ -52,10 +53,18 @@ class DevSetup extends AbstractSetup
 
 
         (new FileLogApplication())->installApp();
-        (new ParlamentApplication())->installApp();
-        (new AbstimmungApplication())->installApp();
 
-        //(new AbstimmungTodayScheduler())->setActive();
+        (new ParlamentApplication())->installApp();
+        (new AbstimmungTodayScheduler())->setActive();
+
+        //(new AbstimmungApplication())->installApp();
+
+
+        //(new EmagrammApplication())->installApp();
+
+
+
+
 
 
         /*(new IsdApplication())->installApp();

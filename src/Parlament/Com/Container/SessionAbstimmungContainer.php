@@ -17,6 +17,7 @@ use Nemundo\Html\Heading\H3;
 use Nemundo\Html\Heading\H5;
 use Nemundo\Html\Paragraph\Paragraph;
 use Nemundo\Html\Table\Table;
+use Parlament\Com\Small\ParlamentSource;
 use Parlament\Data\AbstimmungDatum\AbstimmungDatumReader;
 use Parlament\Data\GeschaeftText\GeschaeftTextReader;
 use Parlament\Reader\AbstimmungDataReader;
@@ -168,6 +169,9 @@ class SessionAbstimmungContainer extends Div
 
 
         }
+
+
+        new ParlamentSource($this);
 
 
         return parent::getContent();

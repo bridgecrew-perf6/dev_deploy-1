@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2a6121d39dc8a81d50a61ad23dc932cac1680f60',
+        'reference' => '1a70937bf9b050952fe3e57b4ced83784fe0989d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2a6121d39dc8a81d50a61ad23dc932cac1680f60',
+            'reference' => '1a70937bf9b050952fe3e57b4ced83784fe0989d',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(

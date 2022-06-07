@@ -1,7 +1,7 @@
-import FontAwesomeIconContainer from "./Icon.js";
+import FontAwesomeIcon from "./FontAwesomeIcon.js";
 
 
-export default class IconButton extends FontAwesomeIconContainer {
+export default class IconButton extends FontAwesomeIcon {
 
     constructor(parentContainer = null) {
 

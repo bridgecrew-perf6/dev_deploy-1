@@ -24,7 +24,7 @@ use Nemundo\Package\Bootstrap\Pagination\BootstrapPagination;
 use Nemundo\Web\Site\Site;
 use Parlament\Com\ListBox\FraktionListBox;
 use Parlament\Com\ListBox\RatListBox;
-use Parlament\Com\Small\SourceSmall;
+use Parlament\Com\Small\ParlamentSource;
 use Parlament\Com\Table\RatsmitgliedTable;
 use Parlament\Data\Abstimmung\AbstimmungReader;
 use Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedReader;

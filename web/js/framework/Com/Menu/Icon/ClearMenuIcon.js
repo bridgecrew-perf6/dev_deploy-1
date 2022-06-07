@@ -1,6 +1,6 @@
-import MenuIcon from "../../../Menu/MenuIcon.js";
+import FontAwesomeIcon from "../../../FontAwesome/FontAwesomeIcon.js";
 
-export default class ClearMenuIcon extends FontAwesome {  // MenuIcon {
+export default class ClearMenuIcon extends FontAwesomeIcon {  // MenuIcon {
 
     constructor(parentContainer = null) {
         super(parentContainer);
