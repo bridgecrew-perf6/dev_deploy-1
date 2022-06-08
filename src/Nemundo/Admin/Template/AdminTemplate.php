@@ -65,7 +65,7 @@ class AdminTemplate extends AbstractResponsiveHtmlDocument
         $this->addPackage(new FontAwesomePackage());
 
         //$this->addCssUrl('/css/dev/mobilemenu.css');
-        //$this->addCssUrl('/css/dev/style.css');
+        $this->addCssUrl('/css/dev/style.css');
 
         $nav = new Nav();  // new AdminSiteNavbar($this);
         $nav->addCssClass('nav');

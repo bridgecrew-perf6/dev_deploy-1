@@ -18,7 +18,7 @@ class ResultatComparisonService extends AbstractServiceRequest
     private $resultList = [];
 
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'abstimmung-resultat-comparison';
     }

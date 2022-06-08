@@ -11,7 +11,7 @@ use Nemundo\User\Type\UserType;
 class PasswordForgotService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-password-forgot';
     }

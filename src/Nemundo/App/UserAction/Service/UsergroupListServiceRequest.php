@@ -9,7 +9,7 @@ use Nemundo\User\Data\Usergroup\UsergroupReader;
 class UsergroupListServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'usergroup-list';
     }

@@ -4,7 +4,6 @@ namespace Parlament\Site\Ratsmitglied;
 
 use Nemundo\Web\Site\AbstractSite;
 use Parlament\Page\Ratsmitglied\RatsmitgliedItemPage;
-use Parlament\Page\RatsmitgliedPage;
 
 class RatsmitgliedItemSite extends AbstractSite
 {
@@ -17,6 +16,7 @@ class RatsmitgliedItemSite extends AbstractSite
         $this->title = 'Ratsmitglieder';
         //$this->title = 'National- und Ständerat';
         $this->url = 'ratsmitglieder-item';
+        $this->menuActive=false;
 
         RatsmitgliedItemSite::$site=$this;
 

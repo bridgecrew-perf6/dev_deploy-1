@@ -2,7 +2,7 @@
 
 namespace Parlament\Page\Kommission;
 
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Hr;
@@ -20,7 +20,7 @@ class KommissionItemPage extends AbstractTemplateDocument
         $kommissionId=(new KommissionParameter())->getValue();
 
 
-        $table = new AdminTable($this);
+        $table = new AdminBootstrapTable($this);
 
         $kommissionMitgliedReader=new KommissionRatsmitgliedReader();
         $kommissionMitgliedReader->model->loadRatsmitglied();

@@ -12,7 +12,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class GeoService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'abstimmung-geo';
     }

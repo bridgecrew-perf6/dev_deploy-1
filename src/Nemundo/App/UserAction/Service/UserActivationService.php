@@ -11,7 +11,7 @@ use Nemundo\User\Builder\UserBuilder;
 class UserActivationService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-activation';
     }

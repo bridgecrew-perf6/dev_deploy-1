@@ -9,7 +9,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class ParentTreeSearchService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'tree-parent-search';
     }

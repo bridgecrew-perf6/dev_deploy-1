@@ -13,7 +13,7 @@ use Nemundo\User\Data\UserUsergroup\UserUsergroupReader;
 class UserListServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-list';
     }

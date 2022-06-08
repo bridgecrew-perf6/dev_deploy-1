@@ -12,7 +12,7 @@ use Nemundo\User\Session\UserSession;
 class LoginServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-login';
         $this->restrictedService = false;

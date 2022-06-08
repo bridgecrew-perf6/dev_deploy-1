@@ -14,8 +14,6 @@ use Nemundo\Package\Bootstrap\Utility\BootstrapSpacing;
 class AdminListBox extends AbstractListBox
 {
 
-
-
     public function addInputDataAttribute($attribute, $value)
     {
         $this->select->addDataAttribute($attribute, $value);
@@ -26,7 +24,6 @@ class AdminListBox extends AbstractListBox
     {
 
         $this->prepareHtml();
-        //$this->loadStyle();
 
         $this->tagName='div';
         $this->addCssClass('admin-textbox');
@@ -35,15 +32,8 @@ class AdminListBox extends AbstractListBox
             $this->select->id = $this->inputId;
         }
 
-       /* $this->tagName = 'div';
-        $this->addCssClass(BootstrapSpacing::MARIGN_BOTTOM_3);
-        $this->addCssClass('col');*/
-
-        //$this->select->addCssClass('nemundo-select');
-
         $label = new Label();
         $label->id = 'label_'.$this->name;
-        //$label->addCssClass('form-label');
         $label->content = $this->getLabelText();
 
        /* if ($this->showErrorMessage) {

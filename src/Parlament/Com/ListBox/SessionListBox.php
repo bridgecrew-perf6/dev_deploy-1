@@ -2,12 +2,10 @@
 
 namespace Parlament\Com\ListBox;
 
-use Nemundo\Package\Bootstrap\FormElement\BootstrapListBox;
-use Parlament\Data\Session\SessionReader;
-use Parlament\Manager\SessionManager;
+use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Parlament\Reader\SessionDataReader;
 
-class SessionListBox extends BootstrapListBox
+class SessionListBox extends AdminListBox
 {
 
     public function __construct($parentContainer = null)
@@ -15,7 +13,7 @@ class SessionListBox extends BootstrapListBox
         parent::__construct($parentContainer);
 
         $this->label = 'Session';
-        $this->name='session';
+        $this->name = 'session';
 
     }
 

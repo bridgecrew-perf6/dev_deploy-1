@@ -8,7 +8,7 @@ use Nemundo\User\Session\UserSession;
 class UserCheckServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-check';
         $this->restrictedService = false;

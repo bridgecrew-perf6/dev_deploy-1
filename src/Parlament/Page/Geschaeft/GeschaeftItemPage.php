@@ -3,7 +3,7 @@
 namespace Parlament\Page\Geschaeft;
 
 use Nemundo\Admin\Com\Table\AdminLabelValueTable;
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\Html\Listing\UnorderedList;
 use Nemundo\Com\TableBuilder\TableHeader;
@@ -34,11 +34,9 @@ class GeschaeftItemPage extends ParlamentTemplate
         $geschaeftId = (new GeschaeftParameter())->getValue();
 
 
-
         //$reader = new GeschaeftDataReader();
 
         $geschaeftRow = (new GeschaeftManager())->getGeschaeftRow($geschaeftId);
-
 
         $h1 = new H1($this);
         $h1->content = $geschaeftRow->geschaeft;
@@ -86,14 +84,6 @@ class GeschaeftItemPage extends ParlamentTemplate
         foreach ($reader->getData() as $geschaeftKommissionRow) {
             $ul->addText($geschaeftKommissionRow->kommission->kommission);
         }
-
-
-
-
-
-
-
-
 
 
 

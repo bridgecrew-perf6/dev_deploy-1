@@ -10,7 +10,6 @@ class AbstimmungDataReader extends AbstimmungReader
 {
 
     use GeschaeftFilterTrait;
-    //use Abstimmun
 
     public function getData()
     {

@@ -16,7 +16,7 @@ use Nemundo\Db\Sql\Order\SortOrder;
 class ContentTypeListService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName='content-contenttype-list';
     }

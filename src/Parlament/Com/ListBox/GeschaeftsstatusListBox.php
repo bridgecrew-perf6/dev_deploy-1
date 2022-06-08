@@ -2,11 +2,10 @@
 
 namespace Parlament\Com\ListBox;
 
-use Nemundo\Package\Bootstrap\FormElement\BootstrapListBox;
+use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Parlament\Data\Geschaeftsstatus\GeschaeftsstatusReader;
-use Parlament\Data\Geschaeftstyp\GeschaeftstypReader;
 
-class GeschaeftsstatusListBox extends BootstrapListBox
+class GeschaeftsstatusListBox extends AdminListBox
 {
 
     public function __construct($parentContainer = null)
@@ -14,18 +13,17 @@ class GeschaeftsstatusListBox extends BootstrapListBox
         parent::__construct($parentContainer);
 
         $this->label = 'Geschäftsstatus';
-        $this->name='status';
+        $this->name = 'status';
 
     }
 
     public function getContent()
     {
 
-
-        $reader=new GeschaeftsstatusReader();
+        $reader = new GeschaeftsstatusReader();
         $reader->addOrder($reader->model->geschaeftsstatus);
         foreach ($reader->getData() as $row) {
-            $this->addItem($row->id,$row->geschaeftsstatus);
+            $this->addItem($row->id, $row->geschaeftsstatus);
         }
 
         return parent::getContent();

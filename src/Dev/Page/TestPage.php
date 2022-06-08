@@ -2,14 +2,20 @@
 
 namespace Dev\Page;
 
+use Dev\App\MyVote\Cookie\MyVoteCookie;
+use Dev\App\MyVote\Data\Vote\Vote;
+use Dev\App\MyVote\Data\Vote\VoteReader;
 use Nemundo\Admin\AdminConfig;
 use Nemundo\Admin\Com\Button\AdminButton;
 use Nemundo\Admin\Com\ListBox\AdminListBox;
 use Nemundo\Admin\Com\ListBox\AdminTextBox;
 use Nemundo\Admin\Com\Navbar\AdminSiteNavbar;
+use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Template\AdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
+use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Com\Template\AbstractResponsiveHtmlDocument;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Div;
@@ -23,24 +29,65 @@ use Nemundo\Html\Paragraph\Paragraph;
 use Nemundo\Package\FontAwesome\FontAwesomeIcon;
 use Nemundo\Package\FontAwesome\FontAwesomePackage;
 use Parlament\Com\Container\RatsmitgliedListContainer;
+use Parlament\Com\JavaScript\ParlamentModuleJavaScript;
 use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Com\Table\RatsmitgliedTable;
 use Parlament\Manager\RatsmitgliedManager;
 
 
-class TestPage extends AbstractTemplateDocument
+class TestPage extends AdminTemplate  // AbstractTemplateDocument
 {
 
 
     public function getContent()
     {
 
+        $cookie = new MyVoteCookie();
 
+        $h1=new H1($this);
+        $h1->content='voter id: '.$cookie->getValue();
+
+        $table=new AdminTable($this);
+
+        $reader = new VoteReader();
+        $reader->model->loadAbstimmung();
+        $reader->model->abstimmung->loadGeschaeft();
+        $reader->model->loadEntscheidung();
+        $reader->filter->andEqual($reader->model->voterId,$cookie->getValue());
+
+
+
+        foreach ($reader->getData() as $voteRow) {
+
+            $tableRow = new TableRow($table);
+            $tableRow->addText($voteRow->abstimmung->geschaeft->geschaeft);
+            $tableRow->addText($voteRow->entscheidung->entscheidung);
+
+        }
+
+
+
+
+
+
+
+
+
+        new ParlamentModuleJavaScript($this);
+
+
+
+
+
+
+
+
+        /*
         $btn= new AdminButton($this);
         $btn->label='Ja';
 
         $btn= new AdminButton($this);
-        $btn->label='Nein';
+        $btn->label='Nein';*/
 
 
 

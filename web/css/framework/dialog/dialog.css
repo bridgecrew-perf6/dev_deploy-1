@@ -1,0 +1,32 @@
+dialog {
+    background-color: var(--color-light1);
+
+    border-width: 1px;
+    border-color: var(--color-dark2);
+}
+
+
+dialog::backdrop {
+
+    background-color: lightgrey;
+    opacity: 0.9;
+
+}
+
+
+
+.dialog-title {
+
+    background-color: var(--color-dark2);
+    color: var(--color-light2);
+
+}
+
+
+.dialog-content {
+
+    height: 400px;
+
+
+}
+

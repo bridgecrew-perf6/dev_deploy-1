@@ -4,7 +4,7 @@ namespace Parlament\Page\Ratsmitglied;
 
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
 use Nemundo\Admin\Com\Table\AdminLabelValueTable;
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
@@ -31,9 +31,10 @@ use Parlament\Data\AbstimmungRatsmitglied\AbstimmungRatsmitgliedReader;
 use Parlament\Manager\RatsmitgliedManager;
 use Parlament\Parameter\FraktionParameter;
 use Parlament\Parameter\RatParameter;
+use Parlament\Template\ParlamentTemplate;
 
 
-class RatsmitgliedItemPage extends BootstrapAdminTemplate
+class RatsmitgliedItemPage extends ParlamentTemplate  // BootstrapAdminTemplate
 {
 
     public function getContent()
@@ -53,7 +54,7 @@ class RatsmitgliedItemPage extends BootstrapAdminTemplate
         $table->addLabelValue('Fraktion',$ratsmitgliedRow->fraktion->fraktion);
 
 
-        $table = new AdminTable($this);
+        $table = new AdminBootstrapTable($this);
 
         $header=new TableHeader($table);
 

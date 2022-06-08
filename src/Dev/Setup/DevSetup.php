@@ -2,6 +2,7 @@
 
 namespace Dev\Setup;
 
+use Dev\App\MyVote\Application\MyVoteApplication;
 use Dev\Script\TestScript;
 use Nemundo\App\Application\Reset\ApplicationReset;
 use Nemundo\App\FileLog\Application\FileLogApplication;
@@ -56,6 +57,9 @@ class DevSetup extends AbstractSetup
 
         (new ParlamentApplication())->installApp();
         (new AbstimmungTodayScheduler())->setActive();
+
+        (new MyVoteApplication())->installApp();
+
 
         //(new AbstimmungApplication())->installApp();
 

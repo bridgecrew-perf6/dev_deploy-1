@@ -10,7 +10,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class GeoIndexListService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         // geoindex-search
         $this->serviceName = 'geo-list';

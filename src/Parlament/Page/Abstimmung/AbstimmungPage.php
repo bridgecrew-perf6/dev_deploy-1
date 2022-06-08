@@ -2,6 +2,7 @@
 
 namespace Parlament\Page\Abstimmung;
 
+use Nemundo\Admin\Com\Form\AdminSearchForm;
 use Nemundo\Com\FormBuilder\SearchForm;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Package\Bootstrap\Layout\Grid\BootstrapRow;
@@ -22,25 +23,24 @@ class AbstimmungPage extends ParlamentTemplate
         $h1 = new H1($this);
         $h1->content = 'Abstimmung';
 
-        $form = new SearchForm($this);
+        //$form = new SearchForm($this);
 
-        $formRow = new BootstrapRow($form);
+        $formRow = new AdminSearchForm($this);  // new BootstrapRow($form);
 
         $geschaeftstyp = new GeschaeftstypListBox($formRow);
-        $geschaeftstyp->column = true;
+        //$geschaeftstyp->column = true;
         $geschaeftstyp->searchMode = true;
         $geschaeftstyp->submitOnChange = true;
 
         $geschaeftsstatus = new GeschaeftsstatusListBox($formRow);
-        $geschaeftsstatus->column = true;
+        //$geschaeftsstatus->column = true;
         $geschaeftsstatus->searchMode = true;
         $geschaeftsstatus->submitOnChange = true;
 
         $session = new SessionListBox($formRow);
-        $session->column = true;
+        //$session->column = true;
         $session->searchMode = true;
         $session->submitOnChange = true;
-
 
         $dataReader = new AbstimmungDataReader();
 

@@ -4,7 +4,7 @@ namespace Parlament\Page\Session;
 
 use Nemundo\Admin\Com\Redefine\AdminSearchRedefine;
 use Nemundo\Admin\Com\Table\AdminLabelValueTable;
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Admin\Template\BootstrapAdminTemplate;
 use Nemundo\Bfs\Gemeinde\Com\ListBox\KantonListBox;
 use Nemundo\Bfs\Gemeinde\Parameter\KantonParameter;
@@ -42,7 +42,7 @@ class SessionPage extends BootstrapAdminTemplate
     {
 
 
-        $table = new AdminTable($this);
+        $table = new AdminBootstrapTable($this);
 
         $header=new TableHeader($table);
         $header->addText('Id');

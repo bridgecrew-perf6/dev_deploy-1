@@ -2,14 +2,14 @@
 
 namespace Parlament\Page\Fraktion;
 
-use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Hr;
 use Nemundo\Html\Heading\H1;
 use Nemundo\Html\Heading\H2;
 use Parlament\Manager\FraktionManager;
 use Parlament\Site\Fraktion\FraktionSite;
+use Parlament\Template\ParlamentTemplate;
 
-class FraktionPage extends AbstractTemplateDocument
+class FraktionPage extends ParlamentTemplate
 {
     public function getContent()
     {

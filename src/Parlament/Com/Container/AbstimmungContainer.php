@@ -2,7 +2,11 @@
 
 namespace Parlament\Com\Container;
 
+use Dev\App\MyVote\Com\Form\VoteForm;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
+use Nemundo\Com\TableBuilder\TableRow;
+use Nemundo\Core\Debug\Debug;
 use Nemundo\Html\Block\ContentDiv;
 use Nemundo\Html\Block\Div;
 use Nemundo\Html\Block\Hr;
@@ -25,30 +29,92 @@ class AbstimmungContainer extends Div
     {
 
 
+/*
+        foreach ($abstimmungReader->getData() as $abstimmungRow) {
+
+            $div = new ContentDiv($content);
+            $div->content = $abstimmungRow->zeit->getTimeLeadingZero(). ' Uhr';
+
+            //$div = new Div($content);
+
+
+            $bold = new Bold($content);
+            $bold->content = $abstimmungRow->abstimmung;
+
+            $table = new AdminTable($content);  // new Table($content);
+
+            $tableRow=new TableRow($table);
+            $tableRow->addText($abstimmungRow->jaBedeutung);
+            $tableRow->addBoldText($abstimmungRow->ja);
+
+            $tableRow=new TableRow($table);
+            $tableRow->addText($abstimmungRow->neinBedeutung);
+            $tableRow->addBoldText($abstimmungRow->nein);
+
+            $tableRow=new TableRow($table);
+            $tableRow->addText('Enthaltungen');
+            $tableRow->addBoldText($abstimmungRow->enthaltung);*/
+
+
+
+            /*
+            $div = new ContentDiv($content);
+            $div->content = $abstimmungRow->jaBedeutung . ': ' . $abstimmungRow->ja;
+
+            $div = new ContentDiv($content);
+            $div->content = $abstimmungRow->neinBedeutung . ': ' . $abstimmungRow->nein;
+
+            $div = new ContentDiv($content);
+            $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;*/
+
+
+            /*
+            $row = new TableRow($table);
+            $row->addText($abstimmungRow->datum->getShortDateLeadingZeroFormat());
+            $row->addText($abstimmungRow->zeit->getTimeLeadingZero());
+
+            $hyperlink = new SiteHyperlink($row);
+            $hyperlink->site = $abstimmungRow->getSite();
+
+            $row->addText($abstimmungRow->jaBedeutung);
+            $row->addText($abstimmungRow->ja);
+            $row->addText($abstimmungRow->neinBedeutung);
+            $row->addText($abstimmungRow->nein);
+
+            $row->addText($abstimmungRow->enthaltung);*/
+
+
+        //}
+
+
 
         foreach ($this->abstimmungReader->getData() as $abstimmungRow) {
 
-            $hyperlink=new SiteHyperlink($this);
-            $hyperlink->site=$abstimmungRow->getSite();
-            $hyperlink->showSiteTitle=false;
 
-            $h3=new H3($hyperlink);
-            $h3->content=$abstimmungRow->abstimmung;  //kurzbezeichnung.' '. $geschaeftRow->geschaeft;
+            $form=new VoteForm($this);
+            $form->abstimmungId=$abstimmungRow->id;
+
+
+
+            //(new Debug())->write($abstimmungRow->id);
+
+
 
             /*$typ=new ContentDiv($this);
             $typ->content=$geschaeftRow->geschaeftstyp->geschaeftstyp;*/
 
 
             $div = new ContentDiv($this);
-            $div->content = $abstimmungRow->datum->getShortDateLeadingZeroFormat().' '. $abstimmungRow->zeit->getTimeLeadingZero();
+            $div->content = $abstimmungRow->datum->getShortDateLeadingZeroFormat().' '. $abstimmungRow->zeit->getTimeLeadingZero(). ' Uhr';
 
-            /*
+
             $div = new Div($this);
 
             $bold = new Bold($div);
-            $bold->content = $abstimmungRow->abstimmung;*/
+            $bold->content = $abstimmungRow->abstimmung;
 
 
+            /*
             $div = new ContentDiv($this);
             $div->content = $abstimmungRow->jaBedeutung . ': ' . $abstimmungRow->ja;
 
@@ -57,12 +123,31 @@ class AbstimmungContainer extends Div
 
 
             $div = new ContentDiv($this);
-            $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;
+            $div->content = 'Enthaltungen: ' . $abstimmungRow->enthaltung;*/
 
+            $hyperlink=new SiteHyperlink($this);
+            $hyperlink->site=$abstimmungRow->getSite();
+            $hyperlink->showSiteTitle=false;
+            $hyperlink->content='Namensabstimmung';
 
+            /*$h3=new H3($hyperlink);
+            $h3->content=$abstimmungRow->abstimmung;  //kurzbezeichnung.' '. $geschaeftRow->geschaeft;*/
 
-            new Hr($this);
+            $table = new AdminBootstrapTable($this);  // new Table($content);
 
+            $tableRow=new TableRow($table);
+            $tableRow->addText($abstimmungRow->jaBedeutung);
+            $tableRow->addBoldText($abstimmungRow->ja);
+
+            $tableRow=new TableRow($table);
+            $tableRow->addText($abstimmungRow->neinBedeutung);
+            $tableRow->addBoldText($abstimmungRow->nein);
+
+            $tableRow=new TableRow($table);
+            $tableRow->addText('Enthaltungen');
+            $tableRow->addBoldText($abstimmungRow->enthaltung);
+
+            //new Hr($this);
 
             /*
             $row=new BootstrapClickableTableRow($this);
@@ -101,6 +186,8 @@ class AbstimmungContainer extends Div
 
 
         }
+
+        //(new Debug())->write('---');
 
         return parent::getContent();
 

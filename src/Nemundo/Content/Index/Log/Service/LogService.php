@@ -11,7 +11,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class LogService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-log';
     }

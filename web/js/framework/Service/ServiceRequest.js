@@ -26,7 +26,7 @@ export default class ServiceRequest extends JsonRequest {
 
     sendRequest() {
 
-        this.addParameter("service",this._service);
+        this.addParameter("service", this._service);
         this.load();
 
     }

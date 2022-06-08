@@ -16,6 +16,8 @@ use Nemundo\Meteo\Isd\Site\IsdSite;
 use Nemundo\Web\Controller\AbstractWebController;
 use Parlament\Site\Abstimmung\AbstimmungSite;
 use Parlament\Site\CrawlerLogSite;
+use Parlament\Site\Fraktion\FraktionSite;
+use Parlament\Site\Geschaeft\GeschaeftSite;
 use Parlament\Site\ParlamentSite;
 use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
 use Parlament\Site\Stream\StreamSite;
@@ -30,16 +32,19 @@ class DevController extends AbstractWebController
 
         //new HomeSite($this);
 
-        /*new LoginSite($this);
+        new LoginSite($this);
         new TestSite($this);
 
         new AppSite($this);
-        new AdminSite($this);*/
+        new AdminSite($this);
 
         //new IsdSite($this);
 
 
         new ParlamentSite($this);
+        new AbstimmungSite($this);
+        new GeschaeftSite($this);
+        new FraktionSite($this);
         //new StreamSite($this);
         new RatsmitgliedSite($this);
 
@@ -50,7 +55,7 @@ class DevController extends AbstractWebController
 
         //new CrawlerLogSite($this);
 
-        //new LogoutSite($this);
+        new LogoutSite($this);
 
 
         new ServiceRequestSite($this);

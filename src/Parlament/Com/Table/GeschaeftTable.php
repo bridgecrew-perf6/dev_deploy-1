@@ -2,9 +2,12 @@
 
 namespace Parlament\Com\Table;
 
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
+use Nemundo\Admin\Com\Table\AdminTable;
 use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Com\Html\Listing\UnorderedList;
 use Nemundo\Com\TableBuilder\TableHeader;
+use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Html\Hyperlink\Hyperlink;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTable;
 use Nemundo\Package\Bootstrap\Table\BootstrapClickableTableRow;
@@ -13,7 +16,7 @@ use Parlament\Data\Geschaeft\GeschaeftReader;
 use Parlament\Filter\GeschaeftFilterTrait;
 use Parlament\Reader\GeschaeftDataReader;
 
-class GeschaeftTable extends BootstrapClickableTable
+class GeschaeftTable extends AdminTable  // BootstrapClickableTable
 {
 
     //use GeschaeftFilterTrait;
@@ -44,10 +47,8 @@ class GeschaeftTable extends BootstrapClickableTable
 
         foreach ($this->geschaeftReader->getData() as $geschaeftRow) {
 
-            $row = new BootstrapClickableTableRow($this);
-
+            $row = new TableRow($this);  // new BootstrapClickableTableRow($this);
             $row->addText($geschaeftRow->datumEinreichung->getShortDateLeadingZeroFormat());
-
             $row->addText($geschaeftRow->kurzbezeichnung);
 
             $hyperlink = new SiteHyperlink($row);
@@ -89,6 +90,5 @@ class GeschaeftTable extends BootstrapClickableTable
         return parent::getContent();
 
     }
-
 
 }

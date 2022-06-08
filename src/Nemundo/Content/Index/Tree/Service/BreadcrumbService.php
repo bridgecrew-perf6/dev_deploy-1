@@ -14,7 +14,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class BreadcrumbService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'tree-breadcrumb';
     }

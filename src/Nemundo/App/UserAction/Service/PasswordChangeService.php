@@ -10,7 +10,7 @@ use Nemundo\User\Session\UserSession;
 class PasswordChangeService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-change-password';
     }

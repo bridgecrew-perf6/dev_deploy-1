@@ -24,6 +24,10 @@ class GeschaeftDataReader extends GeschaeftPaginationReader
         $this->model->loadGeschaeftsstatus();
         $this->model->loadSession();
 
+        if ($this->geschaeftId !== null) {
+            $this->filter->andEqual($this->model->id, $this->geschaeftId);
+        }
+
         if ($this->sessionId !== null) {
             $this->filter->andEqual($this->model->sessionId, $this->sessionId);
         }
@@ -45,6 +49,7 @@ class GeschaeftDataReader extends GeschaeftPaginationReader
     public function getData()
     {
 
+        $this->loadFilter();
 
         return parent::getData();
 

@@ -5,7 +5,9 @@ namespace Parlament\Install;
 use Nemundo\App\Application\Type\Install\AbstractInstall;
 use Nemundo\App\Scheduler\Setup\SchedulerSetup;
 use Nemundo\App\Script\Setup\ScriptSetup;
+use Nemundo\App\WebService\Setup\ServiceRequestSetup;
 use Nemundo\Bfs\Gemeinde\Application\GemeindeApplication;
+use Nemundo\Hosting\Setup\ServiceSetup;
 use Nemundo\Model\Setup\ModelCollectionSetup;
 use Parlament\Application\ParlamentApplication;
 use Parlament\Data\CrawlerLog\CrawlerLog;
@@ -20,6 +22,9 @@ use Parlament\Script\GeschaeftImportScript;
 use Parlament\Script\ParlamentCleanScript;
 use Parlament\Script\ParlamentImportScript;
 use Parlament\Script\ParlamentTestScript;
+use Parlament\Service\AbstimmungService;
+use Parlament\Service\FraktionService;
+use Parlament\Service\GeschaeftService;
 
 class ParlamentInstall extends AbstractInstall
 {
@@ -42,6 +47,12 @@ class ParlamentInstall extends AbstractInstall
 
         (new SchedulerSetup(new ParlamentApplication()))
             ->addScheduler(new AbstimmungTodayScheduler());
+
+        (new ServiceRequestSetup(new ParlamentApplication()))
+            ->addService(new AbstimmungService())
+            ->addService(new GeschaeftService())
+            ->addService(new FraktionService());
+
 
         $this->addEntscheidung(1, 'Ja');
         $this->addEntscheidung(2, 'Nein');

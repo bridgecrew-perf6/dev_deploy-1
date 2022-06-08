@@ -15,7 +15,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class GemeindeService extends AbstractWordServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'gemeinde-gemeinde';
     }

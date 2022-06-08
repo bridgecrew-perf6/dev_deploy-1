@@ -10,7 +10,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class ContentCountService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-count';
     }

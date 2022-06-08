@@ -11,7 +11,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class GeoContentTypeListService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'geo-content-type-list';
     }

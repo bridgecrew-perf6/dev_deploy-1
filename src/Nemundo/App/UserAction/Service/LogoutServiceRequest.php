@@ -10,7 +10,7 @@ use Nemundo\User\Login\UserLogout;
 class LogoutServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'user-logout';
     }

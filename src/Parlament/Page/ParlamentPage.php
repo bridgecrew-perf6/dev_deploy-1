@@ -12,8 +12,9 @@ use Parlament\Com\Container\RatsmitgliedListContainer;
 use Parlament\Com\Container\SessionAbstimmungContainer;
 use Parlament\Com\Table\AbstimmungTable;
 use Parlament\Data\Geschaeft\GeschaeftPaginationReader;
+use Parlament\Template\ParlamentTemplate;
 
-class ParlamentPage extends AbstractTemplateDocument  //  AdminTemplate
+class ParlamentPage extends ParlamentTemplate  // AbstractTemplateDocument  //  AdminTemplate
 {
     public function getContent()
     {

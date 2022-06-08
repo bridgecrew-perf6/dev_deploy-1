@@ -15,7 +15,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class TreePostService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'tree-post';
     }

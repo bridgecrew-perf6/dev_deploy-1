@@ -11,7 +11,7 @@ use Nemundo\Db\Sql\Order\SortOrder;
 class DatumService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'abstimmung-datum';
     }

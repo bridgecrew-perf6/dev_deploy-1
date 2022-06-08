@@ -26,9 +26,10 @@ use Parlament\Manager\RatsmitgliedManager;
 use Parlament\Parameter\FraktionParameter;
 use Parlament\Parameter\RatParameter;
 use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
+use Parlament\Template\ParlamentTemplate;
 
 
-class RatsmitgliedPage extends AbstractTemplateDocument  // AdminTemplate
+class RatsmitgliedPage extends ParlamentTemplate  // AbstractTemplateDocument  // AdminTemplate
 {
     public function getContent()
     {

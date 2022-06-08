@@ -12,7 +12,7 @@ use Nemundo\Db\Sql\Order\SortOrder;
 class ContentGroupService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-group';
     }

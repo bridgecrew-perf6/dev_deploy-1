@@ -8,7 +8,7 @@ use Nemundo\App\WebService\Service\AbstractListServiceRequest;
 class ApplicationSearchService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName='application-application-search';
         // TODO: Implement loadServiceRequest() method.

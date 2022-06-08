@@ -12,7 +12,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class KantonService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'gemeinde-kanton';
     }

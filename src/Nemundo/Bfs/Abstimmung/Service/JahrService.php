@@ -12,7 +12,7 @@ use Nemundo\Db\Sql\Order\SortOrder;
 class JahrService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'abstimmung-jahr';
     }

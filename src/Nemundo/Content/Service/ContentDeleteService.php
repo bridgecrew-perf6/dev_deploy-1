@@ -10,7 +10,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class ContentDeleteService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-delete';
     }

@@ -4,8 +4,7 @@ namespace Parlament\Site\Fraktion;
 
 use Nemundo\Web\Site\AbstractSite;
 use Parlament\Page\Fraktion\FraktionItemPage;
-use Parlament\Page\Ratsmitglied\RatsmitgliedItemPage;
-use Parlament\Page\RatsmitgliedPage;
+
 
 class FraktionItemSite extends AbstractSite
 {
@@ -16,11 +15,11 @@ class FraktionItemSite extends AbstractSite
     protected function loadSite()
     {
 
-        //$this->title = 'Ratsmitglieder';
-        //$this->title = 'National- und Ständerat';
+        $this->title = 'Fraktion Item';
         $this->url = 'fraktion-item';
+        $this->menuActive = false;
 
-        FraktionItemSite::$site=$this;
+        FraktionItemSite::$site = $this;
 
     }
 

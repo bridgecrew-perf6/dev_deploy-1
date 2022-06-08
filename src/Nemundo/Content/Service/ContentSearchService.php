@@ -11,7 +11,7 @@ use Nemundo\Db\DbConfig;
 class ContentSearchService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-search';
     }

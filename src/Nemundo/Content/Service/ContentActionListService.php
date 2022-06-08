@@ -10,7 +10,7 @@ use Nemundo\Content\Data\ContentAction\ContentActionReader;
 class ContentActionListService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-action-list';
     }

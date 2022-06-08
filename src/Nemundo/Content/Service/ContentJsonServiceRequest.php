@@ -13,7 +13,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class ContentJsonServiceRequest extends AbstractServiceRequest  // AbstractListServiceRequest  //ServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         // content-data
         $this->serviceName = 'content-json';

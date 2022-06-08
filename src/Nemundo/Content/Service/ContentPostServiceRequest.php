@@ -14,7 +14,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class ContentPostServiceRequest extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'content-post';
     }

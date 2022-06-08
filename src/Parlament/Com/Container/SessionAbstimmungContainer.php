@@ -2,7 +2,7 @@
 
 namespace Parlament\Com\Container;
 
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Com\Html\Hyperlink\UrlHyperlink;
 use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
 use Nemundo\Com\TableBuilder\TableRow;
@@ -101,7 +101,17 @@ class SessionAbstimmungContainer extends Div
                 $abstimmungReader = new AbstimmungDataReader();
                 $abstimmungReader->filter->andEqual($abstimmungReader->model->datum, $abstimmungDatumRow->datum->getIsoDate());
                 $abstimmungReader->filter->andEqual($abstimmungReader->model->geschaeftId, $geschaeftRow->id);
+
+                $abstimmungContainer = new AbstimmungContainer($div);
+                $abstimmungContainer->abstimmungReader=$abstimmungReader;
+
+
+
+/*
                 foreach ($abstimmungReader->getData() as $abstimmungRow) {
+
+
+
 
                     $div = new ContentDiv($content);
                     $div->content = $abstimmungRow->zeit->getTimeLeadingZero(). ' Uhr';
@@ -109,6 +119,7 @@ class SessionAbstimmungContainer extends Div
                     //$div = new Div($content);
 
 
+                    /*
                     $bold = new Bold($content);
                     $bold->content = $abstimmungRow->abstimmung;
 
@@ -155,7 +166,7 @@ class SessionAbstimmungContainer extends Div
                     $row->addText($abstimmungRow->enthaltung);*/
 
 
-                }
+                //}
 
 
                 /*

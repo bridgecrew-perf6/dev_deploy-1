@@ -2,7 +2,7 @@
 
 namespace Parlament\Page\Kommission;
 
-use Nemundo\Admin\Com\Table\AdminTable;
+use Nemundo\Admin\Com\Table\AdminBootstrapTable;
 use Nemundo\Com\TableBuilder\TableRow;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Hr;

@@ -16,7 +16,7 @@ use Nemundo\Core\Type\Geo\GeoCoordinate;
 class GeoIndexListService extends AbstractServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName='geo-list';
     }

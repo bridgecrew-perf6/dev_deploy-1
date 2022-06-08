@@ -10,7 +10,7 @@ use Nemundo\Core\Http\Request\HttpRequest;
 class TreeDeleteService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'tree-delete';
     }

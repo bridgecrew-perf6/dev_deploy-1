@@ -15,7 +15,7 @@ use Nemundo\Core\Type\Number\Number;
 class ResultatService extends AbstractListServiceRequest
 {
 
-    protected function loadServiceRequest()
+    protected function loadService()
     {
         $this->serviceName = 'abstimmung-resultat';
     }

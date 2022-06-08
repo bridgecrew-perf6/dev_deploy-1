@@ -19,12 +19,12 @@ abstract class AbstractServiceRequest extends AbstractBaseClass
     private $response;
 
 
-    abstract protected function loadServiceRequest();
+    abstract protected function loadService();
 
     public function __construct()
     {
 
-        $this->loadServiceRequest();
+        $this->loadService();
         $this->response = new JsonResponse();
 
     }
