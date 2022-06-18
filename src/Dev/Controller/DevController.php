@@ -5,6 +5,9 @@ namespace Dev\Controller;
 
 use Dev\Site\HomeSite;
 use Dev\Site\TestSite;
+use Nemundo\App\Application\Site\AdminSite;
+use Nemundo\App\Application\Site\AppSite;
+use Nemundo\App\Scheduler\Site\SchedulerSite;
 use Nemundo\App\UserAction\Site\LoginSite;
 use Nemundo\App\UserAction\Site\LogoutSite;
 use Nemundo\App\WebService\Site\ServiceRequestSite;
@@ -24,15 +27,14 @@ class DevController extends AbstractWebController
         new LoginSite($this);
         new TestSite($this);
 
-        new MeteoschweizSite($this);
-        new FeedSite($this);
+        //new MeteoschweizSite($this);
+        //new FeedSite($this);
 
-        new ContentSite($this);
+        //new ContentSite($this);
+        //new SchedulerSite($this);
 
-
-        /*new AppSite($this);
-        new AdminSite($this);*/
-
+        new AppSite($this);
+        new AdminSite($this);
         //new SrfEpisodeSite($this);
 
         new LogoutSite($this);

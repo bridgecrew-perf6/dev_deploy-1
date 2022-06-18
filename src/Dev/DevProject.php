@@ -5,6 +5,7 @@ namespace Dev;
 use Dev\Deployment\DevDeployment;
 use Dev\Setup\DevSetup;
 use Dev\Web\DevWeb;
+use Nemundo\App\Composer\Library\ComposerLibrary;
 use Nemundo\Bfs\BfsProject;
 use Nemundo\Content\App\ContentAppProject;
 use Nemundo\Core\Path\Path;
@@ -38,6 +39,9 @@ class DevProject extends AbstractProject
         $this->addDependency(new BfsProject());*/
         $this->addDependency(new MeteoschweizProject());
         $this->addDependency(new ContentAppProject());
+
+        $this->addComposer(ComposerLibrary::RSS_HTTP);
+        $this->addComposer(ComposerLibrary::RSS_FEED);
 
 
     }

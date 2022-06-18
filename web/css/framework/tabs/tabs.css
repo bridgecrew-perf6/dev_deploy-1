@@ -25,6 +25,15 @@
 }
 
 
+.admin-tabs-button-active {
+
+    font-weight: bold;
+    /*font-size: 2rem;*/
+
+}
+
+
+
 .admin-tabs-button:hover {
     background-color: #777;
 }

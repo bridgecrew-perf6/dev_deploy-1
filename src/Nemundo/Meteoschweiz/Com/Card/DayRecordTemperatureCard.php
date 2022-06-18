@@ -43,6 +43,8 @@ class DayRecordTemperatureCard extends AdminCard
 
         //$messwertReader->limit = 10;
 
+        $messwertReader->addOrder($max);
+
         foreach ($messwertReader->getData() as $messwertRow) {
 
             $container = new AdminItemContainer($this);
