@@ -1,11 +1,9 @@
-import ListBox from "../../../framework/ListBox.js";
 import ContentTypeCollection from "../../Type/ContentTypeCollection.js";
+import AdminListBox from "../../../framework/Admin/Form/AdminListBox.js";
 
-export default class ContentTypeCollectionListBox extends ListBox {
-
+export default class ContentTypeCollectionListBox extends AdminListBox {
 
     onContentTypeChange = null;
-
 
     constructor(parentContainer) {
 
@@ -14,17 +12,10 @@ export default class ContentTypeCollectionListBox extends ListBox {
         this.label = "Content Type";
 
         let collection = new ContentTypeCollection();
-
-
         for (var key in collection.getContentTypeList()) {
-
             let tmp = collection.getContentTypeList()[key];
-
-            //let tmp = new tmp1();
             this.addItem(key, tmp.label);
-
         }
-
 
     }
 
@@ -36,9 +27,7 @@ export default class ContentTypeCollectionListBox extends ListBox {
         if (this.onContentTypeChange !== null) {
 
             this.onChange = function () {
-
                 local.onContentTypeChange((new ContentTypeCollection()).getContentTypeList()[local.value]);
-
             };
 
         }
@@ -46,13 +35,10 @@ export default class ContentTypeCollectionListBox extends ListBox {
     }
 
 
-
     getContentType() {
 
         return (new ContentTypeCollection()).getContentTypeList()[this.value];
 
     }
-
-
 
 }

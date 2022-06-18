@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Data\CmsStation;class CmsStationCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var CmsStationModel*/public $model;public function __construct() {parent::__construct();$this->model = new CmsStationModel();}}

@@ -3,17 +3,23 @@
 namespace Dev\Page;
 
 use Dev\Template\DevTemplate;
+use Nemundo\Admin\Com\Card\AdminCardContainer;
+use Nemundo\Admin\Com\Layout\AdminTwoColumnGridLayout;
 use Nemundo\Html\Paragraph\Paragraph;
+use Nemundo\Meteoschweiz\Com\Card\DayRecordTemperatureCard;
+use Nemundo\Meteoschweiz\Com\Card\MaxTemperatureCard;
 
 class HomePage extends DevTemplate
 {
     public function getContent()
     {
 
-        $this->pageTitle='hello world';
+        $cardContainer = new AdminTwoColumnGridLayout($this);  // new AdminCardContainer($this);
 
-        $p = new Paragraph($this);
-        $p->content = 'hello world';
+        new MaxTemperatureCard($cardContainer);
+        new DayRecordTemperatureCard($cardContainer);
+
+
 
         return parent::getContent();
 

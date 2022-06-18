@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Data\CmsStation;use Nemundo\Model\Id\AbstractModelIdValue;class CmsStationId extends AbstractModelIdValue {/*** @var CmsStationModel*/public $model;public function __construct() {parent::__construct();$this->model = new CmsStationModel();}}

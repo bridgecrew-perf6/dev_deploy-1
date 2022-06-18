@@ -13,6 +13,7 @@ use Nemundo\Package\Bootstrap\Utility\BootstrapSpacing;
 
 class AdminListBox extends AbstractListBox
 {
+    use AdminErrorMessageTrait;
 
     public function addInputDataAttribute($attribute, $value)
     {
@@ -28,22 +29,25 @@ class AdminListBox extends AbstractListBox
         $this->tagName='div';
         $this->addCssClass('admin-textbox');
 
-        if ($this->inputId !== null) {
+        /*if ($this->inputId !== null) {
             $this->select->id = $this->inputId;
-        }
+        }*/
 
         $label = new Label();
-        $label->id = 'label_'.$this->name;
-        $label->content = $this->getLabelText();
+        //$label->id = 'label_'.$this->name;
+        //$label->content = $this->getLabelText();
 
-       /* if ($this->showErrorMessage) {
+        $label->content =$this->getLabelErrorMessage();
+
+        /*
+        if ($this->showErrorMessage) {
 
             $bold = new Bold();
             $bold->addCssClass('form-control-label');
             $bold->content = $this->errorMessage;
 
             $label->content .= ' ' . $bold->getBodyContent();
-            $this->addCssClass('has-danger');
+            //$this->addCssClass('has-danger');
             $this->select->addCssClass('form-control-danger');
 
         }*/

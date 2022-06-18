@@ -40,7 +40,7 @@ export default class DocumentContainer {   // extends BaseContainer {
     }
 
 
-    set keyDown(value) {
+    set onKeyDown(value) {
 
         document.addEventListener("keydown", value);
 

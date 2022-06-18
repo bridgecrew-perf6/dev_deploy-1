@@ -1,20 +1,8 @@
-
-
-
 .admin-table {
 
     --default-table-space: 5px;
-
     border-collapse: collapse;
-
-    /*background-color: #3dd5f3;*/
-
     width: 100%;
-
-   /* max-height: 100%;*/
-
-    /*border-width: 1px;
-    border-color: black;*/
 
 }
 
@@ -26,11 +14,11 @@
     text-align: left;
 }
 
+
 .admin-table thead th a {
     color: var(--color-light2);
     text-decoration: none;
 }
-
 
 
 .admin-table td {
@@ -44,6 +32,16 @@
 
 
 .admin-table td {
+
+    /*
+    border-bottom: 1px solid;
+    border-color: var(--color-dark2);*/
+
+}
+
+
+.admin-table tr {
+    /*border-spacing: 0;*/
 
     border-bottom: 1px solid;
     border-color: var(--color-dark2);

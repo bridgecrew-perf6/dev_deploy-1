@@ -18,9 +18,9 @@ class HomeSite extends AbstractSite
     public function loadContent()
     {
 
-        (new ParlamentSite())->redirect();
+        //(new ParlamentSite())->redirect();
 
-        //(new HomePage())->render();
+        (new HomePage())->render();
 
     }
 }

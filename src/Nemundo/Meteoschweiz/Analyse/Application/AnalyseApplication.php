@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Analyse\Application;use Nemundo\App\Application\Type\AbstractApplication;class AnalyseApplication extends AbstractApplication {protected function loadApplication() {$this->application = 'Analyse';$this->applicationId = '6fdc5dae-337c-4ac5-8855-3c082185c45e';}}

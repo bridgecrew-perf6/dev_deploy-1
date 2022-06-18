@@ -1,17 +1,13 @@
-.card-container {
+.admin-card-container {
 
     display: flex;
     flex-direction: column;
     gap: var(--default-space);
 
-
 }
 
 
-
-
-
-.card {
+.admin-card {
 
     background-color: white;
     /*margin: 2em;*/
@@ -21,29 +17,26 @@
     border-color: var(--color-dark1);
     border-radius: var(--border-radius);
     overflow: hidden;
+    /*max-width: 500px;*/
 
 }
 
 
-.card-title {
+.admin-card-title {
 
     display: block;
-    /*overflow: hidden;*/
     background-color: var(--color-dark1);
     color: var(--color-light1);
-    /*font-style: italic;*/
     font-size: 1.1rem;
     padding: var(--default-space);
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
 
 }
 
 
-.card-content {
+.admin-card-content {
 
-    display: none;
     padding: var(--default-space);
 
 }

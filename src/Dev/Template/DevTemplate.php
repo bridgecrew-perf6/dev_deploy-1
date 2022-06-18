@@ -2,34 +2,20 @@
 
 namespace Dev\Template;
 
-use Nemundo\Admin\Template\AdminTemplate;
+use Nemundo\Admin\Template\NavbarAdminTemplate;
 use Nemundo\Com\JavaScript\Module\ModuleJavaScript;
+use Nemundo\Html\Block\Div;
 
 
-class DevTemplate extends AdminTemplate
+class DevTemplate extends NavbarAdminTemplate
 {
-
-
-    protected function loadContainer()
-    {
-
-        parent::loadContainer();
-
-        $module = new ModuleJavaScript();
-        $module->src = '/js/dev/mobilemenu.js';
-
-        $this->addCssUrl('/css/dev/style.css');
-
-    }
-
 
     public function getContent()
     {
 
+
         $this->pageTitle = 'Dev';
-
         return parent::getContent();
-
 
     }
 

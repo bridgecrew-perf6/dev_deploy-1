@@ -3,6 +3,7 @@
 namespace Dev\Script;
 
 use Nemundo\App\Script\Type\AbstractConsoleScript;
+use Nemundo\Meteoschweiz\Application\MeteoschweizApplication;
 
 
 class TestScript extends AbstractConsoleScript
@@ -16,6 +17,9 @@ class TestScript extends AbstractConsoleScript
 
     public function run()
     {
+
+
+        (new MeteoschweizApplication())->reinstallApp();
 
 
     }

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Widget\Content\MaxTemperatureToday;use Nemundo\Content\Form\AbstractContentForm;class MaxTemperatureTodayContentForm extends AbstractContentForm {/*** @var MaxTemperatureTodayContentType*/public $contentType;public function getContent() {return parent::getContent();}public function onSubmit() {$this->contentType->saveType();}}

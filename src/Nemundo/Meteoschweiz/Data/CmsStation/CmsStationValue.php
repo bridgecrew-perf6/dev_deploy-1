@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Data\CmsStation;class CmsStationValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var CmsStationModel*/public $model;public function __construct() {parent::__construct();$this->model = new CmsStationModel();}}

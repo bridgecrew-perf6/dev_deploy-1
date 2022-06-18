@@ -1,6 +1,7 @@
 import BootstrapDataTable from "../../../framework/Bootstrap/Table/BootstrapDataTable.js";
+import AdminDataTable from "../../../framework/Admin/Table/AdminDataTable.js";
 
-export default class ContentTable extends BootstrapDataTable {
+export default class ContentTable extends AdminDataTable {
 
     showContentType = true;
 

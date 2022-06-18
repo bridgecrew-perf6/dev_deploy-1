@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Bfs\Abstimmung\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class DatumParameter extends AbstractUrlParameter {protected function loadParameter() {$this->parameterName = 'datum';}}

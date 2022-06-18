@@ -1,3 +1,5 @@
+import BaseContainer from "./Base.js";
+
 export default class BaseContainerList {
 
     _htmlElementList = null;
@@ -7,6 +9,22 @@ export default class BaseContainerList {
         this._htmlElementList = document.getElementsByClassName(className);
 
     }
+
+
+    getItem(number) {
+
+        let base = new BaseContainer();
+        base._htmlElement=this._htmlElementList[number];
+        return base;
+
+    }
+
+    getItemCount() {
+
+        return this._htmlElementList.length;
+
+    }
+
 
 
     set onClick(event) {

@@ -20,9 +20,6 @@ class TestSite extends AbstractSite
     public function loadContent()
     {
 
-
-
-
         (new TestPage())->render();
 
     }

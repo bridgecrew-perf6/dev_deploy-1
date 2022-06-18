@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Bfs\Abstimmung\Content\_AbstimmungResultat;use Nemundo\Content\View\AbstractContentView;class AbstimmungResultatContentView extends AbstractContentView {/*** @var AbstimmungResultatContentType*/public $contentType;public function getContent() {return parent::getContent();}}

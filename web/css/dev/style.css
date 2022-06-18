@@ -1,6 +1,5 @@
 @import "../framework/framework.css";
 
-
 :root {
 
     --color-light1: #ffffff;
@@ -13,7 +12,7 @@
     --color-dark1: #f1b963;
     --color-dark2: #e46161;*/
 
-    --box-shadow: 2px 2px 4px #000000;
+    --box-shadow: 3px 6px 4px -6px #000000;
     --border-radius: 5px;
 
 }

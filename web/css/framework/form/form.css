@@ -1,6 +1,36 @@
-@import "input.css";
 /*@import "select.css";*/
 @import "textbox.css";
+@import "input.css";
+
+
+
+.admin-form {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-space);
+
+    background-color: lightgrey;  /* var(--color-light1);*/
+    padding: var(--default-space);
+
+    border-style: solid;
+    border-color: var(--color-dark2);
+    border-width: 1px;
+    border-radius: var(--border-radius);
+
+
+
+}
+
+
+
+.admin-form-error {
+
+    font-weight: bold;
+    color: var(--error-color);
+
+}
+
 
 
 
@@ -16,22 +46,11 @@
 
 
 
-input[type=file] {
 
-    /*display: none;*/
 
-    width: 100%;
-    padding: 12px 20px;
-    /*margin: 8px 0;*/
-    /*display: inline-block;
-    /*border: 1px solid #ccc;*/
-    border-radius: 4px;
-    box-sizing: border-box;
 
-    font-size: large;
-    background-color: whitesmoke;
 
-}
+
 
 
 

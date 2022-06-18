@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Content\App\File\Action;use Nemundo\Content\Action\AbstractAction;class DownloadFileAction extends AbstractAction{    protected function loadAction()    {        $this->actionLabel = 'Download File';        $this->actionId = 'f0d9e2fc-c696-4000-9b41-f7b10cd43e08';    }    /*public function onAction()    {    }*/}

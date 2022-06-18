@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Path;use Nemundo\Project\Path\TmpPath;class MeteoschweizTmpPath extends TmpPath{    protected function loadPath()    {        parent::loadPath();        $this->addPath('meteoschweiz');    }}

@@ -30,6 +30,7 @@ export default class BaseContainer {
 
     fromId(id) {
         this._htmlElement = document.getElementById(id);
+        return this;
     }
 
 

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Content\WindChart;use Nemundo\Content\View\AbstractContentView;class WindChartContentView extends AbstractContentView {/*** @var WindChartContentType*/public $contentType;public function getContent() {return parent::getContent();}}

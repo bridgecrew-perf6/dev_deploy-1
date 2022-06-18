@@ -1,15 +1,22 @@
 @import "global.css";
-@import "form/form.css";
-@import "image.css";
+@import "image/image.css";
 @import "reset.css";
 @import "layout/layout.css";
 @import "typography.css";
-@import "navigation/mobilemenu.css";
+@import "navbar/navbar.css";
+@import "form/form.css";
 @import "form/button.css";
-/*@import "form/form.css";*/
 @import "table/table.css";
 @import "card/card.css";
 @import "dialog/dialog.css";
+@import "pagination/pagination.css";
+@import "icon/icon.css";
+@import "carousel/carousel.css";
+@import "tabs/tabs.css";
+@import "loader/loader.css";
+@import "video/video.css";
+@import "listgroup/listgroup.css";
+@import "item/item.css";
 
 
 * {

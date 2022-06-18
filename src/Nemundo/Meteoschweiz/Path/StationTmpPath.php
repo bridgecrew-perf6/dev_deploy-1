@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Meteoschweiz\Path;use Nemundo\Project\Path\TmpPath;class StationTmpPath extends TmpPath{    public function __construct()    {        parent::__construct();        $this->addPath('meteoschweiz');        $this->addPath('station.csv');    }}

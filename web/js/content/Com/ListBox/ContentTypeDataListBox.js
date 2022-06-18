@@ -1,7 +1,6 @@
-import DataListBox from "../../../framework/Data/DataListBox.js";
-import BootstrapDataListBox from "../../../framework/Bootstrap/Data/BootstrapDataListBox.js";
+import AdminDataListBox from "../../../framework/Admin/Form/AdminDataListBox.js";
 
-export default class ContentTypeDataListBox extends BootstrapDataListBox {
+export default class ContentTypeDataListBox extends AdminDataListBox {
 
     constructor(parentContainer) {
 
@@ -21,7 +20,7 @@ export default class ContentTypeDataListBox extends BootstrapDataListBox {
 
 
     set applicationId(value) {
-        this.addParameter("application",value);
+        this.addParameter("application", value);
     }
 
 

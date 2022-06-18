@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Bfs\Abstimmung\Site;use Nemundo\Web\Site\AbstractSite;use Nemundo\Bfs\Abstimmung\Page\TestPage;class TestSite extends AbstractSite {protected function loadSite() {$this->title = 'Test';$this->url = 'test';}public function loadContent() {(new TestPage())->render();}}

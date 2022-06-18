@@ -1,0 +1,1 @@
+mit subject/description (für geo index)view (mit map/ohne map/static map)

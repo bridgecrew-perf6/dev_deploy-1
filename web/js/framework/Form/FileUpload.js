@@ -33,4 +33,15 @@ export default class FileUpload extends DivContainer {
         this._input.accept = value;
     }
 
+
+    set value(value) {
+        this._input.value = value;
+    }
+
+    get value() {
+        return this._input.value;
+    }
+
+
+
 }

@@ -1,0 +1,40 @@
+.admin-pagination {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+.admin-pagination-link {
+
+    padding: var(--default-space);
+    color: var(--color-light2);
+    background-color: var(--color-dark2);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+
+}
+
+
+.admin-pagination-link:hover {
+
+    /*padding: 20px;*/
+    color: var(--color-dark2);
+    background-color: var(--color-light2);
+
+}
+
+
+
+.admin-pagination-active {
+
+    font-weight: bold;
+    padding: var(--default-space);
+    text-decoration: none;
+    color: var(--color-dark2);
+    background-color: var(--color-light2);
+    border-radius: var(--border-radius);
+
+}
