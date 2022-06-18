@@ -59,7 +59,7 @@ class DevSetup extends AbstractSetup
         (new TextApplication())->installApp();
         (new VideoApplication())->installApp();*/
 
-
+        (new FileLogApplication())->installApp();
         (new MeteoschweizApplication())->installApp();
         (new FeedApplication())->installApp();
 

@@ -9,7 +9,7 @@ use Nemundo\Html\Block\Div;
 use Nemundo\Html\Container\AbstractContainer;
 use Nemundo\Package\FontAwesome\FontAwesomePackage;
 
-class PlainAdminTemplate extends AbstractResponsiveHtmlDocument
+class AdminTemplate extends AbstractResponsiveHtmlDocument
 {
 
     /**
@@ -28,18 +28,12 @@ class PlainAdminTemplate extends AbstractResponsiveHtmlDocument
 
         parent::loadContainer();
 
-        //$this->addCssUrl('/css/framework/framework.css');
         $this->addCssUrl(AdminConfig::$defaultStylesheet);
         $this->addPackage(new FontAwesomePackage());
-
-        /*$nav = new AdminNavbar();
-        $nav->logoText = 'Dev';
-        $nav->site = AdminConfig::$webController;*/
 
         $this->content = new Div();
         $this->content->id = 'main-content';
 
-        //parent::addContainer($nav);
         parent::addContainer($this->content);
 
     }

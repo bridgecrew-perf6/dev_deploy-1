@@ -4,7 +4,7 @@ namespace Nemundo\Content\App\Store\Site;
 
 use Nemundo\Admin\AdminConfig;
 use Nemundo\Admin\Template\NavbarAdminTemplate;
-use Nemundo\Admin\Template\PlainAdminTemplate;
+use Nemundo\Admin\Template\AdminTemplate;
 use Nemundo\Com\Template\ResponsiveHtmlDocument;
 use Nemundo\Content\App\Store\Form\HtmlStoreForm;
 use Nemundo\Content\App\Store\Parameter\StoreParameter;
@@ -40,7 +40,7 @@ class HtmlStoreEditSite extends AbstractEditIconSite
         $store = new LargeTextStoreType();
         $store->storeId = (new StoreParameter())->getValue();
 
-        $page = new PlainAdminTemplate();
+        $page = new AdminTemplate();
         /*$page = new ResponsiveHtmlDocument();
         $page->addCssUrl(AdminConfig::$defaultStylesheet);*/
         $page->pageTitle = 'Edit';

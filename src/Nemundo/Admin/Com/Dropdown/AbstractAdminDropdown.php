@@ -34,7 +34,7 @@ class AbstractAdminDropdown extends AbstractContainer
         $this->addJsUrl('/js/framework/Admin/Dropdown/dropdown.js');
 
         //admin-dropdown-show
-        $dropdownId = 'dropone-' . (new UniqueComName())->getUniqueName();
+       /* $dropdownId = 'dropone-' . (new UniqueComName())->getUniqueName();
 
         $this->button = new AdminButton();
         $this->button->label = 'Click';
@@ -44,7 +44,7 @@ class AbstractAdminDropdown extends AbstractContainer
 
         $this->content = new Div();
         $this->content->id = $dropdownId;
-        $this->content->addCssClass('admin-dropdown-content');
+        $this->content->addCssClass('admin-dropdown-content');*/
         parent::addContainer($this->content);
 
     }

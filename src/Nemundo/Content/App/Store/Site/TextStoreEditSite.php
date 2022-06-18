@@ -3,7 +3,7 @@
 namespace Nemundo\Content\App\Store\Site;
 
 use Nemundo\Admin\Template\NavbarAdminTemplate;
-use Nemundo\Admin\Template\PlainAdminTemplate;
+use Nemundo\Admin\Template\AdminTemplate;
 use Nemundo\Content\App\Store\Form\TextStoreForm;
 use Nemundo\Content\App\Store\Parameter\StoreParameter;
 use Nemundo\Content\App\Store\Type\TextStoreType;
@@ -34,7 +34,7 @@ class TextStoreEditSite extends AbstractEditIconSite
         $store = new TextStoreType();
         $store->storeId = (new StoreParameter())->getValue();
 
-        $page = new PlainAdminTemplate();  // new AdminTemplate();  // new BootstrapDocument();
+        $page = new AdminTemplate();  // new AdminTemplate();  // new BootstrapDocument();
         $page->pageTitle = 'Edit';
 
         $form = new TextStoreForm($page);

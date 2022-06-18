@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd43c8d8aca52b6738625a927ba70a553
+class ComposerStaticInite46d5bf597ec561bea2fb16ad4dda9eb
 {
     public static $files = array (
         'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
@@ -74,9 +74,9 @@ class ComposerStaticInitd43c8d8aca52b6738625a927ba70a553
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd43c8d8aca52b6738625a927ba70a553::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd43c8d8aca52b6738625a927ba70a553::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd43c8d8aca52b6738625a927ba70a553::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite46d5bf597ec561bea2fb16ad4dda9eb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite46d5bf597ec561bea2fb16ad4dda9eb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite46d5bf597ec561bea2fb16ad4dda9eb::$classMap;
 
         }, null, ClassLoader::class);
     }
