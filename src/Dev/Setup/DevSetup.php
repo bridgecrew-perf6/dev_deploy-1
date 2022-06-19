@@ -10,6 +10,7 @@ use Nemundo\App\Script\Reset\ScriptReset;
 use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\App\WebService\Reset\WebServiceReset;
 use Nemundo\Bfs\Abstimmung\Application\AbstimmungApplication;
+use Nemundo\Content\App\Bookmark\Application\BookmarkApplication;
 use Nemundo\Content\App\Feed\Application\FeedApplication;
 use Nemundo\Content\App\Feed\Setup\FeedSetup;
 use Nemundo\Content\App\File\Application\FileApplication;
@@ -34,8 +35,7 @@ use Nemundo\Srf\Scheduler\SrfCrawlerScheduler;
 use Nemundo\Srf\Setup\SrfCrawlerSetup;
 use Parlament\Application\ParlamentApplication;
 use Parlament\Scheduler\AbstimmungTodayScheduler;
-use Weihnachtszeit\App\Ausstellung\Application\AusstellungApplication;
-use Weihnachtszeit\App\Bookmark\Application\BookmarkApplication;
+
 
 class DevSetup extends AbstractSetup
 {

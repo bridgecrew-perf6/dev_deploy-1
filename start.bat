@@ -1,3 +1,3 @@
-start http://localhost:44925
+start http://localhost:43659
 cd web
-php -S localhost:44925
+php -S localhost:43659
