@@ -12,7 +12,7 @@ body {
 #main-content {
 
       margin:  var(--default-space);
-      padding: var(--default-space);
+      /*padding: var(--default-space);*/
       /*background-color: var(--color-light2);*/
 
 }

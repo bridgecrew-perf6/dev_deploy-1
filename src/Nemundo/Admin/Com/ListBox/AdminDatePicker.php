@@ -4,17 +4,21 @@ namespace Nemundo\Admin\Com\ListBox;
 
 use Nemundo\Com\FormBuilder\Item\AbstractDatePicker;
 use Nemundo\Html\Form\Formatting\Label;
+use Nemundo\Html\Form\Input\InputType;
 use Nemundo\Html\Formatting\Bold;
 
-class AdminDatePicker extends AbstractDatePicker
+class AdminDatePicker extends AdminTextBox  // AbstractDatePicker
 {
 
-    use AdminErrorMessageTrait;
+    //use AdminErrorMessageTrait;
 
 
     public function getContent()
     {
 
+        $this->inputType = InputType::DATE;
+
+        /*
         $this->prepareHtml();
 
         $this->addCssClass('admin-textbox');
@@ -34,8 +38,8 @@ class AdminDatePicker extends AbstractDatePicker
 
         }*/
 
-        $this->addContainer($label);
-        $this->addContainer($this->textInput);
+     /*   $this->addContainer($label);
+        $this->addContainer($this->textInput);*/
 
         return parent::getContent();
 

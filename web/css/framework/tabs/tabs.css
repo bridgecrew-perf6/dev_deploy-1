@@ -12,31 +12,45 @@
 
 .admin-tabs-button {
 
-    background-color: var(--color-dark2);
     color: var(--color-light2);
     border: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: var(--default-space);  /* 14px 16px;*/
     /*font-size: 17px;*/
-
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    text-decoration: none;
+
+}
+
+
+.admin-tabs-button:hover {
+    background-color: var(--color-dark2);
+}
+
+
+.admin-tabs-button-inactive {
+
+    background-color: var(--color-light2);
+    font-weight: bold;
+
+    /*font-size: 2rem;*/
 
 }
 
 
 .admin-tabs-button-active {
 
+    background-color: var(--color-dark2);
     font-weight: bold;
+
     /*font-size: 2rem;*/
 
 }
 
 
 
-.admin-tabs-button:hover {
-    background-color: #777;
-}
+
 
 
 .admin-tabs-container {

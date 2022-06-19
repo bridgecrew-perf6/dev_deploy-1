@@ -12,6 +12,8 @@ use Nemundo\Core\Path\Path;
 use Nemundo\FrameworkProject;
 use Nemundo\Meteoschweiz\MeteoschweizProject;
 use Nemundo\Project\AbstractProject;
+use Nemundo\Roundshot\RoundshotProject;
+use Nemundo\Srf\SrfProject;
 use Parlament\ParlamentProject;
 
 class DevProject extends AbstractProject
@@ -38,6 +40,8 @@ class DevProject extends AbstractProject
         /*$this->addDependency(new ParlamentProject());
         $this->addDependency(new BfsProject());*/
         $this->addDependency(new MeteoschweizProject());
+        $this->addDependency(new SrfProject());
+        $this->addDependency(new RoundshotProject());
         $this->addDependency(new ContentAppProject());
 
         $this->addComposer(ComposerLibrary::RSS_HTTP);

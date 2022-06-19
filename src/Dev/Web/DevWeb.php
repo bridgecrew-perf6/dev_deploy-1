@@ -20,8 +20,12 @@ class DevWeb extends AbstractWeb
         ResponseConfig::$imageUrl = null;
 
         //AdminConfig::$logoUrl = '/img/nemundo.svg';
-        AdminConfig::$logoText='Nemundo';
+        //AdminConfig::$logoUrl = '/img/aufrecht.svg';
+        AdminConfig::$logoText = 'Nemundo';
+
+
         //AdminConfig::$defaultStylesheet=null;
+        AdminConfig::$defaultStylesheet = '/css/dev/style.css';
 
         AdminConfig::$defaultTemplateClassName = DevTemplate::class;
         AdminConfig::$webController = new DevController();

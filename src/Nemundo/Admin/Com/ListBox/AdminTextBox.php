@@ -16,27 +16,11 @@ class AdminTextBox extends AbstractTextBox
 
         $this->prepareHtml();
 
-        //$this->select->addCssClass('nemundo-select');
         $this->addCssClass('admin-textbox');
 
         $label = new Label();
         $label->id = 'label_'.$this->name;
-        //$label->content = $this->getLabelText();
-
         $label->content =$this->getLabelErrorMessage();
-
-        /*if ($this->showErrorMessage) {
-
-            $bold = new Bold();
-            $bold->addCssClass('admin-form-error');
-            $bold->content = $this->errorMessage;
-
-            $label->content .= ' ' . $bold->getBodyContent();
-            //$this->addCssClass('has-danger');
-            //$this->textInput->addCssClass('form-control-danger');
-
-        }*/
-
 
         $this->addContainer($label);
         $this->addContainer($this->textInput);

@@ -16,6 +16,7 @@ use Nemundo\Content\App\File\Application\FileApplication;
 use Nemundo\Content\App\Store\Application\StoreApplication;
 use Nemundo\Content\App\Text\Application\TextApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
+use Nemundo\Content\Index\Search\Application\SearchApplication;
 use Nemundo\Content\Reset\ContentReset;
 use Nemundo\Core\Type\Text\Text;
 use Nemundo\Dev\Script\AdminBuilderScript;
@@ -26,6 +27,7 @@ use Nemundo\Model\Script\ModelCleanScript;
 use Nemundo\Project\Install\ProjectInstall;
 use Nemundo\Project\Reset\ProjectReset;
 use Nemundo\Project\Setup\AbstractSetup;
+use Nemundo\Roundshot\Application\RoundshotApplication;
 use Nemundo\Srf\App\Livestream\Application\SrfLivestreamApplication;
 use Nemundo\Srf\Application\SrfApplication;
 use Nemundo\Srf\Scheduler\SrfCrawlerScheduler;
@@ -62,6 +64,12 @@ class DevSetup extends AbstractSetup
         (new FileLogApplication())->installApp();
         (new MeteoschweizApplication())->installApp();
         (new FeedApplication())->installApp();
+        (new FileApplication())->installApp();
+        (new TextApplication())->installApp();
+        (new SrfLivestreamApplication())->installApp();
+        (new SrfApplication())->installApp();
+        (new RoundshotApplication())->installApp();
+        (new SearchApplication())->installApp();
 
         (new FeedSetup())
             ->addFeed('https://de.rt.com/feeds/news/')

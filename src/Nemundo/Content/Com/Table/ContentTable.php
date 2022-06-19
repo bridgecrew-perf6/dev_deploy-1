@@ -36,7 +36,7 @@ class ContentTable extends AdminTable
         $header->addText('Content Type');
         $header->addText('Content Type Id');
         $header->addText('Subject (Data)');
-        $header->addText('Class');
+        //$header->addText('Class');
         $header->addText('Subject (Type)');
         //$header->addText('Date/Time');
         //$header->addText('User');
@@ -57,7 +57,7 @@ class ContentTable extends AdminTable
             $row->addText($contentRow->subject);
 
             if ($contentType !== null) {
-                $row->addText($contentType->getClassName());
+                //$row->addText($contentType->getClassName());
                 $row->addText($contentType->getSubject());
             }
 

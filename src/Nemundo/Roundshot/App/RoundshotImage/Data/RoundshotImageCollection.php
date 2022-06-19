@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Roundshot\App\RoundshotImage\Data;use Nemundo\Model\Collection\AbstractModelCollection;class RoundshotImageCollection extends AbstractModelCollection {protected function loadCollection() {}}

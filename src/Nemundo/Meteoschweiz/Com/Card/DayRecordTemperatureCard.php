@@ -41,9 +41,9 @@ class DayRecordTemperatureCard extends AdminCard
         //$max= new MinField($messwertReader);
         $max->aggregateField= $messwertReader->model->temperature;
 
-        //$messwertReader->limit = 10;
+        $messwertReader->addOrder($max,SortOrder::DESCENDING);
 
-        $messwertReader->addOrder($max);
+        $messwertReader->limit = 5;
 
         foreach ($messwertReader->getData() as $messwertRow) {
 

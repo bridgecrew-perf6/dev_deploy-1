@@ -1,8 +1,7 @@
 .admin-pagination {
 
     display: flex;
-
-    gap: 30px;
+    gap: var(--default-space);
 
 }
 
@@ -38,3 +37,31 @@
     border-radius: var(--border-radius);
 
 }
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    .admin-pagination-item {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .admin-pagination-item {
+        display: inline;
+    }
+
+}
+
+
+
+
+
+

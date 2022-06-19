@@ -1,1 +1,1 @@
-<?phpnamespace Nemundo\Html\Form\Input;class InputType{    const TEXT = 'text';    const PASSWORD = 'password';    const COLOR = 'color';    const NUMBER = 'number';    const EMAIL = 'email';}
+<?phpnamespace Nemundo\Html\Form\Input;class InputType{    const TEXT = 'text';    const PASSWORD = 'password';    const COLOR = 'color';    const NUMBER = 'number';    const EMAIL = 'email';    const DATE='date';    const DATE_TIME='datetime-local';}

@@ -2,10 +2,8 @@
 
 namespace Nemundo\Admin\Com\Tabs;
 
-use Nemundo\Admin\Com\Button\AdminSiteButton;
-use Nemundo\Core\Debug\Debug;
+use Nemundo\Com\Html\Hyperlink\SiteHyperlink;
 use Nemundo\Html\Block\Div;
-use Nemundo\Package\Bootstrap\Tabs\BootstrapSiteTabsDropdown;
 use Nemundo\Web\Parameter\AbstractUrlParameter;
 use Nemundo\Web\Site\AbstractSite;
 
@@ -74,9 +72,9 @@ class AdminSiteTabs extends Div
     public function addSite(AbstractSite $site)
     {
 
-        $btn=new AdminSiteButton($this);
-
-        $btn->site=$site;
+        $btn = new SiteHyperlink($this);  // new SiteButton($this);   new AdminSiteButton($this);
+        $btn->addCssClass('admin-tabs-button');
+        $btn->site = $site;
 
         if ($site->isCurrentSite()) {
             $btn->addCssClass('admin-tabs-button-active');

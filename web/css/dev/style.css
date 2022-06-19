@@ -1,18 +1,10 @@
 @import "../framework/framework.css";
-
 :root {
+--color-light1: #d3d3d3;
+--color-light2: #d3d3d3;
+--color-dark1: #c21622;
+--color-dark2: #9d4d52;
 
-    --color-light1: #ffffff;
-    --color-light2: #e3f6f5;
-    --color-dark1: #272343;
-    --color-dark2: #bae8e8;
-
-    /*--color-light1: #cbf078;
-    --color-light1: #f8f398;
-    --color-dark1: #f1b963;
-    --color-dark2: #e46161;*/
-
-    --box-shadow: 3px 6px 4px -6px #000000;
-    --border-radius: 5px;
-
+--box-shadow: 3px 6px 4px -6px #000000;
+--border-radius: 30px;
 }

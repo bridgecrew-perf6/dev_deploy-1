@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Roundshot\Reader;use Nemundo\Core\Base\AbstractBase;use Nemundo\Core\Type\DateTime\DateTime;class ImageItem extends AbstractBase{    /**     * @var DateTime     */    public $dateTime;    public $imageUrl;}

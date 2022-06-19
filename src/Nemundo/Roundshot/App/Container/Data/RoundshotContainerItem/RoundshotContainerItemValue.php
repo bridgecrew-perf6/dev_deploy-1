@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Roundshot\App\Container\Data\RoundshotContainerItem;class RoundshotContainerItemValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var RoundshotContainerItemModel*/public $model;public function __construct() {parent::__construct();$this->model = new RoundshotContainerItemModel();}}

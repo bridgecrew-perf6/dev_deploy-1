@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Srf\Import;use Nemundo\Core\Base\AbstractBase;abstract class _AbstractImport extends AbstractBase{    abstract public function importData();}

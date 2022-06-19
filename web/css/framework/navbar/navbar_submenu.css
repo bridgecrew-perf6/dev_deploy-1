@@ -2,11 +2,7 @@
 .admin-navbar-dropdown-link:after {
 
     font-family: "Font Awesome\ 5 Pro";
-    content: "\f063";  /* "\f1ea";*/
-
-
-
- /*   content: "\f007";*/
+    content: "\f063";
 
 }
 
@@ -24,6 +20,7 @@
 .admin-navbar-submenu-content {
 
     display: none;
+    overflow: hidden;
     background-color: var(--color-light2);
     border-style: solid;
     border-width: 1px;
@@ -58,17 +55,13 @@
 
 @media screen and (max-width: 1000px) {
 
-
     .admin-navbar-link {
         display: block;
     }
 
-
     .admin-navbar-submenu-content {
-
         position: relative;
         background-color: white;
-
     }
 
 }
@@ -78,9 +71,7 @@
 @media screen and (min-width: 1000px) {
 
     .admin-navbar-submenu-content {
-
         position: absolute;
-
     }
 
 
