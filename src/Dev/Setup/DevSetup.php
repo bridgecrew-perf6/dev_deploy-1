@@ -35,6 +35,7 @@ use Nemundo\Srf\Setup\SrfCrawlerSetup;
 use Parlament\Application\ParlamentApplication;
 use Parlament\Scheduler\AbstimmungTodayScheduler;
 use Weihnachtszeit\App\Ausstellung\Application\AusstellungApplication;
+use Weihnachtszeit\App\Bookmark\Application\BookmarkApplication;
 
 class DevSetup extends AbstractSetup
 {
@@ -66,6 +67,7 @@ class DevSetup extends AbstractSetup
         (new FeedApplication())->installApp();
         (new FileApplication())->installApp();
         (new TextApplication())->installApp();
+        (new BookmarkApplication())->installApp();
         (new SrfLivestreamApplication())->installApp();
         (new SrfApplication())->installApp();
         (new RoundshotApplication())->installApp();
