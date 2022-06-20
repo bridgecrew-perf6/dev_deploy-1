@@ -4,9 +4,8 @@ namespace Nemundo\Admin\Com\ListBox;
 
 
 use Nemundo\Com\FormBuilder\Item\AbstractCheckBox;
-use Nemundo\Html\Formatting\Bold;
 use Nemundo\Html\Form\Formatting\Label;
-use Nemundo\Package\Bootstrap\Utility\BootstrapSpacing;
+use Nemundo\Html\Formatting\Bold;
 
 class AdminCheckBox extends AbstractCheckBox
 {
@@ -19,15 +18,11 @@ class AdminCheckBox extends AbstractCheckBox
         $this->tagName = 'div';
         $this->addCssClass('admin-textbox');
 
-        /*$this->addCssClass(BootstrapSpacing::MARIGN_BOTTOM_3);
-        $this->addCssClass('col');
-
-        $this->checkbox->addCssClass('form-check-input');*/
-
         $label = new Label($this);
         $label->content = $this->checkbox->getContent()->bodyContent . ' ' . $this->getLabelText();
-        /*$label->addCssClass('form-check-label');
-        $label->addCssClass('text-nowrap');*/
+
+        $this->checkbox->addCssClass('admin-checkbox');
+
 
         if ($this->showErrorMessage) {
 

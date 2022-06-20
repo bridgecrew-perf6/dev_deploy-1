@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Content\Type;use Nemundo\Content\Builder\IndexBuilder;use Nemundo\Core\Base\AbstractBase;abstract class AbstractContentDelete extends AbstractBase{    abstract public function deleteContent($dataId);    protected function deleteIndex(AbstractContentType $contentType) {        (new IndexBuilder())->deleteIndex($contentType);    }}

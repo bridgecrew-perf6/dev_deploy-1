@@ -14,6 +14,7 @@ use Nemundo\Content\App\Bookmark\Application\BookmarkApplication;
 use Nemundo\Content\App\Feed\Application\FeedApplication;
 use Nemundo\Content\App\Feed\Setup\FeedSetup;
 use Nemundo\Content\App\File\Application\FileApplication;
+use Nemundo\Content\App\Job\Setup\JobSetup;
 use Nemundo\Content\App\Store\Application\StoreApplication;
 use Nemundo\Content\App\Text\Application\TextApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
@@ -73,10 +74,15 @@ class DevSetup extends AbstractSetup
         (new RoundshotApplication())->installApp();
         (new SearchApplication())->installApp();
 
-        (new FeedSetup())
+
+
+
+
+
+        /*(new FeedSetup())
             ->addFeed('https://de.rt.com/feeds/news/')
             ->addFeed('https://tkp.at/feed/')
-            ->addFeed('https://www.epochtimes.de/rss');
+            ->addFeed('https://www.epochtimes.de/rss');*/
 
 
 

@@ -1,11 +1,12 @@
 .admin-button {
+
     color: var(--color-light1);
     background-color: var(--color-dark1);
-    width: 100px;
+/*    width: 100px;*/
     border-radius: var(--border-radius);
     transition-duration: 0.3s;
     border: none;
-    padding: 10px;
+    padding: var(--default-space);  /* 10px;*/
     text-decoration: none;
 
     display: block;

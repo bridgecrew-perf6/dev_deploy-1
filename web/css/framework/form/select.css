@@ -1,22 +1,20 @@
-select {
+.admin-select {
 
-    width: 100%;
-    /*padding: 12px 20px;
-    margin: 8px 0;*/
+    /*width: 100%;*/
+    padding: var(--default-space);
+    /*margin: 8px 0;*/
     /*display: inline-block;*/
     display: block;
     border: 1px solid #ccc;
-    border-radius:0;/* 4px;*/
+    border-radius: var(--default-space);
     box-sizing: border-box;
-
     font-size: 1.5rem;
-
     background-color: var(--color-light1);
 
 }
 
 
-select:focus {
+.admin-select:focus {
 
     /*background-color: #3dd5f3;*/
     box-shadow: var(--box-shadow);

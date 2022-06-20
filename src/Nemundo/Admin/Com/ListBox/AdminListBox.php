@@ -52,6 +52,8 @@ class AdminListBox extends AbstractListBox
 
         }*/
 
+        $this->select->addCssClass('admin-select');
+
         $this->addContainer($label);
         $this->addContainer($this->select);
 

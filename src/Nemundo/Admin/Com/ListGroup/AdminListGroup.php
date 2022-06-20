@@ -2,7 +2,9 @@
 
 namespace Nemundo\Admin\Com\ListGroup;
 
+use Nemundo\Com\Html\Hyperlink\UrlHyperlink;
 use Nemundo\Html\Block\Div;
+use Nemundo\Html\Listing\Li;
 use Nemundo\Web\Site\AbstractSite;
 
 class AdminListGroup extends Div
@@ -24,6 +26,21 @@ class AdminListGroup extends Div
 
         return $this;
 
+    }
+
+
+    public function addHyperlink($label, $url = '#')
+    {
+
+        /*$li = new Li($this);
+        $li->addCssClass('list-group-item');*/
+
+        $hyperlink = new UrlHyperlink($this);
+        $hyperlink->addCssClass('admin-listgroup-item');
+        $hyperlink->content = $label;
+        $hyperlink->url = $url;
+
+        return $this;
     }
 
 }

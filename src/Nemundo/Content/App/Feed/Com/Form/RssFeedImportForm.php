@@ -34,7 +34,7 @@ class RssFeedImportForm extends AbstractAdminForm
         $text = new Text($this->feedUrl->value);
         foreach ($text->split("\r\n") as $line) {
 
-            (new Debug())->write('rss: '.$line);
+            //(new Debug())->write('rss: '.$line);
 
             $builder=new FeedContentBuilder();
             $builder->rssUrl=$line;
@@ -42,7 +42,7 @@ class RssFeedImportForm extends AbstractAdminForm
 
         }
 
-        exit;
+        //exit;
 
     }
 

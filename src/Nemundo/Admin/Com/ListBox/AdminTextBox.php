@@ -22,6 +22,8 @@ class AdminTextBox extends AbstractTextBox
         $label->id = 'label_'.$this->name;
         $label->content =$this->getLabelErrorMessage();
 
+        $this->textInput->addCssClass('admin-input');
+
         $this->addContainer($label);
         $this->addContainer($this->textInput);
 
