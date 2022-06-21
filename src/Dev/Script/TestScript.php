@@ -3,7 +3,9 @@
 namespace Dev\Script;
 
 use Nemundo\App\Script\Type\AbstractConsoleScript;
+use Nemundo\Content\App\WebRadio\Application\WebRadioApplication;
 use Nemundo\Meteoschweiz\Application\MeteoschweizApplication;
+use Parlament\Application\ParlamentApplication;
 
 
 class TestScript extends AbstractConsoleScript
@@ -19,7 +21,14 @@ class TestScript extends AbstractConsoleScript
     {
 
 
-        (new MeteoschweizApplication())->reinstallApp();
+        //(new ParlamentApplication())->installApp();
+
+
+
+
+
+        //https://s5.radio.co/sca4082ebb/listen
+
 
 
     }

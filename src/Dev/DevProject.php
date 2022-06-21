@@ -42,6 +42,7 @@ class DevProject extends AbstractProject
         $this->addDependency(new MeteoschweizProject());
         $this->addDependency(new SrfProject());
         $this->addDependency(new RoundshotProject());
+        $this->addDependency(new ParlamentProject());
         $this->addDependency(new ContentAppProject());
 
         $this->addComposer(ComposerLibrary::RSS_HTTP);

@@ -1,15 +1,16 @@
 .admin-button {
 
-    color: var(--color-light1);
-    background-color: var(--color-dark1);
+    color: var(--color-light);
+    background-color: var(--color-dark);
 /*    width: 100px;*/
     border-radius: var(--border-radius);
-    transition-duration: 0.3s;
+    /*transition-duration: 0.3s;*/
     border: none;
     padding: var(--default-space);  /* 10px;*/
     text-decoration: none;
 
-    display: block;
+    display: inline;
+
 
 }
 
@@ -22,13 +23,13 @@
 
 }
 
-
+/*
 input[type=file]::file-selector-button {
 
-    color: var(--color-light1);
-    background-color: var(--color-dark1);
+    color: var(--color-light);
+    background-color: var(--color-dark);
     /*width: 100px;*/
-    border-radius: var(--border-radius);
+   /* border-radius: var(--border-radius);
     transition-duration: 0.3s;
     border: none;
     padding: 10px;
@@ -43,4 +44,4 @@ input[type=file]::file-selector-button:hover {
     cursor: pointer;
     box-shadow: var(--box-shadow);
 
-}
+}*/

@@ -2,7 +2,6 @@
 @import "image/image.css";
 @import "reset.css";
 @import "layout/layout.css";
-@import "typography.css";
 @import "navbar/navbar.css";
 @import "form/form.css";
 @import "form/button.css";
@@ -18,11 +17,11 @@
 @import "listgroup/listgroup.css";
 @import "item/item.css";
 @import "dropdown/dropdown.css";
+@import "breadcrumb/breadcrumb.css";
+@import "layout/title.css";
 
 
 * {
     margin: 0;
     padding: 0;
 }
-
-

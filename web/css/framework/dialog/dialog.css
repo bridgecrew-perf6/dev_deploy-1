@@ -1,8 +1,8 @@
 dialog {
-    background-color: var(--color-light1);
+    background-color: var(--color-light);
 
     border-width: 1px;
-    border-color: var(--color-dark2);
+    border-color: var(--color-dark);
 }
 
 
@@ -17,8 +17,8 @@ dialog::backdrop {
 
 .dialog-title {
 
-    background-color: var(--color-dark2);
-    color: var(--color-light2);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     padding: var(--default-space);
     font-weight: bold;
     display: flex;

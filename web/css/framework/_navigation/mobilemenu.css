@@ -10,7 +10,7 @@
     justify-content: space-between;
 
 
-    background-color: var(--color-dark1);
+    background-color: var(--color-dark);
     /*padding: 10px;*/
     /*text-align: right;*/
     /*position: relative;*/
@@ -22,7 +22,7 @@
 
 .nav-item {
 
-    color: var(--color-light1);
+    color: var(--color-light);
     /*width: 100px;*/
     text-decoration: none;
     font-weight: bold;
@@ -32,8 +32,8 @@
 
 .nav-item:hover {
 
-    background-color: var(--color-dark2);
-    /*color:var(--color-light2);*/
+    background-color: var(--color-dark);
+    /*color:var(--color-light);*/
 
 }
 
@@ -59,7 +59,7 @@
 
 .mobilemenu {
 
-    color: var(--color-light1);
+    color: var(--color-light);
     font-size: 1.5em;
     transition: 0.5s;
 
@@ -108,7 +108,7 @@
         display: inline;
         border-style: solid;
         border-width: 1px;
-        border-color: var(--color-light1);
+        border-color: var(--color-light);
         border-radius: 5px;
         padding: 15px;
     }
@@ -128,7 +128,7 @@
         /*gap: 10px;*/
 
         border-width: 1px;
-        border-color: var(--color-light1);
+        border-color: var(--color-light);
 
 
         width: 0;
@@ -136,7 +136,7 @@
 
         overflow: hidden;
 
-        background-color: var(--color-dark1);
+        background-color: var(--color-dark);
         position: absolute;
         right: 0;
         /*opacity: 0.9;*/
@@ -165,7 +165,7 @@
         display: inline;
         cursor: pointer;
         font-size: 3em;
-        color: var(--color-light1);
+        color: var(--color-light);
         position: absolute;
         right: 0;
 

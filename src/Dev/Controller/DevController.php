@@ -16,6 +16,8 @@ use Nemundo\Content\App\Feed\Site\FeedSite;
 use Nemundo\Content\Site\ContentSite;
 use Nemundo\Meteoschweiz\Site\MeteoschweizSite;
 use Nemundo\Web\Controller\AbstractWebController;
+use Parlament\Site\ParlamentSite;
+use Parlament\Site\Ratsmitglied\RatsmitgliedSite;
 
 
 class DevController extends AbstractWebController
@@ -28,8 +30,12 @@ class DevController extends AbstractWebController
         new LoginSite($this);
         new TestSite($this);
 
-        new MeteoschweizSite($this);
-        new FeedSite($this);
+        new ParlamentSite($this);
+
+        //new RatsmitgliedSite($this);
+
+        /*new MeteoschweizSite($this);
+        new FeedSite($this);*/
 
         //new ContentSite($this);
         //new SchedulerSite($this);

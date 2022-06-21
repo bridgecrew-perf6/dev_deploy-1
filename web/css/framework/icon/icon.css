@@ -1,6 +1,6 @@
 /*.icon-button {
 
-    color: var(--color-dark2);
+    color: var(--color-dark);
     font-size: 2rem;
     cursor: pointer;
 
@@ -10,7 +10,7 @@
 
 .admin-icon {
 
-    color: var(--color-dark2);
+    color: var(--color-font);
     font-size: 2rem;
     cursor: pointer;
 

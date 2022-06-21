@@ -10,31 +10,24 @@
 }
 
 /*
+.admin-textbox-label {
+
+display: block;
+
+}*/
+
+
+
 .admin-textbox label {
 
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 
-}*/
+}
 
+.admin-textbox-color {
 
+    height: 50px;
+    padding: 0;
+    margin: 0;
 
-/*
-.admin-textbox select {
-
-    width: 100%;
-
-    padding: 10px;
-
-    /*padding: 12px 20px;
-    margin: 8px 0;*/
-  /*  display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    /*box-sizing: border-box;*/
-
-  /*  font-size: 1rem;
-
-    background-color: var(--color-light1);
-
-
-}*/
+}

@@ -83,7 +83,7 @@ class AdminNavbar extends Nav
 
         foreach ($this->site->getMenuActiveSite() as $site) {
 
-            if ($site->hasItems()) {
+            if ($site->hasMenuActiveItems()) {
 
                 $submenu = new AdminNavbarDropdown($menu);
                 $submenu->dropdownLabel = $site->title;

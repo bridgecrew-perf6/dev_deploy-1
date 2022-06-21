@@ -1,18 +1,7 @@
-
-.admin-navbar-dropdown-link:after {
+/*.admin-navbar-dropdown-link:after {
 
     font-family: "Font Awesome\ 5 Pro";
-    content: "\f063";
-
-}
-
-
-/*
-.admin-navbar-submenu-icon {
-    color: var(--color-dark2);
-    /*background-color: white;*/
-
-  /*  font-size: 2rem;
+    content: "\f078";
 
 }*/
 
@@ -21,10 +10,10 @@
 
     display: none;
     overflow: hidden;
-    background-color: var(--color-light2);
+    background-color: var(--color-light);
     border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: var(--color-dark);
     border-radius: var(--border-radius);
     z-index: 999;
 
@@ -37,7 +26,7 @@
     padding: var(--default-space);
     overflow: hidden;
 
-    color: var(--color-dark2);
+    color: var(--color-dark);
     text-decoration: none;
 
     /*background-color: #0a47a9;*/
@@ -47,8 +36,8 @@
 
 .admin-navbar-submenu-link:hover {
 
-    background-color: var(--color-dark2);
-    color: var(--color-light2);
+    background-color: var(--color-dark);
+    color: var(--color-light);
 
 }
 

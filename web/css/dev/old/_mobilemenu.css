@@ -47,7 +47,7 @@ button:hover {
     justify-content: space-between;
 
 
-    background-color: var(--color-light1);
+    background-color: var(--color-light);
     padding: 1em;
     /*text-align: right;*/
     position: relative;
@@ -76,7 +76,7 @@ button:hover {
 #hamburger {
 border-style: solid;
 border-width: 1px;
-border-color: var(--color-dark1);
+border-color: var(--color-dark);
 border-radius: 5px;
     padding: 15px;
 }

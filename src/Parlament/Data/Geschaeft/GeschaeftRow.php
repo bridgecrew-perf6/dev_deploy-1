@@ -1,0 +1,102 @@
+<?php
+namespace Parlament\Data\Geschaeft;
+class GeschaeftRow extends \Nemundo\Model\Row\AbstractModelDataRow {
+/**
+* @var \Nemundo\Model\Row\AbstractModelDataRow
+*/
+private $row;
+
+/**
+* @var GeschaeftModel
+*/
+public $model;
+
+/**
+* @var string
+*/
+public $id;
+
+/**
+* @var string
+*/
+public $kurzbezeichnung;
+
+/**
+* @var string
+*/
+public $geschaeft;
+
+/**
+* @var int
+*/
+public $geschaeftstypId;
+
+/**
+* @var \Parlament\Data\Geschaeftstyp\GeschaeftstypRow
+*/
+public $geschaeftstyp;
+
+/**
+* @var int
+*/
+public $sessionId;
+
+/**
+* @var \Parlament\Data\Session\SessionRow
+*/
+public $session;
+
+/**
+* @var int
+*/
+public $geschaeftsstatusId;
+
+/**
+* @var \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusRow
+*/
+public $geschaeftsstatus;
+
+/**
+* @var \Nemundo\Core\Type\DateTime\DateTime
+*/
+public $lastUpdate;
+
+/**
+* @var \Nemundo\Core\Type\DateTime\Date
+*/
+public $datumEinreichung;
+
+public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
+parent::__construct($row->getData());
+$this->row = $row;
+$this->id = $this->getModelValue($model->id);
+$this->kurzbezeichnung = $this->getModelValue($model->kurzbezeichnung);
+$this->geschaeft = $this->getModelValue($model->geschaeft);
+$this->geschaeftstypId = intval($this->getModelValue($model->geschaeftstypId));
+if ($model->geschaeftstyp !== null) {
+$this->loadParlamentDataGeschaeftstypGeschaeftstypgeschaeftstypRow($model->geschaeftstyp);
+}
+$this->sessionId = intval($this->getModelValue($model->sessionId));
+if ($model->session !== null) {
+$this->loadParlamentDataSessionSessionsessionRow($model->session);
+}
+$this->geschaeftsstatusId = intval($this->getModelValue($model->geschaeftsstatusId));
+if ($model->geschaeftsstatus !== null) {
+$this->loadParlamentDataGeschaeftsstatusGeschaeftsstatusgeschaeftsstatusRow($model->geschaeftsstatus);
+}
+$this->lastUpdate = new \Nemundo\Core\Type\DateTime\DateTime($this->getModelValue($model->lastUpdate));
+$value = $this->getModelValue($model->datumEinreichung);
+if ($value !== "0000-00-00") {
+$this->datumEinreichung = new \Nemundo\Core\Type\DateTime\Date($this->getModelValue($model->datumEinreichung));
+}
+}
+private function loadParlamentDataGeschaeftstypGeschaeftstypgeschaeftstypRow($model) {
+$this->geschaeftstyp = new \Parlament\Data\Geschaeftstyp\GeschaeftstypRow($this->row, $model);
+}
+private function loadParlamentDataSessionSessionsessionRow($model) {
+$this->session = new \Parlament\Data\Session\SessionRow($this->row, $model);
+}
+private function loadParlamentDataGeschaeftsstatusGeschaeftsstatusgeschaeftsstatusRow($model) {
+$this->geschaeftsstatus = new \Parlament\Data\Geschaeftsstatus\GeschaeftsstatusRow($this->row, $model);
+}
+}

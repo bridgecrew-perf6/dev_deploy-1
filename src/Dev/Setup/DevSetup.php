@@ -5,12 +5,15 @@ namespace Dev\Setup;
 use Dev\App\MyVote\Application\MyVoteApplication;
 use Dev\Script\TestScript;
 use Nemundo\App\Application\Reset\ApplicationReset;
+use Nemundo\App\CssDesigner\Application\CssDesignerApplication;
 use Nemundo\App\FileLog\Application\FileLogApplication;
 use Nemundo\App\Script\Reset\ScriptReset;
 use Nemundo\App\Script\Setup\ScriptSetup;
 use Nemundo\App\WebService\Reset\WebServiceReset;
 use Nemundo\Bfs\Abstimmung\Application\AbstimmungApplication;
 use Nemundo\Content\App\Bookmark\Application\BookmarkApplication;
+use Nemundo\Content\App\Explorer\Application\ExplorerApplication;
+use Nemundo\Content\App\Favorite\Application\FavoriteApplication;
 use Nemundo\Content\App\Feed\Application\FeedApplication;
 use Nemundo\Content\App\Feed\Setup\FeedSetup;
 use Nemundo\Content\App\File\Application\FileApplication;
@@ -18,7 +21,9 @@ use Nemundo\Content\App\Job\Setup\JobSetup;
 use Nemundo\Content\App\Store\Application\StoreApplication;
 use Nemundo\Content\App\Text\Application\TextApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
+use Nemundo\Content\App\WebRadio\Application\WebRadioApplication;
 use Nemundo\Content\Index\Search\Application\SearchApplication;
+use Nemundo\Content\Index\Tree\Application\TreeApplication;
 use Nemundo\Content\Reset\ContentReset;
 use Nemundo\Core\Type\Text\Text;
 use Nemundo\Dev\Script\AdminBuilderScript;
@@ -72,9 +77,17 @@ class DevSetup extends AbstractSetup
         (new SrfLivestreamApplication())->installApp();
         (new SrfApplication())->installApp();
         (new RoundshotApplication())->installApp();
+        (new ExplorerApplication())->installApp();
+
+        (new WebRadioApplication())->installApp();
+
+        (new ParlamentApplication())->installApp();
+
+        (new CssDesignerApplication())->installApp();
+
         (new SearchApplication())->installApp();
-
-
+        (new FavoriteApplication())->installApp();
+        (new TreeApplication())->installApp();
 
 
 
@@ -143,4 +156,10 @@ class DevSetup extends AbstractSetup
         $reset->remove();
 
     }
+
+
+
+
+
+
 }

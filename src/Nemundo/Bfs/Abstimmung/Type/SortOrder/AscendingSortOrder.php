@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\Bfs\Abstimmung\Type\SortOrder;use Nemundo\Db\Sql\Order\SortOrder;class AscendingSortOrder extends AbstractSortOrder{    protected function loadSortOrder()    {        $this->id = 1;        $this->sortOrder = 'Ascending';        $this->sql = SortOrder::ASCENDING;    }}

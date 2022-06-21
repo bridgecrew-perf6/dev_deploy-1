@@ -1,9 +1,9 @@
 @import "../framework/framework.css";
 :root {
---color-light1: #c85151;
---color-light2: #6b2424;
---color-dark1: #d1e6bb;
---color-dark2: #7a4343;
+--color-light: #c85151;
+--color-light: #6b2424;
+--color-dark: #d1e6bb;
+--color-dark: #7a4343;
 
 --box-shadow: 3px 6px 4px -6px #000000;
 --border-radius: 5px;

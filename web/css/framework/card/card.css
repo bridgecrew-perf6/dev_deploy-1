@@ -14,7 +14,7 @@
 
     border-style: solid;
     border-width: 1px;
-    border-color: var(--color-dark1);
+    border-color: var(--color-dark);
     border-radius: var(--border-radius);
     overflow: hidden;
     /*max-width: 500px;*/
@@ -25,8 +25,8 @@
 .admin-card-title {
 
     display: block;
-    background-color: var(--color-light2);
-    color: var(--color-dark2);
+    background-color: var(--color-light);
+    color: var(--color-dark);
     font-size: 1.1rem;
     padding: var(--default-space);
     text-decoration: none;
