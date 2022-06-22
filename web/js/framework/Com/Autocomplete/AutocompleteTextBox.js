@@ -207,12 +207,13 @@ export default class AutocompleteTextBox extends TextBox {
         };
 
         let wordList = new DivContainer(this);
-        wordList.position = PositionStyle.ABSOLUTE;
+        wordList.addCssClass("autocomplete-word-list");
+        //wordList.position = PositionStyle.ABSOLUTE;
         wordList.visible = false;
-        wordList.widthPercent = 100;
+        /*wordList.widthPercent = 100;
         wordList.border = "1px solid #d4d4d4";
         wordList.backgroundColor = ColorStyle.WHITE;
-        wordList.zIndex=999;
+        wordList.zIndex=999;*/
 
         window.addEventListener('click', function (e) {
             if (wordList._htmlElement.contains(e.target)) {

@@ -17,6 +17,7 @@
 
 
 .admin-hyperlink {
-    color: var(--color-dark);
+    color: var(--color-font);
     text-decoration: none;
+    display: block;
 }

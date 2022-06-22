@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\WebLog\Data\BrowserAgent;use Nemundo\Model\Id\AbstractModelIdValue;class BrowserAgentId extends AbstractModelIdValue {/*** @var BrowserAgentModel*/public $model;public function __construct() {parent::__construct();$this->model = new BrowserAgentModel();}}

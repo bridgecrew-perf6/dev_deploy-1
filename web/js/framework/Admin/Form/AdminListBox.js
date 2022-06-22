@@ -6,6 +6,7 @@ export default class AdminListBox extends ListBox {
 
         super(parentContainer);
         this.addCssClass("admin-textbox");
+        this._select.addCssClass("admin-select");
 
     }
 

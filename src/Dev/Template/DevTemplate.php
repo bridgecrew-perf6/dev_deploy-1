@@ -13,11 +13,7 @@ class DevTemplate extends NavbarAdminTemplate
     public function getContent()
     {
 
-
-
-
-
-        $this->pageTitle = 'Dev';
+        $this->pageTitle = 'Dev (Test)';
         return parent::getContent();
 
     }

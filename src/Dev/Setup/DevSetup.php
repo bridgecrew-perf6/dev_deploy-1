@@ -22,6 +22,7 @@ use Nemundo\Content\App\Store\Application\StoreApplication;
 use Nemundo\Content\App\Text\Application\TextApplication;
 use Nemundo\Content\App\Video\Application\VideoApplication;
 use Nemundo\Content\App\WebRadio\Application\WebRadioApplication;
+use Nemundo\Content\Index\Geo\Application\GeoIndexApplication;
 use Nemundo\Content\Index\Search\Application\SearchApplication;
 use Nemundo\Content\Index\Tree\Application\TreeApplication;
 use Nemundo\Content\Reset\ContentReset;
@@ -39,6 +40,7 @@ use Nemundo\Srf\App\Livestream\Application\SrfLivestreamApplication;
 use Nemundo\Srf\Application\SrfApplication;
 use Nemundo\Srf\Scheduler\SrfCrawlerScheduler;
 use Nemundo\Srf\Setup\SrfCrawlerSetup;
+use Nemundo\WebLog\Application\WebLogApplication;
 use Parlament\Application\ParlamentApplication;
 use Parlament\Scheduler\AbstimmungTodayScheduler;
 
@@ -59,6 +61,8 @@ class DevSetup extends AbstractSetup
 
         (new ScriptSetup())->addScript(new TestScript());
         (new ScriptSetup())->addScript(new ModelCleanScript());
+
+
 
 
 /*
@@ -82,6 +86,7 @@ class DevSetup extends AbstractSetup
         (new WebRadioApplication())->installApp();
 
         (new ParlamentApplication())->installApp();
+        (new GeoIndexApplication())->installApp();
 
         (new CssDesignerApplication())->installApp();
 
@@ -89,6 +94,7 @@ class DevSetup extends AbstractSetup
         (new FavoriteApplication())->installApp();
         (new TreeApplication())->installApp();
 
+        (new WebLogApplication())->installApp();
 
 
 

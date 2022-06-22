@@ -1,6 +1,7 @@
 import ListBox from "../ListBox.js";
 import ServiceRequest from "../Service/ServiceRequest.js";
 import MouseCursor from "../../core/Mouse/MouseCursor.js";
+import AdminLoader from "../Admin/Loader/AdminLoader.js";
 
 
 export default class DataListBox extends ListBox {
@@ -34,16 +35,16 @@ export default class DataListBox extends ListBox {
 
         let local = this;
 
+        let loader = new AdminLoader(this);
+
         this._serviceRequest.service = this.service;
         this._serviceRequest.sendRequest();
-
-        //let loader = new LoaderContainer(this);
 
         (new MouseCursor()).setWait();
 
         this._serviceRequest.onFinished = function () {
 
-            //loader.removeContainer();
+            loader.removeContainer();
 
             if (local.onLoaded !== null) {
                 local.onLoaded();

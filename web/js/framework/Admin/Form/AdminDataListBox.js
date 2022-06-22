@@ -6,23 +6,8 @@ export default class AdminDataListBox extends DataListBox {
 
         super(parentContainer);
         this.addCssClass("admin-textbox");
-        //this._select.addCssClass("form-select");
-        //this.columnLayout=true;
+        this._select.addCssClass("admin-select");
 
     }
-
-
-    /*
-    set columnLayout(value) {
-
-        let className = "col";
-
-        if (value) {
-            this.addCssClass(className);
-        } else {
-            this.removeCssClass(className);
-        }
-
-    }*/
 
 }

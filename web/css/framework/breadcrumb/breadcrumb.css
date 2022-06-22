@@ -11,9 +11,9 @@
 }
 
 
-.admin-breadcrumb li:before {
+.admin-breadcrumb li+li:before {
     padding: 8px;
-    color: black;
+    color: var(--color-dark);
     content: "/";
 }
 

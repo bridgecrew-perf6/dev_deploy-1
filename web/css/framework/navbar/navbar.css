@@ -25,9 +25,6 @@
 
     display: flex;
 
-    /*background-color: #3dd5f3;*/
-
-
 }
 
 
@@ -127,25 +124,24 @@
 
     .admin-navbar-close {
 
-        display: inline;
+        display:inline;
         cursor: pointer;
         font-size: 3em;
         color: var(--color-dark);
         position: absolute;
-        right: 0;
-        /*right: var(--default-space);*/
+        top: 5px;
+        right: 20px;
 
     }
 
 
     .admin-navbar-menu {
 
-        /*display: flex;*/
         flex-direction: column;
         align-items: normal;
-        /*gap: 30px;*/
+        border-style: solid;
         border-width: 1px;
-        border-color: var(--color-light);
+        border-color: var(--color-dark);
         right: 0;
         width: 0;
         overflow: hidden;

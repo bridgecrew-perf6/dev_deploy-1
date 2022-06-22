@@ -5,6 +5,8 @@ namespace Dev\Script;
 use Nemundo\App\Script\Type\AbstractConsoleScript;
 use Nemundo\Content\App\WebRadio\Application\WebRadioApplication;
 use Nemundo\Meteoschweiz\Application\MeteoschweizApplication;
+use Nemundo\Srf\App\Livestream\Application\SrfLivestreamApplication;
+use Nemundo\WebLog\Application\WebLogApplication;
 use Parlament\Application\ParlamentApplication;
 
 
@@ -19,6 +21,17 @@ class TestScript extends AbstractConsoleScript
 
     public function run()
     {
+
+
+        (new SrfLivestreamApplication())->installApp();
+
+
+        //(new WebLogApplication())->installApp();
+
+
+
+
+
 
 
         //(new ParlamentApplication())->installApp();

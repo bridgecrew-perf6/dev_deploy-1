@@ -1,6 +1,6 @@
 
 
-export default class GemeindeAutocomplete extends BoostrapAuto AdminAutocomplete {
+export default class GemeindeAutocomplete extends BoostrapAuto AdminAutocompleteTextBox {
 
     constructor(parentContainer) {
 

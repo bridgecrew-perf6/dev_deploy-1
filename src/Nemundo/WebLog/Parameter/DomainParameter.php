@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\WebLog\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class DomainParameter extends AbstractUrlParameter {protected function loadParameter() {$this->parameterName = 'domain';}}

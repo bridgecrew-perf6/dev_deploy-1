@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\WebLog\Data\UrlLog;class UrlLogValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var UrlLogModel*/public $model;public function __construct() {parent::__construct();$this->model = new UrlLogModel();}}

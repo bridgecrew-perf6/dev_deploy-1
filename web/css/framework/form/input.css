@@ -4,7 +4,8 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid;
+    border-color: var(--color-dark);
     border-radius: var(--border-radius);
     box-sizing: border-box;
     font-size: large;
@@ -13,7 +14,7 @@
 
 .admin-input:focus {
 
-    border: none;
+    /*border: none;*/
 
 }
 

@@ -8,13 +8,17 @@ use Nemundo\Admin\AdminConfig;
 use Nemundo\User\Login\CookieLogin;
 use Nemundo\Web\Base\AbstractWeb;
 use Nemundo\Web\ResponseConfig;
+use Nemundo\WebLog\Builder\WebLogBuilder;
 
 class DevWeb extends AbstractWeb
 {
     public function loadWeb()
     {
 
+        $log = new WebLogBuilder();
+
         (new CookieLogin())->checkLogin();
+
 
         ResponseConfig::$description = '';
         ResponseConfig::$imageUrl = null;
@@ -31,6 +35,8 @@ class DevWeb extends AbstractWeb
         AdminConfig::$webController = new DevController();
 
         (new DevController())->render();
+
+        $log->createWebLog();
 
     }
 }

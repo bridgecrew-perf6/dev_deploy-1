@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\WebLog\Site;use Nemundo\Web\Site\AbstractSite;use Nemundo\WebLog\Page\SlowPagePage;class SlowPageSite extends AbstractSite {protected function loadSite() {$this->title = 'SlowPage';$this->url = 'SlowPage';}public function loadContent() {(new SlowPagePage())->render();}}

@@ -1,0 +1,1 @@
+<?phpnamespace Nemundo\WebLog\Page;use Nemundo\Com\Template\AbstractTemplateDocument;use Nemundo\WebLog\Template\WebLogTemplate;class SlowPagePage extends WebLogTemplate{    public function getContent()    {        return parent::getContent();    }}
