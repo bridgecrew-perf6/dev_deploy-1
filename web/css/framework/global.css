@@ -1,0 +1,15 @@
+:root {
+
+    --color-light: lightgrey;
+    --color-dark: #676767;
+    --color-background: lightblue;
+    --color-font:blue;
+
+    --error-color: red;
+
+    --border-radius: 5px;
+    --box-shadow: 3px 6px 4px -6px #000000;
+
+    --default-space: 20px;
+
+}

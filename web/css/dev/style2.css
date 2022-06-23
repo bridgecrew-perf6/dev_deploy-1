@@ -1,0 +1,28 @@
+@import "../framework/framework.css";
+
+:root {
+
+    --color-light: #ffffff;
+    --color-light: #e3f6f5;
+    --color-dark: #272343;
+    --color-dark: #bae8e8;
+
+    /*--color-light: #cbf078;
+    --color-light: #f8f398;
+    --color-dark: #f1b963;
+    --color-dark: #e46161;*/
+
+    --box-shadow: 3px 6px 4px -6px #000000;
+    --border-radius: 5px;
+
+}
+
+
+body {
+
+    background-image: url("/img/dev/cupcakes.jpg");
+    background-repeat: repeat;
+
+
+}
+

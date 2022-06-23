@@ -1,0 +1,22 @@
+
+.admin-dropdown {
+    position: relative;
+}
+
+
+
+.admin-dropdown-content {
+
+    display: none;
+    /*position: absolute;*/
+    /*width: 400px;
+    height: 400px;
+    background-color: #3dd5f3;*/
+
+}
+
+.admin-dropdown-show {
+
+    display: block;
+
+}
