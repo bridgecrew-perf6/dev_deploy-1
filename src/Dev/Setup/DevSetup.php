@@ -51,8 +51,8 @@ class DevSetup extends AbstractSetup
         $reset = new ProjectReset();
         $reset->addReset(new ScriptReset());
         $reset->addReset(new ApplicationReset());
-        $reset->addReset(new ContentReset());
-        $reset->addReset(new WebServiceReset());
+        //$reset->addReset(new ContentReset());
+        //$reset->addReset(new WebServiceReset());
         $reset->reset();
 
         (new ProjectInstall())->install();
