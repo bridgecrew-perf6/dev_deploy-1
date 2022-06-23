@@ -31,3 +31,21 @@ display: block;
     margin: 0;
 
 }
+
+
+
+
+.admin-icon-textbox {
+    position: relative;
+}
+
+.admin-icon-textbox input {
+    padding-left: 70px;
+}
+
+.admin-icon-textbox i {
+    position: absolute;
+    color: lightgrey;
+    left: 15px;
+    top: 15px;
+}

@@ -1,8 +1,8 @@
 {
     "color-light": "#ede9e9",
-    "color-dark": "#2d22ce",
-    "color-background": "#aeabde",
-    "color-font": "#b9226b",
+    "color-dark": "#36a81f",
+    "color-background": "#e7e6ef",
+    "color-font": "#e60f7a",
     "box-shadow": "3px 6px 4px -6px #000000",
     "border-radius": "10"
 }

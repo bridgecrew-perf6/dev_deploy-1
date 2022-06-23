@@ -29,5 +29,6 @@ class LivestreamWidgetContentView extends AbstractContentView
         new LivestreamModuleJavaScript($this);
 
         return parent::getContent();
+
     }
 }

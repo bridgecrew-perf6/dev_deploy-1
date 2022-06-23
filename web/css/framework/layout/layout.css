@@ -52,6 +52,14 @@ body {
 
 }
 
+.admin-default-layout {
+
+
+
+}
+
+
+
 .admin-two-column-grid-layout {
 
     display: grid;
@@ -99,10 +107,8 @@ body {
     align-items: center;
     justify-content: center;*/
 
-
     background-color: var(--color-light);
     border-radius: var(--border-radius);
-
     padding: var(--default-space);
 
 }

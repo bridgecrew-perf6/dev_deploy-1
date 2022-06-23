@@ -2,6 +2,7 @@
 
 namespace Dev\Script;
 
+use Dev\Import\KontrafunkContentBuilder;
 use Nemundo\App\Script\Type\AbstractConsoleScript;
 use Nemundo\Content\App\WebRadio\Application\WebRadioApplication;
 use Nemundo\Meteoschweiz\Application\MeteoschweizApplication;
@@ -22,8 +23,10 @@ class TestScript extends AbstractConsoleScript
     public function run()
     {
 
+        (new KontrafunkContentBuilder())->saveContent();
 
-        (new SrfLivestreamApplication())->installApp();
+
+        //(new SrfLivestreamApplication())->installApp();
 
 
         //(new WebLogApplication())->installApp();

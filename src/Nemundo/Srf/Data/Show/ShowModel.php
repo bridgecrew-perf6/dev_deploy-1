@@ -113,6 +113,10 @@ $index = new \Nemundo\Model\Definition\Index\ModelIndex($this);
 $index->indexName = "media_type";
 $index->addType($this->mediaTypeId);
 
+$index = new \Nemundo\Model\Definition\Index\ModelSearchIndex($this);
+$index->indexName = "show";
+$index->addType($this->show);
+
 }
 public function loadMediaType() {
 if ($this->mediaType == null) {

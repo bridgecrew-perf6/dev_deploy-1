@@ -1,6 +1,6 @@
-import DataListBox from "../../../framework/Data/DataListBox.js";
+import AdminDataListBox from "../../../framework/Admin/Form/AdminDataListBox.js";
 
-export default class ShowListBox extends DataListBox {
+export default class ShowListBox extends AdminDataListBox {
 
     constructor(parentContainer) {
 
