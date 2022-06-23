@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Site;use Nemundo\Meteoschweiz\Page\StationPage;use Nemundo\Web\Site\AbstractSite;class StationSite extends AbstractSite {protected function loadSite() {$this->title = 'Station';$this->url = 'station';}public function loadContent() {    (new StationPage())->render();}}

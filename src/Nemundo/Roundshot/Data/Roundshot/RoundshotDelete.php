@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\Data\Roundshot;class RoundshotDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var RoundshotModel*/public $model;public function __construct() {parent::__construct();$this->model = new RoundshotModel();}}

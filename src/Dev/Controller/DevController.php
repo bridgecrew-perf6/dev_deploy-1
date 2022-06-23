@@ -7,8 +7,6 @@ use Dev\Site\HomeSite;
 use Dev\Site\TestSite;
 use Nemundo\App\Application\Site\AdminSite;
 use Nemundo\App\Application\Site\AppSite;
-use Nemundo\App\ClassDesigner\Site\ClassDesignerSite;
-use Nemundo\App\ModelDesigner\Site\ModelDesignerSite;
 use Nemundo\App\Scheduler\Site\SchedulerSite;
 use Nemundo\App\UserAction\Site\LoginSite;
 use Nemundo\App\UserAction\Site\LogoutSite;
@@ -32,7 +30,7 @@ class DevController extends AbstractWebController
         new LoginSite($this);
         new TestSite($this);
 
-        new ParlamentSite($this);
+        //new ParlamentSite($this);
 
         //new RatsmitgliedSite($this);
 
@@ -41,10 +39,6 @@ class DevController extends AbstractWebController
 
         //new ContentSite($this);
         //new SchedulerSite($this);
-
-
-        //new ModelDesignerSite($this);
-
 
         new AppSite($this);
         new AdminSite($this);

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Com\Small;use Nemundo\Html\Formatting\Small;class MeteoschweizSourceSmall extends Small{    public function getContent()    {        $this->content = 'Quelle MeteoSchweiz';        return parent::getContent();    }}

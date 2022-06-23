@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Timelapse\Data\Timelapse;use Nemundo\Model\Id\AbstractModelIdValue;class TimelapseId extends AbstractModelIdValue {/*** @var TimelapseModel*/public $model;public function __construct() {parent::__construct();$this->model = new TimelapseModel();}}

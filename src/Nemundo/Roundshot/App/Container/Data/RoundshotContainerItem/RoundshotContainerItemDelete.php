@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Container\Data\RoundshotContainerItem;class RoundshotContainerItemDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var RoundshotContainerItemModel*/public $model;public function __construct() {parent::__construct();$this->model = new RoundshotContainerItemModel();}}

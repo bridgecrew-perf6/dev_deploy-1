@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Timelapse\Data\TimelapseJob;class TimelapseJobValue extends \Nemundo\Model\Value\AbstractModelDataValue {/*** @var TimelapseJobModel*/public $model;public function __construct() {parent::__construct();$this->model = new TimelapseJobModel();}}

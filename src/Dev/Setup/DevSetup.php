@@ -40,7 +40,6 @@ use Nemundo\Srf\App\Livestream\Application\SrfLivestreamApplication;
 use Nemundo\Srf\Application\SrfApplication;
 use Nemundo\Srf\Scheduler\SrfCrawlerScheduler;
 use Nemundo\Srf\Setup\SrfCrawlerSetup;
-use Nemundo\WebLog\Application\WebLogApplication;
 use Parlament\Application\ParlamentApplication;
 use Parlament\Scheduler\AbstimmungTodayScheduler;
 
@@ -72,6 +71,7 @@ class DevSetup extends AbstractSetup
         (new TextApplication())->installApp();
         (new VideoApplication())->installApp();*/
 
+        /*
         (new FileLogApplication())->installApp();
         (new MeteoschweizApplication())->installApp();
         (new FeedApplication())->installApp();
@@ -86,15 +86,15 @@ class DevSetup extends AbstractSetup
         (new WebRadioApplication())->installApp();
 
         (new ParlamentApplication())->installApp();
-        (new GeoIndexApplication())->installApp();
+        (new GeoIndexApplication())->installApp();*/
 
         (new CssDesignerApplication())->installApp();
 
+        /*
         (new SearchApplication())->installApp();
         (new FavoriteApplication())->installApp();
         (new TreeApplication())->installApp();
-
-        (new WebLogApplication())->installApp();
+*/
 
 
 

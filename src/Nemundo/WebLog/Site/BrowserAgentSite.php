@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\WebLog\Site;use Nemundo\Web\Site\AbstractSite;use Nemundo\WebLog\Page\BrowserAgentPage;class BrowserAgentSite extends AbstractSite{    protected function loadSite()    {        $this->title = 'Browser Agent';        $this->url = 'browser-agent';    }    public function loadContent()    {        (new BrowserAgentPage())->render();    }}

@@ -1,1 +1,0 @@
-Cms:WindChart(Datum/Station)MultiStationDifferentTemperatureCurrent WindMesswertEmagrammBlogAllgemeine LagePrognosenRadar--> eigene App--> StreamGeoIndex

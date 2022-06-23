@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Container\Application;use Nemundo\App\Application\Type\AbstractApplication;class ContainerApplication extends AbstractApplication {protected function loadApplication() {$this->application = 'Container';$this->applicationId = 'ba772a6a-5af4-46d8-883f-fb33f1ee5393';}}

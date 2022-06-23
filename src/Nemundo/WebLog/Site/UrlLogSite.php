@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\WebLog\Site;use Nemundo\Web\Site\AbstractSite;use Nemundo\WebLog\Page\UrlLogPage;class UrlLogSite extends AbstractSite{    protected function loadSite()    {        $this->title = 'Url';        $this->url = 'url-log';    }    public function loadContent()    {        (new UrlLogPage())->render();    }}

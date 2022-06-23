@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\Data\Roundshot;use Nemundo\Model\Id\AbstractModelIdValue;class RoundshotId extends AbstractModelIdValue {/*** @var RoundshotModel*/public $model;public function __construct() {parent::__construct();$this->model = new RoundshotModel();}}

@@ -14,11 +14,13 @@ class HomePage extends DevTemplate
     public function getContent()
     {
 
+
+        /*
         $cardContainer = new AdminTwoColumnGridLayout($this);  // new AdminCardContainer($this);
 
         new MaxTemperatureCard($cardContainer);
         new DayRecordTemperatureCard($cardContainer);
-
+*/
 
 
         return parent::getContent();

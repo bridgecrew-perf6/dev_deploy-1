@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Bfs\Abstimmung\Parameter;use Nemundo\Web\Parameter\AbstractUrlParameter;class GeoLevelParameter extends AbstractUrlParameter{    protected function loadParameter()    {        $this->parameterName = 'geolevel';    }}

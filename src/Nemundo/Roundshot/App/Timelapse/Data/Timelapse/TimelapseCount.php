@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Timelapse\Data\Timelapse;class TimelapseCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var TimelapseModel*/public $model;public function __construct() {parent::__construct();$this->model = new TimelapseModel();}}

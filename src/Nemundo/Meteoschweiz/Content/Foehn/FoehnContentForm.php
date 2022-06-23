@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Content\Foehn;use Nemundo\Content\Form\AbstractContentForm;class FoehnContentForm extends AbstractContentForm {/*** @var FoehnContentType*/public $contentType;public function getContent() {return parent::getContent();}public function onSubmit() {$this->contentType->saveType();}}

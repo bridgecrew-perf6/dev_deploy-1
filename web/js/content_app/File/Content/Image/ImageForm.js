@@ -1,1 +1,0 @@
-import FileForm from "../File/FileForm.js";import FileAccept from "../../../../html/Form/Input/FileAccept.js";export default class ImageForm extends FileForm {    constructor(parentContainer) {        super(parentContainer);        this.serviceName = "image-post";        this.accept = FileAccept.IMAGE;    }}

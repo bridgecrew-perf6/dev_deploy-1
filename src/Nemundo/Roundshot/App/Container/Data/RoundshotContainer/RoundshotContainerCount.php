@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\App\Container\Data\RoundshotContainer;class RoundshotContainerCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var RoundshotContainerModel*/public $model;public function __construct() {parent::__construct();$this->model = new RoundshotContainerModel();}}

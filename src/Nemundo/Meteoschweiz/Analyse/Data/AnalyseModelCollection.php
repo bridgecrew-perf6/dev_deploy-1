@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Analyse\Data;use Nemundo\Model\Collection\AbstractModelCollection;class AnalyseModelCollection extends AbstractModelCollection {protected function loadCollection() {}}

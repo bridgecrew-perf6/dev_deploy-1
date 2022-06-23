@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Widget\Application;use Nemundo\App\Application\Type\AbstractApplication;class WidgetApplication extends AbstractApplication {protected function loadApplication() {$this->application = 'Widget';$this->applicationId = '96281c95-9f1f-4a95-8d6d-8c4300a8325d';}}

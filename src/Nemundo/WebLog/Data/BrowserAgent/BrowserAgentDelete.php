@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\WebLog\Data\BrowserAgent;class BrowserAgentDelete extends \Nemundo\Model\Delete\AbstractModelDelete {/*** @var BrowserAgentModel*/public $model;public function __construct() {parent::__construct();$this->model = new BrowserAgentModel();}}

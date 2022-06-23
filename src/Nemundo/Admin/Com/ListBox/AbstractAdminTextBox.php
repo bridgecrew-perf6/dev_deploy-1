@@ -15,7 +15,6 @@ class AbstractAdminTextBox extends AbstractTextBox
 
         $this->prepareHtml();
 
-        $this->tagName='div';
         $this->addCssClass('admin-textbox');
 
         $label = new Label();

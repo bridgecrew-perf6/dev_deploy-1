@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Meteoschweiz\Widget\Content\StationSearch;use Nemundo\Content\Form\AbstractContentForm;class StationSearchContentForm extends AbstractContentForm {/*** @var StationSearchContentType*/public $contentType;public function getContent() {return parent::getContent();}public function onSubmit() {$this->contentType->saveType();}}

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\WebLog\Data\UrlLog;class UrlLogCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var UrlLogModel*/public $model;public function __construct() {parent::__construct();$this->model = new UrlLogModel();}}

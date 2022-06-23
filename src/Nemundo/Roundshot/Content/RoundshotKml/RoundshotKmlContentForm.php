@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\Content\RoundshotKml;use Nemundo\Content\Form\AbstractContentForm;class RoundshotKmlContentForm extends AbstractContentForm {/*** @var RoundshotKmlContentType*/public $contentType;public function getContent() {return parent::getContent();}public function onSubmit() {$this->contentType->saveType();}}

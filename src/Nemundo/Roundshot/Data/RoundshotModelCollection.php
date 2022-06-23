@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\Roundshot\Data;use Nemundo\Model\Collection\AbstractModelCollection;class RoundshotModelCollection extends AbstractModelCollection {protected function loadCollection() {$this->addModel(new \Nemundo\Roundshot\Data\Roundshot\RoundshotModel());}}

@@ -1,1 +1,0 @@
-<?phpnamespace Nemundo\WebLog\Data\BrowserAgent;class BrowserAgentCount extends \Nemundo\Model\Count\AbstractModelDataCount {/*** @var BrowserAgentModel*/public $model;public function __construct() {parent::__construct();$this->model = new BrowserAgentModel();}}
