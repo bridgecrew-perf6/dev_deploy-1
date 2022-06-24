@@ -6,6 +6,7 @@ use Nemundo\Com\Package\PackageTrait;
 use Nemundo\Com\Template\AbstractTemplateDocument;
 use Nemundo\Html\Block\Div;
 use Nemundo\Html\Header\Link\StylesheetLink;
+use Nemundo\Html\Header\Meta\Meta;
 use Nemundo\Html\Script\JavaScript;
 use Nemundo\Html\Script\JavaScriptType;
 
@@ -17,6 +18,13 @@ class MapPage extends AbstractTemplateDocument
     public function getContent()
     {
 
+
+        $meta=new Meta($this);
+$meta->addAttribute('http-equiv','Content-Security-Policy');
+        $meta->addAttribute('content','upgrade-insecure-requests');
+
+
+        //<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
         $script = new JavaScript($this);
         $script->src = 'https://www.openlayers.org/api/OpenLayers.js';
