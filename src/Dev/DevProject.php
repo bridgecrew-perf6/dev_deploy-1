@@ -10,6 +10,7 @@ use Nemundo\Bfs\BfsProject;
 use Nemundo\Content\App\ContentAppProject;
 use Nemundo\Core\Path\Path;
 use Nemundo\FrameworkProject;
+use Nemundo\Geo\Kml\KmlProject;
 use Nemundo\Meteoschweiz\MeteoschweizProject;
 use Nemundo\Project\AbstractProject;
 use Nemundo\Roundshot\RoundshotProject;
@@ -36,6 +37,8 @@ class DevProject extends AbstractProject
         //$this- webteClass=DevTemplate::class;
 
         $this->addDependency(new FrameworkProject());
+        $this->addDependency(new KmlProject());
+
         //$this->addDependency(new MeteoProject());
         /*$this->addDependency(new ParlamentProject());
         $this->addDependency(new BfsProject());*/
