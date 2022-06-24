@@ -3,6 +3,7 @@
 namespace Dev\Setup;
 
 use Dev\App\MyVote\Application\MyVoteApplication;
+use Dev\App\Wetzikon\Application\WetzikonApplication;
 use Dev\Script\TestScript;
 use Nemundo\App\Application\Reset\ApplicationReset;
 use Nemundo\App\CssDesigner\Application\CssDesignerApplication;
@@ -62,6 +63,8 @@ class DevSetup extends AbstractSetup
         (new ScriptSetup())->addScript(new ModelCleanScript());
 
 
+
+        (new WetzikonApplication())->installApp();
 
 
 /*

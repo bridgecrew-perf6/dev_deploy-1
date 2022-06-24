@@ -3,6 +3,7 @@
 namespace Dev\Controller;
 
 
+use Dev\App\Wetzikon\Site\WetzikonSite;
 use Dev\Site\HomeSite;
 use Dev\Site\TestSite;
 use Nemundo\App\Application\Site\AdminSite;
@@ -27,8 +28,17 @@ class DevController extends AbstractWebController
 
         new HomeSite($this);
 
+        new WetzikonSite($this);
+
+
+
+
+
         new LoginSite($this);
         new TestSite($this);
+
+
+
 
         //new ParlamentSite($this);
 
@@ -40,8 +50,8 @@ class DevController extends AbstractWebController
         //new ContentSite($this);
         //new SchedulerSite($this);
 
-        new AppSite($this);
-        new AdminSite($this);
+       // new AppSite($this);
+       // new AdminSite($this);
         //new SrfEpisodeSite($this);
 
         //new LogoutSite($this);
