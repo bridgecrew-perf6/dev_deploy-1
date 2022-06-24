@@ -27,8 +27,8 @@ class TestPage extends AbstractTemplateDocument
         /*$js = new ModuleJavaScript($this);
         $js->src = '/js/dev/map.js';*/
 
-        $script=new JavaScript($this);
-        $script->src='http://www.openlayers.org/api/OpenLayers.js';
+        /*$script=new JavaScript($this);
+        $script->src='https://www.openlayers.org/api/OpenLayers.js';
 
 
         $script=new JavaScript($this);
@@ -40,7 +40,7 @@ class TestPage extends AbstractTemplateDocument
 
         $div = new Div($this);
 
-        $div->id = 'mapdiv';
+        $div->id = 'mapdiv';*/
 
 
         return parent::getContent();
