@@ -10,7 +10,7 @@ public function getContent() {
 
 
     $script=new JavaScript($this);
-    $script->src='http://www.openlayers.org/api/OpenLayers.js';
+    $script->src='https://www.openlayers.org/api/OpenLayers.js';
 
 
     $script=new JavaScript($this);
