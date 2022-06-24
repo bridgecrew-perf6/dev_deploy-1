@@ -21,6 +21,11 @@ public $text;
 */
 public $coordinate;
 
+/**
+* @var string
+*/
+public $strasse;
+
 public function __construct() {
 parent::__construct();
 $this->model = new PoiModel();
@@ -31,6 +36,7 @@ $this->typeValueList->setModelValue($this->model->titel, $this->titel);
 $this->typeValueList->setModelValue($this->model->text, $this->text);
 $property = new \Nemundo\Model\Data\Property\Geo\GeoCoordinateDataProperty($this->model->coordinate, $this->typeValueList);
 $property->setValue($this->coordinate);
+$this->typeValueList->setModelValue($this->model->strasse, $this->strasse);
 $id = parent::save();
 return $id;
 }

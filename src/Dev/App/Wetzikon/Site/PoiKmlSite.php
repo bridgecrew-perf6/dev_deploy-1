@@ -3,6 +3,8 @@
 namespace Dev\App\Wetzikon\Site;
 
 use Dev\App\Wetzikon\Data\Poi\PoiReader;
+use Dev\App\Wetzikon\Data\PoiBild\PoiBildReader;
+use Nemundo\Admin\Com\Image\AdminImage;
 use Nemundo\Geo\Kml\Container\Placemark;
 use Nemundo\Geo\Kml\Document\KmlDocument;
 use Nemundo\Geo\Kml\Object\KmlMarker;
@@ -22,29 +24,28 @@ class PoiKmlSite extends AbstractKmlSite
     {
         $this->title = 'Kml';
         $this->url = 'kml';
-        PoiKmlSite::$site=$this;
+        PoiKmlSite::$site = $this;
     }
 
     public function loadContent()
     {
 
-        $kml=new KmlDocument();
+        $kml = new KmlDocument();
 
 
-        $reader=new PoiReader();
+        $reader = new PoiReader();
         foreach ($reader->getData() as $poiRow) {
 
-            $marker= new KmlMarker($kml);
+            $marker = new KmlMarker($kml);
             $marker->coordinate = $poiRow->coordinate;
-            $marker->label=$poiRow->titel;
+            $marker->description = $poiRow->text;
+            $marker->label = $poiRow->titel;
+
 
         }
 
 
         $kml->render();
-
-
-
 
 
     }

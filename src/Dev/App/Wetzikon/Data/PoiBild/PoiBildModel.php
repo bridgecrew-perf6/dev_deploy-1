@@ -26,6 +26,11 @@ public $bild;
 */
 public $bildAutoSize1200;
 
+/**
+* @var \Nemundo\Model\Type\ImageFormat\AutoSizeModelImageFormat
+*/
+public $bildAutoSize300;
+
 protected function loadModel() {
 $this->tableName = "wetzikon_poi_bild";
 $this->aliasTableName = "wetzikon_poi_bild";
@@ -57,6 +62,8 @@ $this->bild->label = "Bild";
 $this->bild->allowNullValue = false;
 $this->bildAutoSize1200 = new \Nemundo\Model\Type\ImageFormat\AutoSizeModelImageFormat($this->bild);
 $this->bildAutoSize1200->size = 1200;
+$this->bildAutoSize300 = new \Nemundo\Model\Type\ImageFormat\AutoSizeModelImageFormat($this->bild);
+$this->bildAutoSize300->size = 300;
 
 }
 public function loadPoi() {

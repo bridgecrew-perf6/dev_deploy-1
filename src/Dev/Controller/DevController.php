@@ -3,6 +3,8 @@
 namespace Dev\Controller;
 
 
+use Dev\App\Wetzikon\Site\MapSite;
+use Dev\App\Wetzikon\Site\PoiSite;
 use Dev\App\Wetzikon\Site\WetzikonSite;
 use Dev\Site\HomeSite;
 use Dev\Site\TestSite;
@@ -29,13 +31,15 @@ class DevController extends AbstractWebController
         new HomeSite($this);
 
         new WetzikonSite($this);
+        new MapSite($this);
+
+new PoiSite($this);
 
 
 
 
-
-        new LoginSite($this);
-        new TestSite($this);
+     /*   new LoginSite($this);
+        new TestSite($this);*/
 
 
 
