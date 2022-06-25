@@ -42,7 +42,7 @@ service.onDataRow=function (dataRow) {
 
     var marker = new OpenLayers.Layer.Markers(dataRow.titel);
 
-    marker.events.register("click", marker, function(e) {
+        let clickMarker = function(e) {
 
         //alert("click");
 
@@ -75,8 +75,10 @@ service.onDataRow=function (dataRow) {
             title,
             null, false );
         map.addPopup(popup);*/
-    });
+    };
 
+    marker.events.register( 'click', marker, clickMarker );
+    marker.events.register( 'touchstart', marker, clickMarker );
 
 
 

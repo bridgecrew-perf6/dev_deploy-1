@@ -48,7 +48,6 @@ class WetzikonPage extends AbstractTemplateDocument
 
                 $img = new AdminImage($container);
                 $img->src = $bildRow->bild->getImageUrl($imageReader->model->bildAutoSize300);
-                $img->width = 300;
 
             }
 

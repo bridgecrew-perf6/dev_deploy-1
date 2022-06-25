@@ -21,6 +21,8 @@ class PoiImageSite extends AbstractAdminIconSite
         $this->icon->icon='image';
         $this->menuActive = false;
 
+        new PoiImageDeleteSite($this);
+
         PoiImageSite::$site=$this;
 
     }
