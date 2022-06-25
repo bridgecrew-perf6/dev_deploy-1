@@ -16,8 +16,10 @@ class DevTemplate extends NavbarAdminTemplate
     public function getContent()
     {
 
-        $this->pageTitle = 'Dev';
+        //$this->pageTitle = 'Dev';
 
+
+        $this->pageTitle = 'wetzitrail';
 
 
 

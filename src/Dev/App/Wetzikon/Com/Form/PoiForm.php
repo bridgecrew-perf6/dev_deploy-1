@@ -58,9 +58,10 @@ class PoiForm extends AbstractAdminEditForm
 
         $this->titel->value=$poiRow->titel;
         $this->text->value= $poiRow->text;
+        $this->coordinate->value=$poiRow->coordinateText;
 
-        $this->coordinate->validation=false;
-        $this->coordinate->visible=false;
+        /*$this->coordinate->validation=false;
+        $this->coordinate->visible=false;*/
 
 
         // TODO: Implement loadUpdateForm() method.
@@ -73,6 +74,7 @@ class PoiForm extends AbstractAdminEditForm
         $data=new Poi();
         $data->titel=$this->titel->getValue();
         $data->text=$this->text->getValue();
+        $data->coordinateText= $this->coordinate->getValue();
         $data->coordinate->fromText($this->coordinate->getValue());
         $data->save();
 
@@ -88,8 +90,8 @@ class PoiForm extends AbstractAdminEditForm
         $data=new PoiUpdate();
         $data->titel=$this->titel->getValue();
         $data->text=$this->text->getValue();
-
-        //$data->coordinate->fromText($this->coordinate->getValue());
+        $data->coordinateText= $this->coordinate->getValue();
+        $data->coordinate->fromText($this->coordinate->getValue());
         $data->updateById($this->dataId);
 
         // TODO: Implement onUpdate() method.

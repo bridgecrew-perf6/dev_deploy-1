@@ -26,6 +26,11 @@ public $coordinate;
 */
 public $strasse;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $coordinateText;
+
 protected function loadModel() {
 $this->tableName = "wetzikon_poi";
 $this->aliasTableName = "wetzikon_poi";
@@ -74,6 +79,15 @@ $this->strasse->aliasFieldName = "wetzikon_poi_strasse";
 $this->strasse->label = "Strasse";
 $this->strasse->allowNullValue = false;
 $this->strasse->length = 255;
+
+$this->coordinateText = new \Nemundo\Model\Type\Text\TextType($this);
+$this->coordinateText->tableName = "wetzikon_poi";
+$this->coordinateText->externalTableName = "wetzikon_poi";
+$this->coordinateText->fieldName = "coordinate_text";
+$this->coordinateText->aliasFieldName = "wetzikon_poi_coordinate_text";
+$this->coordinateText->label = "Coordinate Text";
+$this->coordinateText->allowNullValue = false;
+$this->coordinateText->length = 255;
 
 }
 }

@@ -2,6 +2,7 @@
 
 namespace Dev\Site;
 
+use Dev\App\Wetzikon\Site\MapSite;
 use Dev\Page\HomePage;
 use Nemundo\Web\Site\AbstractSite;
 use Parlament\Site\ParlamentSite;
@@ -20,7 +21,9 @@ class HomeSite extends AbstractSite
 
         //(new ParlamentSite())->redirect();
 
-        (new HomePage())->render();
+        //(new HomePage())->render();
+
+        MapSite::$site->redirect();
 
     }
 }

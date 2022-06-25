@@ -2,10 +2,11 @@
 
 namespace Dev\App\Wetzikon\Site;
 
+use Nemundo\Admin\Site\Icon\AbstractAdminIconSite;
 use Nemundo\Web\Site\AbstractSite;
 use Dev\App\Wetzikon\Page\PoiImagePage;
 
-class PoiImageSite extends AbstractSite
+class PoiImageSite extends AbstractAdminIconSite
 {
 
     /**
@@ -17,6 +18,7 @@ class PoiImageSite extends AbstractSite
     {
         $this->title = 'Image';
         $this->url = 'PoiImage';
+        $this->icon->icon='image';
         $this->menuActive = false;
 
         PoiImageSite::$site=$this;

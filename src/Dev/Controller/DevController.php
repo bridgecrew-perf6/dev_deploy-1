@@ -30,7 +30,7 @@ class DevController extends AbstractWebController
 
         new HomeSite($this);
 
-        new WetzikonSite($this);
+        //new WetzikonSite($this);
         new MapSite($this);
 
 new PoiSite($this);

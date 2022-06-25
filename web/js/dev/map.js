@@ -2,6 +2,10 @@
 
 import Debug from "../core/Debug/Debug.js";
 import ServiceRequest from "../framework/Service/ServiceRequest.js";
+import AdminDialog from "../framework/Admin/Dialog/AdminDialog.js";
+import AdminMainContent from "../framework/Admin/Layout/AdminMainContent.js";
+import ParagraphContainer from "../html/Content/Paragraph.js";
+import AdminImage from "../framework/Admin/Image/AdminImage.js";
 
 let map = new OpenLayers.Map("mapdiv");
 map.addLayer(new OpenLayers.Layer.OSM());
@@ -36,9 +40,48 @@ service.onDataRow=function (dataRow) {
             map.getProjectionObject() // to Spherical Mercator Projection
         );
 
-    var markers = new OpenLayers.Layer.Markers(dataRow.titel);
-    map.addLayer(markers);
-    markers.addMarker(new OpenLayers.Marker(lonLat));
+    var marker = new OpenLayers.Layer.Markers(dataRow.titel);
+
+    marker.events.register("click", marker, function(e) {
+
+        //alert("click");
+
+        let content = new AdminMainContent();
+
+        let dialog = new AdminDialog(content);
+        dialog.dialogTitle= dataRow.titel;
+
+        let p=new ParagraphContainer(dialog);
+        p.text= dataRow.text;
+
+
+        for (let imageUrl of dataRow.image) {
+            // ...use `element`...
+
+            (new Debug()).write(imageUrl);
+
+            let img = new AdminImage(dialog);
+            img.src = imageUrl;
+
+
+        }
+
+
+        dialog.showDialog();
+
+        /*let popup = new OpenLayers.Popup.FramedCloud("chicken",
+            marker.lonlat,
+            new OpenLayers.Size(200, 200),
+            title,
+            null, false );
+        map.addPopup(popup);*/
+    });
+
+
+
+
+    map.addLayer(marker);
+    marker.addMarker(new OpenLayers.Marker(lonLat));
 
 
 

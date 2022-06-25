@@ -15,7 +15,7 @@ class PoiSite extends AbstractSite
 
     protected function loadSite()
     {
-        $this->title = 'Poi Admin';
+        $this->title = 'Admin';
         $this->url = 'poi';
 
         new PoiNewSite($this);

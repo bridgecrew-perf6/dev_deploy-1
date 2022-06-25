@@ -27,9 +27,17 @@ dialog::backdrop {
 }
 
 
-.dialog-content {
+.admin-dialog-content {
 
-    height: 400px;
+    /*height: 400px;*/
+    width: 800px;
+    padding: var(--default-space);
+
 
 }
 
+.admin-dialog-button {
+
+    padding: var(--default-space);
+
+}

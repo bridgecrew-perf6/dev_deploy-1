@@ -1,5 +1,5 @@
 import DialogContainer from "../../../html/Dialog/Dialog.js";
-import AdminButton from "../../AdminButton.js";
+import AdminButton from "../Button/AdminButton.js";
 import DivContainer from "../../../html/Content/Div.js";
 import CloseFontAwesomeIcon from "../../FontAwesome/CloseFontAwesomeIcon.js";
 import SpanContainer from "../../../html/Content/Span.js";
@@ -23,15 +23,17 @@ export default class AdminDialog extends DialogContainer {
 
 
         this._content = new DivContainer();
+        this._content.addCssClass("admin-dialog-content");
         super.addContainer(this._content);
 
 
 
         let btnDiv = new DivContainer();
+        btnDiv.addCssClass("admin-dialog-button");
         super.addContainer(btnDiv);
 
         let btn = new AdminButton(btnDiv);
-        btn.label = "Close";
+        btn.label = "Schliessen";
         btn.onClick = function () {
             local.closeDialog();
         };

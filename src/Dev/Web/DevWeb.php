@@ -17,13 +17,13 @@ class DevWeb extends AbstractWeb
         (new CookieLogin())->checkLogin();
 
         ResponseConfig::$description = '';
-        //ResponseConfig::$imageUrl = '/img/wetzikon.png';  // null;
+        //ResponseConfig::$imageUrl = '/img/_wetzikon.png';  // null;
 
         //AdminConfig::$logoUrl = '/img/nemundo.svg';
         //AdminConfig::$logoUrl = '/img/aufrecht.svg';
 
         AdminConfig::$logoUrl = '/img/dev/wetzikon.png';  // null;
-        AdminConfig::$logoText = 'Dev';
+        //AdminConfig::$logoText = 'Dev';
 
         //AdminConfig::$defaultStylesheet=null;
         AdminConfig::$defaultStylesheet = '/css/dev/style.css';

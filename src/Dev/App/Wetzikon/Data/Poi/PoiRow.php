@@ -36,6 +36,11 @@ public $coordinate;
 */
 public $strasse;
 
+/**
+* @var string
+*/
+public $coordinateText;
+
 public function __construct(\Nemundo\Db\Row\AbstractDataRow $row, $model) {
 parent::__construct($row->getData());
 $this->row = $row;
@@ -45,5 +50,6 @@ $this->text = $this->getModelValue($model->text);
 $property = new \Nemundo\Model\Reader\Property\Geo\GeoCoordinateReaderProperty($row, $model->coordinate);
 $this->coordinate = $property->getValue();
 $this->strasse = $this->getModelValue($model->strasse);
+$this->coordinateText = $this->getModelValue($model->coordinateText);
 }
 }

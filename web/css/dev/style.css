@@ -1,9 +1,9 @@
 @import "../framework/framework.css";
 :root {
---color-light: #ede9e9;
---color-dark: #2d22ce;
---color-background: #aeabde;
---color-font: #0b1c6f;
+--color-light: white; /* #ede9e9;*/
+--color-dark: #e30815;
+--color-background: white;
+--color-font: black;
 
 --box-shadow: 3px 6px 4px -6px #000000;
 --border-radius: 10px;
@@ -11,10 +11,12 @@
 
 
 
+
 #mapdiv {
 
+    position: fixed;
     width: 100%;
-    height: 800px;
-
-
+    height: 100%;
+    left: 0;
+    top: 70px;
 }

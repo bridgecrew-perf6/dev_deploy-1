@@ -26,6 +26,11 @@ public $coordinate;
 */
 public $strasse;
 
+/**
+* @var \Nemundo\Model\Type\Text\TextType
+*/
+public $coordinateText;
+
 protected function loadExternalType() {
 parent::loadExternalType();
 $this->externalModelClassName = PoiModel::class;
@@ -71,6 +76,14 @@ $this->strasse->externalTableName = $this->externalTableName;
 $this->strasse->aliasFieldName = $this->strasse->tableName . "_" . $this->strasse->fieldName;
 $this->strasse->label = "Strasse";
 $this->addType($this->strasse);
+
+$this->coordinateText = new \Nemundo\Model\Type\Text\TextType();
+$this->coordinateText->fieldName = "coordinate_text";
+$this->coordinateText->tableName = $this->parentFieldName . "_" . $this->externalTableName;
+$this->coordinateText->externalTableName = $this->externalTableName;
+$this->coordinateText->aliasFieldName = $this->coordinateText->tableName . "_" . $this->coordinateText->fieldName;
+$this->coordinateText->label = "Coordinate Text";
+$this->addType($this->coordinateText);
 
 }
 }
